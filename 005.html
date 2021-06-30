@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>VCAREER</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="dist/vcareer-style.css">
+    <script src="https://kit.fontawesome.com/58d8b0aee0.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2" defer></script>
+</head>
+<body>
+<!-- heroコンポーネント -->
+<section class="topsBar">
+  <div class="herrty-body">
+    <div class="container displayFlex icx-justify-content-space-between icx-align-content-center" style="max-width:100%;">
+      <!--<a href="index.html"><img src="dist/img/vector_logo_sample.jpg"></a>-->
+      <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a href="index.html"><img src="dist/img/vector_logo_sample.png"></a>
+          <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          
+          <!--<a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" aria-expanded="false">-->
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+          <!--<div class="navbar-menu" id="navMenu">-->
+            <!-- navbar-start, navbar-end... -->
+          <!--</div>-->
+        </div>
+        <script>
+              document.addEventListener('DOMContentLoaded', () => {
+    
+              // Get all "navbar-burger" elements
+              const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+    
+              // Check if there are any navbar burgers
+              if ($navbarBurgers.length > 0) {
+    
+              // Add a click event on each of them
+              $navbarBurgers.forEach( el => {
+              el.addEventListener('click', () => {
+    
+              // Get the target from the "data-target" attribute
+              const target = el.dataset.target;
+              const $target = document.getElementById(target);
+    
+              // Toggle the "icx-active" class on both the "navbar-burger" and the "navbar-menu"
+              el.classList.toggle('icx-active');
+              $target.classList.toggle('icx-active');
+    
+              });
+             });
+            }
+    
+            });
+        (function() {
+           var burger = document.querySelector('.burger');
+           var nav = document.querySelector('#'+burger.dataset.target); 
+           burger.addEventListener('click', function(){
+           burger.classList.toggle('icx-active');
+           nav.classList.toggle('icx-active');
+         });
+        })();
+        </script>
+      
+        <div id="navbarBasicExample" class="navbar-menu" style="margin:0 2% 0 0;">
+          <div class="navbar-start">
+            <!--<a href="index.html" class="navbar-item">
+                <i class="fab fa-font-awesome-flag"></i>HOME
+            </a>-->
+              <div class="navbar-item cont-dropdown icx-hoverable">
+                <a href="002.html" class="navbar-link">
+                    <i class="fas fa-mail-bulk"></i>メッセージ管理＜求人企業・紹介会社＞
+                </a>   
+                <div class="navbar-dropdown">
+                  <a class="navbar-item">
+                    <i class="fab fa-twitch"></i>メッセージ管理＜求職者＞
+                  </a>
+                </div>
+              </div>
+                <a href="004.html" class="navbar-item">
+                    <i class="fas fa-user-tie"></i><i class="fab fa-sistrix"></i>求職者検索
+                </a>
+                <a class="navbar-item">
+                    <i class="far fa-id-card"></i>登録者管理
+                </a> 
+            <div class="navbar-item cont-dropdown icx-hoverable">
+              <a class="navbar-link">
+                <i class="fas fa-sliders-h"></i>基本設定
+              </a>
+      
+              <div class="navbar-dropdown">
+                <a class="navbar-item">
+                    <i class="fas fa-user-cog"></i>アカウント管理
+                </a>
+                <a class="navbar-item">
+                    <i class="fas fa-laptop-code"></i>サイト管理
+                </a>
+                <!--<a class="navbar-item">
+                  Contact
+                </a>
+                <hr class="navbar-divider">
+                <a class="navbar-item">
+                  Report an issue
+                </a>-->
+              </div>
+            </div>
+          </div>
+      
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="buttons">
+                <a class="button icx-defoult_mint">
+                    <i class="fas fa-pen-nib"></i><strong>　Signup</strong>
+                  </a>
+                  <a class="button icx-pails_sub">
+                    <i class="fas fa-fingerprint"></i>　Login
+                  </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+</section>
+
+<main>
+  <!--main-functioncontents-->
+  <article>
+    <div class="displayFlex icx-justify-content-space-between">
+      <div class="tags cont-activity">
+        <span class="tag icx-darkbl">2021年06月17日</span>
+        <span class="tag icx-bright">掲載中の求人情報 3件</span>
+      </div>
+      <div class="title icx-6" style="font-size:0.8em;text-align:right;padding:1% 0;">
+        <h1 class="pagetitle title icx-5">求職者検索</h1>
+      </div>
+    </div>   
+</article>
+
+
+<article style="margin-top:1%;" id="searchApp">
+    <div class="tabs v-columns  icx-toggle icx-fullwidth searchTabs icx-flex-direction-row icx-flex-wrap-wrap icx-justify-content-space-between">
+        <div class="column vmenu-btn">
+          <a class="bd-notification v-box" href="004.html" v-on:click="icxActive = 'tab1c'" v-bind:class="{ 'icx-active': icxActive == 'tab1c' }"> 
+            <div class="has-text-centered">
+              <h3 class="title icx-4"><i class="fas fa-search"></i> 希望職種で検索</h3>
+            </div>
+          </a>
+        </div>
+        <div class="column vmenu-btn">
+          <a class="bd-notification v-box" href="004.html" v-on:click="icxActive = 'tab2c'" v-bind:class="{ 'icx-active': icxActive == 'tab2c' }">
+            <div class="has-text-centered">
+              <h3 class="title icx-4"><i class="fas fa-search-plus"></i> 詳細条件で検索</h3>
+            </div>
+          </a>
+        </div>
+        <div class="column vmenu-btn">
+          <a class="bd-notification v-box" href="004.html" v-on:click="icxActive = 'tab3c'" v-bind:class="{ 'icx-active': icxActive == 'tab3c' }">
+            <div class="has-text-centered">
+              <h3 class="title icx-4"><i class="far fa-handshake"></i> 登録済マッチング条件</h3>
+            </div>   
+          </a>
+        </div>
+        <div class="column vmenu-btn">
+          <a class="bd-notification v-box" href="004.html" v-on:click="icxActive = 'tab4c'" v-bind:class="{ 'icx-active': icxActive == 'tab4c' }">
+            <div class="has-text-centered">
+              <h3 class="title icx-4"><i class="fas fa-star"></i> お気に入り</h3>
+           </div>
+          </a>
+        </div>
+    </div>
+
+    <div class="tab-contents">
+      <div class="content" v-bind:class="{ 'icx-active': icxActive == 'tab1c' }" style="border:none!important;background:none !important;">
+          <!--tab1c-->
+          <div class="icx-flex icx-flex-direction-column">
+              <div class="btn-Aggregation-round icx-flex icx-flex-direction-row icx-justify-content-space-between">
+                  <button class="button icx-fullwidth icx-rounded"><i class="fas fa-caret-right"></i> アプリケーション開発（オープン系）</button>        
+                  <button class="button icx-fullwidth icx-rounded"><i class="fas fa-caret-right"></i> アプリケーション開発（ＷＥＢ系）</button>
+              </div>
+              <div class="btn-Aggregation-round icx-flex icx-flex-direction-row icx-justify-content-space-between">            
+                  <button class="button icx-fullwidth icx-rounded"><i class="fas fa-caret-right"></i> アプリケーション開発（汎用系）</button>           
+                  <button class="button icx-fullwidth icx-rounded"><i class="fas fa-caret-right"></i> アプリケーション開発（制御・組込み系）</button>
+              </div>
+              <div class="btn-Aggregation-round icx-flex icx-flex-direction-row icx-justify-content-space-between">          
+                  <button class="button icx-fullwidth icx-rounded"><i class="fas fa-caret-right"></i> パッケージソフト・OS開発</button>          
+                  <button class="button icx-fullwidth icx-rounded"><i class="fas fa-caret-right"></i> プロジェクトリーダー・マネジャー</button>
+              </div>
+              <div class="btn-Aggregation-round icx-flex icx-flex-direction-row icx-justify-content-space-between">          
+                  <button class="button icx-fullwidth icx-rounded"><i class="fas fa-caret-right"></i> ネットワーク・サーバー設計・構築</button>             
+                  <button class="button icx-fullwidth icx-rounded"><i class="fas fa-caret-right"></i> ネットワーク・サーバー運用・保守</button>
+              </div>
+              <div class="btn-Aggregation-round icx-flex icx-flex-direction-row icx-justify-content-space-between">
+                  <button class="button icx-fullwidth icx-rounded"><i class="fas fa-caret-right"></i> 社内情報システム・EDP・MIS</button>        
+                  <button class="button icx-fullwidth icx-rounded"><i class="fas fa-caret-right"></i> テクニカル・カスタマーサポート</button>
+              </div>
+              <div class="btn-Aggregation-round icx-flex icx-flex-direction-row icx-justify-content-space-between">              
+                  <button class="button icx-fullwidth icx-rounded"><i class="fas fa-caret-right"></i> システムサポート・運用・保守</button>              
+                  <button class="button icx-fullwidth icx-rounded"><i class="fas fa-caret-right"></i> ＩＴ系コンサルタント</button>
+              </div>
+              <div class="btn-Aggregation-round icx-flex icx-flex-direction-row icx-justify-content-space-between">              
+                  <button class="button icx-fullwidth icx-rounded"><i class="fas fa-caret-right"></i> CAD・CAM・CAE・CIM他</button>              
+                  <button class="button icx-fullwidth icx-rounded"><i class="fas fa-caret-right"></i> 品質管理、テスト、評価</button>
+              </div>
+              <div class="btn-Aggregation-round icx-flex icx-flex-direction-row icx-justify-content-space-between">              
+                  <button class="button icx-fullwidth icx-rounded"><i class="fas fa-caret-right"></i> 製品開発・研究</button>              
+                  <button class="button icx-fullwidth icx-rounded"><i class="fas fa-caret-right"></i> その他ソフトウェア関連職</button>
+              </div>
+            </div>
+          </div>
+      </div>
+    </article>
+    <div class="icx-fullwidth icx-flex-direction-row icx-flex-wrap-wrap icx-justify-content-space-between" style="margin-bottom: 10px;">
+      <div class="box-noshadow">
+        <i class="fas fa-user-tie" aria-hidden="true"></i> <strong>求職者一覧画面</strong>
+      </div>
+    </div>
+
+<form action="/freecandidate/search_kibo_jyouken" method="post" post="true">
+<input id="session_id_validation" name="session_id_validation" type="hidden" value="09bf6816594e2f80065df05b169eedc3" />
+<input id="commit" name="commit" type="hidden" value="この条件で検索する" />
+<input id="syokusyu_dai_select_01" name="syokusyu_dai_select_01" type="hidden" value="15" />
+<input id="nensyu" name="nensyu" type="hidden" value="4" />
+<input id="gender[]" name="gender[]" type="hidden" value="2" />
+<input id="by_syokusyu" name="by_syokusyu" type="hidden" value="true" />
+<input id="age_up" name="age_up" type="hidden" value="30" />
+<input id="age_down" name="age_down" type="hidden" value="40" />
+<input id="session_id_validation" name="session_id_validation" type="hidden" value="09bf6816594e2f80065df05b169eedc3" />
+
+
+<table class="ta_o table icx-fullwidth icx-hoverable v-table-filtering-controller v-box2">
+  <tr>
+    <!--<th style="width:10%;" align="center">並べ替え</th>-->
+    <td colspan="2">
+      <div class="select is-normal">
+      <select id="search_sort1" name="search_sort1"><option value="1" selected="selected">登録日</option>
+<option value="2">登録No</option>
+<option value="3">年齢</option>
+<option value="5">担当者</option>
+<option value="6">希望職種 1</option>
+<option value="7">人材紹介会社</option></select></div>      <div class="select is-normal"><select id="search_order1" name="search_order1"><option value="1">昇順</option>
+<option value="2" selected="selected">降順</option></select></div>
+    </td>
+  </tr>
+  
+  <tr>
+    <!--<th align="center">絞込み</th>-->
+    <td colspan="2"><table border="0" cellpadding="0" cellspacing="0" class="ta_none">
+        <tr>
+          <td align="left" valign="top" nowrap="nowrap">性別</td>
+          <td align="left" valign="top">&nbsp;</td>
+          <td align="left" valign="top">
+            <input id="filter_gender[]" name="filter_gender[]" type="radio" value="1" />男&nbsp;&nbsp;<input id="filter_gender[]" name="filter_gender[]" type="radio" value="2" />女
+          </td>
+        </tr>
+        <tr>
+          <td align="left" valign="top" nowrap="nowrap">年齢</td>
+          <td align="left" valign="top">&nbsp;</td>
+          <td align="left" valign="top">
+            <span class="control"><input id="filter_age_up" maxlength="3" name="filter_age_up" size="3" type="text" /></span>歳～<span class="control"><input id="filter_age_down" maxlength="3" name="filter_age_down" size="3" type="text" /></span>歳
+          </td>
+        </tr>
+        <tr>
+          <td align="left" valign="top" nowrap="nowrap">希望年収</td>
+          <td align="left" valign="top">&nbsp;</td>
+          <td align="left" valign="top">
+            <div class="select is-normal">
+            <select id="filter_nensyu" name="filter_nensyu"><option value="">---</option>
+<option value="1">0〜99万</option>
+<option value="2">100万〜199万</option>
+<option value="3">200万〜299万</option>
+<option value="4">300万〜399万</option>
+<option value="5">400万〜499万</option>
+<option value="6">500万〜599万</option>
+<option value="7">600万〜699万</option>
+<option value="8">700万〜799万</option>
+<option value="9">800万〜899万</option>
+<option value="10">900万〜999万</option>
+<option value="11">1,000万〜1,199万</option>
+<option value="12">1,200万〜1,499万</option>
+<option value="13">1,500万〜1,999万</option>
+<option value="14">2,000万以上</option></select></div>
+</td>
+        </tr>
+        <tr>
+          <td align="left" valign="top" nowrap="nowrap">希望雇用形態</td>
+          <td align="left" valign="top">&nbsp;</td>
+          <td align="left" valign="top">
+            
+            
+              <input id="filter_kibo_koyo[]" name="filter_kibo_koyo[]" type="checkbox" value="1" />正社員            
+              <input id="filter_kibo_koyo[]" name="filter_kibo_koyo[]" type="checkbox" value="2" />契約社員            
+              <input id="filter_kibo_koyo[]" name="filter_kibo_koyo[]" type="checkbox" value="3" />パート・アルバイト            
+              <input id="filter_kibo_koyo[]" name="filter_kibo_koyo[]" type="checkbox" value="4" />紹介予定派遣            
+              <input id="filter_kibo_koyo[]" name="filter_kibo_koyo[]" type="checkbox" value="5" />派遣社員            
+          </td>
+        </tr>
+        <tr>
+          <td align="left" valign="top" nowrap="nowrap">希望勤務地<br />
+            （複数選択可）</td>
+          <td align="left" valign="top">&nbsp;</td>
+          <td align="left" valign="top">
+            <div class="select is-normal selectoptionmul_Multiple">
+            <select id="filter_kibo_kinmuchis[]" multiple="multiple" name="filter_kibo_kinmuchis[]" size="5" value="希望勤務地">
+<option value="1">北海道</option>
+<option value="3">青森県</option>
+<option value="4">岩手県</option>
+<option value="5">宮城県</option>
+<option value="6">秋田県</option>
+<option value="7">山形県</option>
+<option value="8">福島県</option>
+<option value="10">茨城県</option>
+<option value="11">栃木県</option>
+<option value="12">群馬県</option>
+<option value="14">東京都</option>
+<option value="15">神奈川県</option>
+<option value="16">千葉県</option>
+<option value="17">埼玉県</option>
+<option value="19">新潟県</option>
+<option value="20">富山県</option>
+<option value="21">石川県</option>
+<option value="22">福井県</option>
+<option value="23">山梨県</option>
+<option value="24">長野県</option>
+<option value="26">岐阜県</option>
+<option value="27">静岡県</option>
+<option value="28">愛知県</option>
+<option value="29">三重県</option>
+<option value="31">滋賀県</option>
+<option value="32">京都府</option>
+<option value="33">大阪府</option>
+<option value="34">兵庫県</option>
+<option value="35">奈良県</option>
+<option value="36">和歌山県</option>
+<option value="38">鳥取県</option>
+<option value="39">島根県</option>
+<option value="40">岡山県</option>
+<option value="41">広島県</option>
+<option value="42">山口県</option>
+<option value="44">徳島県</option>
+<option value="45">香川県</option>
+<option value="46">愛媛県</option>
+<option value="47">高知県</option>
+<option value="49">福岡県</option>
+<option value="50">佐賀県</option>
+<option value="51">長崎県</option>
+<option value="52">熊本県</option>
+<option value="53">大分県</option>
+<option value="54">宮崎県</option>
+<option value="55">鹿児島県</option>
+<option value="56">沖縄県</option></select></div>
+</td>
+</tr>
+</table>
+  </td>
+  </tr>
+</table>
+<section class="icx-fullwidth v-form-ja icx-flex is-justify-content-center" style="border-bottom: unset;"><button class="btn button icx-submit" name="commit" type="submit">絞込み</button></section>
+<br>
+
+<!--table width="100%" border="0" cellpadding="10" cellspacing="0">
+    <tr>
+        <td align="right" bgcolor="#FFCC99" class="ta">　チェック済みデータに対して <span class=sbtn><input name="kento_checks" type="submit" value="検討中フォルダ登録" /></span>&nbsp;&nbsp;<span class=sbtn><input name="scout_checks" type="submit" value="一括スカウト（※未実装）" /></span></td>
+    </tr>
+</table-->
+
+<!-- Pageコントロール -->
+<table class="table icx-fullwidth icx-hoverable" style="">
+  <tr>
+    <th align="left">
+    3件中　1～3件を表示
+    <select id="per_page_count[B]" name="per_page_count[B]"><option value="10" selected="selected">10 件</option>
+<option value="20">20 件</option>
+<option value="30">30 件</option>
+<option value="50">50 件</option></select>
+    <span class=sbtn><input name="per_page_button[B]" type="submit" value="表示" /></span>
+  </th>
+    <td align="right">    
+  </td>
+  </tr>
+</table>
+<!-- Pageコントロール -->
+
+<br>
+
+
+
+<table width="100%" class="ta_none">
+  <tr>
+    <td align="right" class="ta">
+    <a href="/freecandidate/kyusyokusya_kento/117" class="btn button icx-submit icx-small" onclick="var f=document.createElement('form'); this.parentNode.appendChild(f); f.method='POST'; f.action=this.href; f.submit(); return false;"><i aria-hidden="true" class="fas fa-star"></i><span>　お気に入りフォルダに登録</span></a>
+    <a href="/freecandidate/scout_input_message" class="btn button icx-submit icx-small" onclick="var f=document.createElement('form'); this.parentNode.appendChild(f); var p0=document.createElement('input'); p0.type='hidden'; p0.name='kyusyokusya_id'; p0.value='117'; f.appendChild(p0); f.method='POST'; f.action=this.href; f.submit(); return false;"><i aria-hidden="true" class="far fa-bell"></i><span>　スカウト</span></a>
+    <a href="/freecandidate/kyusyokusya_show/117" class="btn button icx-defoult_mint icx-small" onclick="var f=document.createElement('form'); this.parentNode.appendChild(f); f.method='POST'; f.action=this.href; f.submit(); return false;"><i aria-hidden="true" class="fas fa-comment-dots"></i><span>　詳細</span></a></td>
+  </tr>
+</table>
+
+<table class="ta_o table icx-fullwidth icx-hoverable v-box2" width="100%" border="0" cellspacing="0" cellpadding="0">
+    <colgroup><col width="15%">
+    <col width="40%">
+    <col width="15%">
+    <col width="30%">
+  
+  </colgroup><tbody><tr>
+  <th colspan="4">
+    <table class="ta_none table icx-hoverable" style="padding:2px;" width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tbody><tr>
+      <td width="100%" align="left">
+        紹介会社テスト / 
+        登録No.461&nbsp;&nbsp;&nbsp;&nbsp;
+        登録日：2021/04/28
+      </td>
+    </tr>
+    </tbody></table>
+  </th>
+  </tr>
+  
+  <tr>
+    <th>氏名</th>
+    <td>
+  
+      31歳／男性
+  
+    </td>
+    <th>希望年収</th>
+    <td>
+      200万〜299万
+    </td>
+  </tr>
+  
+  <tr>
+    <th scope="row">最終学歴</th>
+    <td>大学院／国立／文系</td>
+    <th>婚姻</th>
+    <td>未婚</td>
+  </tr>
+  
+  <tr>
+    <th scope="row">住所</th>
+    
+      <td>神奈川県</td>
+    
+    <th>希望勤務地</th>
+    <td>
+      
+      北海道
+      
+    </td>
+  </tr>
+  
+  <tr><!--改行-->
+
+    <!--この間に横並び2個入る--> 
+    <!--ここから横並び1個目スタート--> 
+    <th>就業経験1</th>
+    <td colspan="3"> <table class="ta_inner table icx-hoverable" style="width:100%;">
+        <tbody><tr>
+          <td nowrap="">在籍期間</td>
+          <td>：</td>
+          <td>2004年04月01日～</td>
+        </tr>
+        <tr>
+          <td nowrap="">会社名</td>
+          <td>：</td>
+          <td>
+            化学・素材 ／
+            非上場 ／
+            国内資本
+          </td>
+        </tr>
+        <tr>
+          <td nowrap="">従業員数</td>
+          <td>：</td>
+          <td>200人〜499人</td>
+        </tr>
+        <tr>
+          <td nowrap="">事業内容</td>
+          <td>：</td>
+          <td>高分子合成樹脂材料の複合加工及び複合加工品の製造・販売<br></td>
+        </tr>
+        <tr>
+          <td nowrap="">雇用形態</td>
+          <td>：</td>
+          <td>正社員</td>
+        </tr>
+        <tr>
+          <td nowrap="">職種</td>
+          <td>：</td>
+          <td>経理／2年</td>
+        </tr>
+        <tr>
+          <td nowrap="">役職</td>
+          <td>：</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td nowrap="">職務内容</td>
+          <td>：</td>
+          <td>【社長秘書業務】 
+  <br>・社長のスケジュール管理 
+  <br>・出張切符の手配 
+  <br>・お茶だし 
+  <br>・お中元等の手配 
+  <br>・書類の整理 
+  <br>・団体生命保険の事務処理 
+  <br>備考 2004.4～2006.12　経理部配属 
+  <br>【経理業務】 
+  <br>・支払手形の発行 
+  <br>・受取手形の記帳 
+  <br>・請求書発行 
+  <br>・ファイリング 
+  <br>・電話応対 
+  <br>・月末の振込み 
+  <br>・伝票入力 
+  <br>・入出金管理 
+  <br></td>
+  </tr></tbody></table></td>
+ <!--ここで横並び1個目終わり-->  
+  </tr><!--ここで改行--> 
+  <tr><!--ここで改行-->
+ <!--ここから横並び2個目スタート-->  
+  <th>語学</th>
+  <td colspan="3"><table class="ta_none table icx-hoverable" border="0" cellspacing="0" cellpadding="0" style="width:100%;">
+        <tbody><tr>
+          <td rowspan="5">英語</td>
+          <td>英会話</td>
+          <td>---</td>
+        </tr>
+        <tr>
+          <td>英文</td>
+          <td>---</td>
+        </tr>
+        <tr>
+          <td>TOEIC</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>TOEFL</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>その他資格</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>その他語学</td>
+          <td colspan="2"></td>
+        </tr>
+      </tbody></table>
+    </td>
+   <!--ここで横並び2個目終わり-->
+   <!--この間に横並び2個入る--> 
+  </tr><!--改行-->
+  
+  <tr>
+    <th scope="row">希望職種</th>
+    <td>[ソフトウェア関連] アプリケーション開発（オープン系）／希望なし／希望なし</td>
+    <th>希望雇用形態</th>
+    <td>正社員</td>
+  </tr>
+  </tbody></table>
+
+<br />
+<br />
+<!--2件目-->
+<table width="100%" class="ta_none ">
+  <tr>
+    <td align="right" class="ta">
+    <a href="/freecandidate/kyusyokusya_kento/117" class="btn button icx-submit icx-small" onclick="var f=document.createElement('form'); this.parentNode.appendChild(f); f.method='POST'; f.action=this.href; f.submit(); return false;"><i aria-hidden="true" class="fas fa-star"></i><span>　お気に入りフォルダに登録</span></a>
+    <a href="/freecandidate/scout_input_message" class="btn button icx-submit icx-small" onclick="var f=document.createElement('form'); this.parentNode.appendChild(f); var p0=document.createElement('input'); p0.type='hidden'; p0.name='kyusyokusya_id'; p0.value='117'; f.appendChild(p0); f.method='POST'; f.action=this.href; f.submit(); return false;"><i aria-hidden="true" class="far fa-bell"></i><span>　スカウト</span></a>
+    <a href="/freecandidate/kyusyokusya_show/117" class="btn button icx-defoult_mint icx-small" onclick="var f=document.createElement('form'); this.parentNode.appendChild(f); f.method='POST'; f.action=this.href; f.submit(); return false;"><i aria-hidden="true" class="fas fa-comment-dots"></i><span>　詳細</span></a></td>
+  </tr>
+</table>
+<table class="ta_o table icx-fullwidth icx-hoverable v-box2" width="100%" border="0" cellspacing="0" cellpadding="0">
+  <colgroup><col width="15%">
+  <col width="40%">
+  <col width="15%">
+  <col width="30%">
+
+</colgroup><tbody><tr>
+<th colspan="4">
+  <table class="ta_none table icx-hoverable" style="padding:2px;" width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tbody><tr>
+    <td width="100%" align="left">
+      紹介会社テスト / 
+      登録No.461&nbsp;&nbsp;&nbsp;&nbsp;
+      登録日：2021/04/28
+    </td>
+  </tr>
+  </tbody></table>
+</th>
+</tr>
+
+<tr>
+  <th>氏名</th>
+  <td>
+
+    31歳／男性
+
+  </td>
+  <th>希望年収</th>
+  <td>
+    200万〜299万
+  </td>
+</tr>
+
+<tr>
+  <th scope="row">最終学歴</th>
+  <td>大学院／国立／文系</td>
+  <th>婚姻</th>
+  <td>未婚</td>
+</tr>
+
+<tr>
+  <th scope="row">住所</th>
+  
+    <td>神奈川県</td>
+  
+  <th>希望勤務地</th>
+  <td>
+    
+    北海道
+    
+  </td>
+</tr>
+
+<tr><!--改行-->
+
+        <!--この間に横並び2個入る--> 
+        <!--ここから横並び1個目スタート--> 
+        <th>就業経験1</th>
+        <td colspan="3"> <table class="ta_inner table icx-hoverable" style="width:100%;">
+            <tbody><tr>
+              <td nowrap="">在籍期間</td>
+              <td>：</td>
+              <td>2004年04月01日～</td>
+            </tr>
+            <tr>
+              <td nowrap="">会社名</td>
+              <td>：</td>
+              <td>
+                化学・素材 ／
+                非上場 ／
+                国内資本
+              </td>
+            </tr>
+            <tr>
+              <td nowrap="">従業員数</td>
+              <td>：</td>
+              <td>200人〜499人</td>
+            </tr>
+            <tr>
+              <td nowrap="">事業内容</td>
+              <td>：</td>
+              <td>高分子合成樹脂材料の複合加工及び複合加工品の製造・販売<br></td>
+            </tr>
+            <tr>
+              <td nowrap="">雇用形態</td>
+              <td>：</td>
+              <td>正社員</td>
+            </tr>
+            <tr>
+              <td nowrap="">職種</td>
+              <td>：</td>
+              <td>経理／2年</td>
+            </tr>
+            <tr>
+              <td nowrap="">役職</td>
+              <td>：</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td nowrap="">職務内容</td>
+              <td>：</td>
+              <td>複合加工及び複合加工品の製造
+      <br>・メーカー・商社の事務（一般事務／営業事務）
+      <br></td>
+      </tr></tbody></table></td>
+     <!--ここで横並び1個目終わり-->  
+      </tr><!--ここで改行--> 
+      <tr><!--ここで改行-->
+     <!--ここから横並び2個目スタート-->  
+      <th>語学</th>
+      <td colspan="3"><table class="ta_none table icx-hoverable" border="0" cellspacing="0" cellpadding="0" style="width:100%;">
+            <tbody><tr>
+              <td rowspan="5">英語</td>
+              <td>英会話</td>
+              <td>---</td>
+            </tr>
+            <tr>
+              <td>英文</td>
+              <td>---</td>
+            </tr>
+            <tr>
+              <td>TOEIC</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>TOEFL</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>その他資格</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>その他語学</td>
+              <td colspan="2"></td>
+            </tr>
+          </tbody></table>
+        </td>
+       <!--ここで横並び2個目終わり-->
+       <!--この間に横並び2個入る--> 
+      </tr><!--改行-->
+
+<tr>
+  <th scope="row">希望職種</th>
+  <td>[ソフトウェア関連] アプリケーション開発（オープン系）／希望なし／希望なし</td>
+  <th>希望雇用形態</th>
+  <td>正社員</td>
+</tr>
+</tbody></table>
+
+<br />
+<!--3件目-->
+<table width="100%" class="ta_none ">
+  <tr>
+    <td align="right" class="ta">
+    <a href="/freecandidate/kyusyokusya_kento/117" class="btn button icx-submit icx-small" onclick="var f=document.createElement('form'); this.parentNode.appendChild(f); f.method='POST'; f.action=this.href; f.submit(); return false;"><i aria-hidden="true" class="fas fa-star"></i><span>　お気に入りフォルダに登録</span></a>
+    <a href="/freecandidate/scout_input_message" class="btn button icx-submit icx-small" onclick="var f=document.createElement('form'); this.parentNode.appendChild(f); var p0=document.createElement('input'); p0.type='hidden'; p0.name='kyusyokusya_id'; p0.value='117'; f.appendChild(p0); f.method='POST'; f.action=this.href; f.submit(); return false;"><i aria-hidden="true" class="far fa-bell"></i><span>　スカウト</span></a>
+    <a href="/freecandidate/kyusyokusya_show/117" class="btn button icx-defoult_mint icx-small" onclick="var f=document.createElement('form'); this.parentNode.appendChild(f); f.method='POST'; f.action=this.href; f.submit(); return false;"><i aria-hidden="true" class="fas fa-comment-dots"></i><span>　詳細</span></a></td>
+  </tr>
+</table>
+
+<table class="ta table icx-fullwidth icx-hoverable v-box2" width="100%" border="0" cellspacing="0" cellpadding="0">
+    <colgroup>
+      <col width="15%">
+      <col width="40%">
+      <col width="15%">
+      <col width="30%"> </colgroup>
+    <tbody>
+      <tr>
+        <th colspan="4">
+          <table class="ta_none" style="padding:2px;" width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tbody>
+              <tr>
+                <td width="100%" align="left"> 株式会社ベクトル / 登録No.436&nbsp;&nbsp;&nbsp;&nbsp; 登録日：2021/04/09 </td>
+              </tr>
+            </tbody>
+          </table>
+        </th>
+      </tr>
+      <tr>
+        <th>氏名</th>
+        <td> Irvine&nbsp;itoi（アーヴァイン&nbsp;イトイ）／31歳／男性 </td>
+        <th>希望年収</th>
+        <td> 400万〜499万 </td>
+      </tr>
+      <tr>
+        <th scope="row">最終学歴</th>
+        <td>大学／国立／理系</td>
+        <th>婚姻</th>
+        <td>未婚</td>
+      </tr>
+      <tr>
+        <th scope="row">住所</th>
+        <td>福井県</td>
+        <th>希望勤務地</th>
+        <td> 東京都 </td>
+      </tr>
+      <tr>
+        <tr><!--改行-->
+
+            <!--この間に横並び2個入る--> 
+            <!--ここから横並び1個目スタート--> 
+            <th>就業経験1</th>
+            <td colspan="3"> <table class="ta_inner table icx-hoverable" style="width:100%;">
+                <tbody><tr>
+                  <td nowrap="">在籍期間</td>
+                  <td>：</td>
+                  <td>2004年04月01日～</td>
+                </tr>
+                <tr>
+                  <td nowrap="">会社名</td>
+                  <td>：</td>
+                  <td>
+                    化学・素材 ／
+                    非上場 ／
+                    国内資本
+                  </td>
+                </tr>
+                <tr>
+                  <td nowrap="">従業員数</td>
+                  <td>：</td>
+                  <td>200人〜499人</td>
+                </tr>
+                <tr>
+                  <td nowrap="">事業内容</td>
+                  <td>：</td>
+                  <td>高分子合成樹脂材料の複合加工及び複合加工品の製造・販売<br></td>
+                </tr>
+                <tr>
+                  <td nowrap="">雇用形態</td>
+                  <td>：</td>
+                  <td>正社員</td>
+                </tr>
+                <tr>
+                  <td nowrap="">職種</td>
+                  <td>：</td>
+                  <td>経理／2年</td>
+                </tr>
+                <tr>
+                  <td nowrap="">役職</td>
+                  <td>：</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td nowrap="">職務内容</td>
+                  <td>：</td>
+                  <td> 
+          <br>・ 
+          <br>・
+          <br>・
+          <br></td>
+          </tr></tbody></table></td>
+         <!--ここで横並び1個目終わり-->  
+          </tr><!--ここで改行--> 
+          <tr><!--ここで改行-->
+         <!--ここから横並び2個目スタート-->  
+          <th>語学</th>
+          <td colspan="3"><table class="ta_none table icx-hoverable" border="0" cellspacing="0" cellpadding="0" style="width:100%;">
+                <tbody><tr>
+                  <td rowspan="5">英語</td>
+                  <td>英会話</td>
+                  <td>---</td>
+                </tr>
+                <tr>
+                  <td>英文</td>
+                  <td>---</td>
+                </tr>
+                <tr>
+                  <td>TOEIC</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>TOEFL</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>その他資格</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>その他語学</td>
+                  <td colspan="2"></td>
+                </tr>
+              </tbody></table>
+            </td>
+           <!--ここで横並び2個目終わり-->
+           <!--この間に横並び2個入る--> 
+      </tr>
+      <tr>
+        <th scope="row">希望職種</th>
+        <td>[ソフトウェア関連] アプリケーション開発（オープン系）／希望なし／希望なし</td>
+        <th>希望雇用形態</th>
+        <td>正社員</td>
+      </tr>
+    </tbody>
+  </table> <br>
+  <table class="table icx-fullwidth icx-hoverable" style="">
+    <tr>
+      <th align="left"> 3件中　1～3件を表示 <select id="per_page_count[B]" name="per_page_count[B]"><option value="10" selected="selected">10 件</option>
+  <option value="20">20 件</option>
+  <option value="30">30 件</option>
+  <option value="50">50 件</option></select> <span class=sbtn><input name="per_page_button[B]" type="submit" value="表示" /></span> </th>
+      <td align="right"> </td>
+    </tr>
+  </table>
+  </form>
+  <div class="ta"> <a href="004.html" class="btn button icx-submit" onclick="var f=document.createElement('form'); this.parentNode.appendChild(f); var p0=document.createElement('input'); p0.type='hidden'; p0.name='is_back'; p0.value='true'; f.appendChild(p0); f.method='POST'; f.action=this.href; f.submit(); return false;"><i class="fas fa-chevron-left"></i><span>　もどる</span></a> </div>&nbsp;&nbsp; <br>
+
+<script>
+    window.onload = function () {var searchApp = new Vue({
+      el: '#searchApp',
+      data: {
+        icxActive: 'tab1c'
+      }
+    })
+}
+</script>
+
+  <button class="button icx-defoult_mint icx-outlined is-nomal v-box pageTop">
+    <a href="#"><i class="fas fa-arrow-up"></i></a>
+  </button>
+<script>
+  $(window).scroll(function () {
+  var now = $(window).scrollTop();
+  if (now > 200) {
+    $('.pageTop').fadeIn("slow");
+  } else {
+    $('.pageTop').fadeOut('slow');
+  }
+});
+</script>
+</main>
+<script>
+  for (const element of document.querySelectorAll('.modal .delete, .show-modal')) {
+    element.addEventListener('click', e => {
+        const modalId = element.dataset.target;
+        const modal = document.getElementById(modalId);
+        modal.classList.toggle('icx-active');
+    });
+}
+</script>
+
+<footer class="footer">
+  <div class="content cont-text-centered">
+    <p>
+      <strong>VCareer </strong><span> © Copyright Reserved. 2021 Vector,co.ltd</span>
+    </p>
+  </div>
+</footer>
+</body>
+</html>

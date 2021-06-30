@@ -1,0 +1,2992 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>VCAREER</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="dist/vcareer-style.css">
+    <script src="https://kit.fontawesome.com/58d8b0aee0.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2" defer></script>
+</head>
+<body>
+<!-- heroコンポーネント -->
+<section class="topsBar">
+  <div class="herrty-body">
+    <div class="container displayFlex icx-justify-content-space-between icx-align-content-center" style="max-width:100%;">
+      <!--<a href="index.html"><img src="dist/img/vector_logo_sample.jpg"></a>-->
+      <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a href="index.html"><img src="dist/img/vector_logo_sample.png"></a>
+          <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          
+          <!--<a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" aria-expanded="false">-->
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+          <!--<div class="navbar-menu" id="navMenu">-->
+            <!-- navbar-start, navbar-end... -->
+          <!--</div>-->
+        </div>
+        <script>
+              document.addEventListener('DOMContentLoaded', () => {
+    
+              // Get all "navbar-burger" elements
+              const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+    
+              // Check if there are any navbar burgers
+              if ($navbarBurgers.length > 0) {
+    
+              // Add a click event on each of them
+              $navbarBurgers.forEach( el => {
+              el.addEventListener('click', () => {
+    
+              // Get the target from the "data-target" attribute
+              const target = el.dataset.target;
+              const $target = document.getElementById(target);
+    
+              // Toggle the "icx-active" class on both the "navbar-burger" and the "navbar-menu"
+              el.classList.toggle('icx-active');
+              $target.classList.toggle('icx-active');
+    
+              });
+             });
+            }
+    
+            });
+        (function() {
+           var burger = document.querySelector('.burger');
+           var nav = document.querySelector('#'+burger.dataset.target); 
+           burger.addEventListener('click', function(){
+           burger.classList.toggle('icx-active');
+           nav.classList.toggle('icx-active');
+         });
+        })();
+        </script>
+      
+        <div id="navbarBasicExample" class="navbar-menu" style="margin:0 2% 0 0;">
+          <div class="navbar-start">
+            <!--<a href="index.html" class="navbar-item">
+                <i class="fab fa-font-awesome-flag"></i>HOME
+            </a>-->
+              <div class="navbar-item cont-dropdown icx-hoverable">
+                <a href="002.html" class="navbar-link">
+                    <i class="fas fa-mail-bulk"></i>メッセージ管理＜求人企業・紹介会社＞
+                </a>   
+                <div class="navbar-dropdown">
+                  <a class="navbar-item">
+                    <i class="fab fa-twitch"></i>メッセージ管理＜求職者＞
+                  </a>
+                </div>
+              </div>
+                <a href="004.html" class="navbar-item">
+                    <i class="fas fa-user-tie"></i><i class="fab fa-sistrix"></i>求職者検索
+                </a>
+                <a class="navbar-item">
+                    <i class="far fa-id-card"></i>登録者管理
+                </a> 
+            <div class="navbar-item cont-dropdown icx-hoverable">
+              <a class="navbar-link">
+                <i class="fas fa-sliders-h"></i>基本設定
+              </a>
+      
+              <div class="navbar-dropdown">
+                <a class="navbar-item">
+                    <i class="fas fa-user-cog"></i>アカウント管理
+                </a>
+                <a class="navbar-item">
+                    <i class="fas fa-laptop-code"></i>サイト管理
+                </a>
+                <!--<a class="navbar-item">
+                  Contact
+                </a>
+                <hr class="navbar-divider">
+                <a class="navbar-item">
+                  Report an issue
+                </a>-->
+              </div>
+            </div>
+          </div>
+      
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="buttons">
+                <a class="button icx-defoult_mint">
+                    <i class="fas fa-pen-nib"></i><strong>　Signup</strong>
+                  </a>
+                  <a class="button icx-pails_sub">
+                    <i class="fas fa-fingerprint"></i>　Login
+                  </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+</section>
+
+<main>
+  <!--main-functioncontents-->
+  <article>
+    <div class="displayFlex icx-justify-content-space-between">
+      <div class="tags cont-activity">
+        <span class="tag icx-darkbl">2021年06月17日</span>
+        <span class="tag icx-bright">掲載中の求人情報 3件</span>
+      </div>
+      <div class="title icx-6" style="font-size:0.8em;text-align:right;padding:1% 0;">
+        <h1 class="pagetitle title icx-5 nosrap">求職者検索</h1>
+      </div>
+    </div>   
+</article>
+
+
+<article style="margin-top:1%;" id="searchApp">
+    <div class="tabs v-columns icx-toggle icx-fullwidth searchTabs icx-flex-direction-row icx-flex-wrap-wrap icx-justify-content-space-between">
+        <div class="column vmenu">
+          <a class="bd-notification v-box" v-on:click="icxActive = 'tab1c'" v-bind:class="{ 'icx-active': icxActive == 'tab1c' }"> 
+            <div class="cont-text-centered">
+              <h3 class="title icx-4"><i class="fas fa-search"></i> 希望職種で検索</h3>
+              <hr>
+                <p>「Ｖキャリア」に公開されている求職者を希望職種で検索することができます。また、求職者（求職者が登録している人材紹介会社）に対してスカウトメールを出すことができます。</p>
+               </p>
+            </div>
+          </a>
+        </div>
+        <div class="column vmenu">
+          <a class="bd-notification v-box" v-on:click="icxActive = 'tab2c'" v-bind:class="{ 'icx-active': icxActive == 'tab2c' }">
+            <div class="cont-text-centered">
+              <h3 class="title icx-4"><i class="fas fa-search-plus"></i> 詳細条件で検索</h3>
+              <hr>
+              <p>「Ｖキャリア」に公開されている求職者を様々な条件で検索することができます。また、求職者（求職者が登録している人材紹介会社）に対してスカウトメールを出すことができます。</p>
+            </div>
+          </a>
+        </div>
+        <div class="column vmenu">
+          <a class="bd-notification v-box" v-on:click="icxActive = 'tab3c'" v-bind:class="{ 'icx-active': icxActive == 'tab3c' }">
+            <div class="cont-text-centered">
+              <h3 class="title icx-4"><i class="far fa-handshake"></i> 登録済マッチング条件</h3>
+              <hr>
+                <p>検索条件を保存しておくと、その条件にマッチする求職者が「Ｖキャリア」に公開された場合に確認できます。</p>
+            </div>   
+          </a>
+        </div>
+        <div class="column vmenu">
+          <a class="bd-notification v-box" v-on:click="icxActive = 'tab4c'" v-bind:class="{ 'icx-active': icxActive == 'tab4c' }">
+            <div class="cont-text-centered">
+              <h3 class="title icx-4"><i class="fas fa-star"></i> お気に入り</h3>
+                <hr>
+              <p>気になる求職者を検討中ホルダーに保存しておくことが可能です。</s>
+           </div>
+          </a>
+        </div>
+    </div>
+
+    <div class="tab-contents">
+        <div class="content" v-bind:class="{ 'icx-active': icxActive == 'tab1c' }" style="border:none!important;background:none !important;">
+            <!--tab1c-->
+            <div class="icx-flex icx-flex-direction-column">
+              <div class="btn-Aggregation-round icx-flex icx-flex-direction-row icx-justify-content-space-between">
+                  <button class="button icx-fullwidth icx-rounded" onclick="location.href='005.html'"><i class="fas fa-caret-right"></i> ソフトウェア関連</button><button class="button icx-fullwidth icx-rounded" onclick="location.href='005.html'"><i class="fas fa-caret-right"></i> 電気・電子・半導体関連</button>                   
+              </div>
+              <div class="btn-Aggregation-round icx-flex icx-flex-direction-row icx-justify-content-space-between">
+                  <button class="button icx-fullwidth icx-rounded"><i class="fas fa-caret-right" onclick="location.href='005.html'"></i> 機械・自動車・メカトロ関連</button><button class="button icx-fullwidth icx-rounded" onclick="location.href='005.html'"><i class="fas fa-caret-right"></i> 建築・土木・設計・不動産関連</button>
+              </div>
+              <div class="btn-Aggregation-round icx-flex icx-flex-direction-row icx-justify-content-space-between">
+                  <button class="button icx-fullwidth icx-rounded" onclick="location.href='005.html'"><i class="fas fa-caret-right"></i> 金融関連</button><button class="button icx-fullwidth icx-rounded" onclick="location.href='005.html'"><i class="fas fa-caret-right"></i> 流通・外食・サービス関連</button>                
+              </div>
+              <div class="btn-Aggregation-round icx-flex icx-flex-direction-row icx-justify-content-space-between">
+                  <button class="button icx-fullwidth icx-rounded" onclick="location.href='005.html'"><i class="fas fa-caret-right"></i> 営業・海外営業関連</button><button class="button icx-fullwidth icx-rounded" onclick="location.href='005.html'"><i class="fas fa-caret-right"></i> クリエイティブ関連</button>
+              </div>
+              <div class="btn-Aggregation-round icx-flex icx-flex-direction-row icx-justify-content-space-between">
+                  <button class="button icx-fullwidth icx-rounded" onclick="location.href='005.html'"><i class="fas fa-caret-right"></i> 経営幹部・コンサルタント関連</button><button class="button icx-fullwidth icx-rounded" onclick="location.href='005.html'"><i class="fas fa-caret-right"></i> 企画・管理関連</button>
+              </div>
+              <div class="btn-Aggregation-round icx-flex icx-flex-direction-row icx-justify-content-space-between">
+                  <button class="button icx-fullwidth icx-rounded" onclick="location.href='005.html'"><i class="fas fa-caret-right"></i> 業務関連</button><button class="button icx-fullwidth icx-rounded" onclick="location.href='005.html'"><i class="fas fa-caret-right"></i> その他専門職</button>
+              </div>
+              <div class="btn-Aggregation-round icx-flex icx-flex-direction-row icx-justify-content-space-between">
+                  <button class="button icx-fullwidth icx-rounded" onclick="location.href='005.html'"><i class="fas fa-caret-right"></i> 化学・バイオ・食品・医療関連</button><button class="button icx-fullwidth icx-rounded" onclick="location.href='005.html'"><i class="fas fa-caret-right"></i> テスト</button>
+              </div>
+          </div>       
+        </div>
+        
+        <div class="content" v-bind:class="{ 'icx-active': icxActive == 'tab2c' }" style="border:none!important;background:none !important;">
+          <!--tab2c-->
+          <div class="icx-fullwidth icx-flex-direction-row icx-flex-wrap-wrap icx-justify-content-space-between" style="margin-bottom:10px;">
+            <div class="box-noshadow">
+              <i class="fas fa-pen-alt"></i> <strong>基本情報・プロフィール</strong>
+　　　　　　</div>                    
+　　　　　　</div>
+          <table class="ta table icx-fullwidth icx-hoverable" width="100%">
+            <tbody>
+              <tr>
+                <th width="10%">
+                  年齢
+                </th>
+                <td>
+                    <div class="control">
+                        <input id="age_up" name="age_up"　class="input icx-hovered"  maxlength="" type="text" placeholder="年齢"><span class="vAl-middle" style="padding-top:10px;">　歳～　</span><input id="age_down" class="input icx-hovered"  maxlength="" name="age_down" type="text" placeholder="年齢">
+                    </div>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  性別
+                </th>
+                <td>
+                    <div class="control">
+                        <label class="radio">
+                          <input type="radio" id="gender[]" name="gender[]" value="1" checked>  
+                          男
+                        </label>
+                        <label class="radio">
+                          <input type="radio" id="gender[]" name="gender[]" value="2"> 
+                          女
+                        </label>
+                      </div>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  最終学歴
+                </th>
+                <td>
+                    <div class="select">
+                        <select name="gakureki">
+                          <option value="">---</option>
+                          <option value="1">中学</option>
+                          <option value="2">高校</option>
+                          <option value="4">専門・短大・高専・各種学校</option>
+                          <option value="3">大学</option>
+                          <option value="5">大学院</option>
+                        </select>
+                      </div>
+                      <div class="select">
+                        <select name="gakko">
+                          <option value="">---</option>
+                          <option value="1">国立</option>
+                          <option value="2">公立</option>
+                          <option value="4">私立</option>
+                          <option value="3">海外</option>
+                        </select>
+                      </div>
+                      <div class="select">
+                        <select name="bunri">
+                          <option value="">---</option>
+                          <option value="1">文系</option>
+                          <option value="2">理系</option>
+                          <option value="4">その他</option>
+                        </select>
+                      </div>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  婚姻
+                </th>
+                <td>
+                    <div class="select">
+                        <select name="konin">
+                          <option value="">---</option>
+                          <option value="1">未婚</option>
+                          <option value="2">既婚</option>
+                        </select>
+                    </div>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  転宅を伴う転勤
+                </th>
+                <td>
+                    <div class="control">
+                        <label class="radio">
+                          <input type="radio" id="tenkin[]" name="tenkin[]" value="1" checked>
+                          可
+                        </label>
+                        <label class="radio">
+                          <input type="radio" id="tenkin[]" name="tenkin[]"  value="0">
+                          不可
+                        </label>
+                      </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          
+          <section class="icx-fullwidth v-form-ja icx-flex icx-flex-direction-row" style="border-bottom:unset;">
+            <div class="icx-flex icx-flex-direction-colmun" style="width:10%;">
+                  <div style="font-weight:700;margin-left:11px;">住所</div>
+            </div>
+          
+          <div class="ja_all" style="width:90%;">
+          <div class="icx-flex icx-flex-direction-column"> 
+          <div class="ja_localarea"><input id="ch1_1" name="ch1_1" onclick="setAll(this.id,0,1)" type="checkbox" value="100"><label for="name1">北海道</label></div>
+          <div class="icx-flex icx-flex-direction-row kentofu">
+          <div><input id="address_1[]" name="address_1[]" type="checkbox" value="1"><label for="name1">北海道</label></div>
+          </div>
+          </div>
+          
+          <div class="icx-flex icx-flex-direction-column"> 
+          <div class="ja_localarea"><input id="ch1_12" name="ch1_12" onclick="setAll(this.id,2,8)" type="checkbox" value="200"><label for="name1">東北全域</label></div>
+          <div class="icx-flex icx-flex-direction-row kentofu">
+            <div><input id="address_1[]" name="address_1[]" type="checkbox" value="3"><label for="name1">青森県</label></div>
+            <div><input id="address_1[]" name="address_1[]" type="checkbox" value="4"><label for="name1">岩手県</label></div>
+            <div><input id="address_1[]" name="address_1[]" type="checkbox" value="5"><label for="name1">宮城県</label></div>
+            <div><input id="address_1[]" name="address_1[]" type="checkbox" value="6"><label for="name1">秋田県</label></div>
+            <div><input id="address_1[]" name="address_1[]" type="checkbox" value="7"><label for="name1">山形県</label></div>
+            <div><input id="address_1[]" name="address_1[]" type="checkbox" value="8"><label for="name1">福島県</label></div>
+          </div>
+          </div>
+          
+          <div class="icx-flex icx-flex-direction-column"> 
+          <div class="ja_localarea"><input id="ch1_13" name="ch1_13" onclick="setAll(this.id,9,12)" type="checkbox" value="300"> <label for="name1">北関東全域</label></div>
+          <div class="icx-flex icx-flex-direction-row kentofu">
+            <div><input id="address_1[]" name="address_1[]" type="checkbox" value="10"><label for="name1">茨城県</label></div>
+            <div><input id="address_1[]" name="address_1[]" type="checkbox" value="11"><label for="name1">栃木県</label></div>
+            <div><input id="address_1[]" name="address_1[]" type="checkbox" value="12"><label for="name1">群馬県</label></div>
+          </div>
+          </div>
+          
+          <div class="icx-flex icx-flex-direction-column"> 
+          <div class="ja_localarea"><input id="ch1_14" name="ch1_14" onclick="setAll(this.id,13,17)" type="checkbox" value="400"><label for="name1">首都圏全域</label></div>
+          <div class="icx-flex icx-flex-direction-row kentofu">
+            <div><input id="address_1[]" name="address_1[]" type="checkbox" value="14"><label for="name1">東京都</label></div>
+            <div><input id="address_1[]" name="address_1[]" type="checkbox" value="15"><label for="name1">神奈川県</label></div>
+            <div><input id="address_1[]" name="address_1[]" type="checkbox" value="16"><label for="name1">千葉県</label></div>
+            <div><input id="address_1[]" name="address_1[]" type="checkbox" value="17"><label for="name1">埼玉県</label></div>
+          </div>
+          </div>
+          
+          <div class="icx-flex icx-flex-direction-column"> 
+          <div class="ja_localarea"><input id="ch1_15" name="ch1_15" onclick="setAll(this.id,18,24)" type="checkbox" value="500"><label for="name1">甲信越全域</label></div>
+          <div class="icx-flex icx-flex-direction-row kentofu">
+            <div><input id="address_1[]" name="address_1[]" type="checkbox" value="19"><label for="name1">新潟県</label></div>
+            <div><input id="address_1[]" name="address_1[]" type="checkbox" value="20"><label for="name1">富山県</label></div>
+            <div><input id="address_1[]" name="address_1[]" type="checkbox" value="21"><label for="name1">石川県</label></div>
+            <div><input id="address_1[]" name="address_1[]" type="checkbox" value="22"><label for="name1">福井県</label></div>
+            <div><input id="address_1[]" name="address_1[]" type="checkbox" value="23"><label for="name1">山梨県</label></div>
+            <div><input id="address_1[]" name="address_1[]" type="checkbox" value="24"><label for="name1">長野県</label></div>
+          </div>
+          </div>
+          
+          <div class="icx-flex icx-flex-direction-column"> 
+          <div class="ja_localarea"><input id="ch1_16" name="ch1_16" onclick="setAll(this.id,25,29)" type="checkbox" value="600"><label for="name1">東海全域</label></div>
+          <div class="icx-flex icx-flex-direction-row kentofu">
+            <div><input id="address_1[]" name="address_1[]" type="checkbox" value="26"><label for="name1">岐阜県</label></div>
+            <div><input id="address_1[]" name="address_1[]" type="checkbox" value="27"><label for="name1">静岡県</label></div>
+            <div><input id="address_1[]" name="address_1[]" type="checkbox" value="28"><label for="name1">愛知県</label></div>
+            <div><input id="address_1[]" name="address_1[]" type="checkbox" value="29"><label for="name1">三重県</label></div>
+          </div>
+          </div>
+          
+          <div class="icx-flex icx-flex-direction-column"> 
+          <div class="ja_localarea"><input id="ch1_17" name="ch1_17" onclick="setAll(this.id,30,36)" type="checkbox" value="700"><label for="name1">関西全域</label></div>
+          <div class="icx-flex icx-flex-direction-row kentofu">
+            <div><input id="address_1[]" name="address_1[]" type="checkbox" value="31"><label for="name1">滋賀県</label></div>
+            <div><input id="address_1[]" name="address_1[]" type="checkbox" value="32"><label for="name1">京都府</label></div>
+            <div><input id="address_1[]" name="address_1[]" type="checkbox" value="33"><label for="name1">大阪府</label></div>
+            <div><input id="address_1[]" name="address_1[]" type="checkbox" value="34"><label for="name1">兵庫県</label></div>
+            <div><input id="address_1[]" name="address_1[]" type="checkbox" value="35"><label for="name1">奈良県</label></div>
+            <div><input id="address_1[]" name="address_1[]" type="checkbox" value="36"><label for="name1">和歌山県</label></div>
+          </div>
+          </div>
+          
+          <div class="icx-flex icx-flex-direction-column"> 
+          <div class="ja_localarea"><input id="ch1_18" name="ch1_18" onclick="setAll(this.id,37,42)" type="checkbox" value="800"><label for="name1">中国全域</label></div>
+          <div class="icx-flex icx-flex-direction-row kentofu">
+            <div><input id="address_1[]" name="address_1[]" type="checkbox" value="38"><label for="name1">鳥取県</label></div>
+            <div><input id="address_1[]" name="address_1[]" type="checkbox" value="39"><label for="name1">島根県</label></div>
+            <div><input id="address_1[]" name="address_1[]" type="checkbox" value="40"><label for="name1">岡山県</label></div>
+            <div><input id="address_1[]" name="address_1[]" type="checkbox" value="41"><label for="name1">広島県</label></div>
+            <div><input id="address_1[]" name="address_1[]" type="checkbox" value="42"><label for="name1">山口県</label></div>
+          </div>
+          </div>
+          
+          <div class="icx-flex icx-flex-direction-column"> 
+          <div class="ja_localarea"><input id="ch1_19" name="ch1_19" onclick="setAll(this.id,43,47)" type="checkbox" value="900"><label for="name1">四国全域</label></div>
+          <div class="icx-flex icx-flex-direction-row kentofu">
+            <div><input id="address_1[]" name="address_1[]" type="checkbox" value="44"><label for="name1">徳島県</label></div>
+            <div><input id="address_1[]" name="address_1[]" type="checkbox" value="45"><label for="name1">香川県</label></div>
+            <div><input id="address_1[]" name="address_1[]" type="checkbox" value="46"><label for="name1">愛媛県</label></div>
+            <div><input id="address_1[]" name="address_1[]" type="checkbox" value="47"><label for="name1">高知県</label></div>
+          </div>
+          </div>
+          
+          <div class="icx-flex icx-flex-direction-column"> 
+          <div class="ja_localarea"><input id="ch1_110" name="ch1_110" onclick="setAll(this.id,48,56)" type="checkbox" value="1000"><label for="name1">九州全域</label></div>
+          <div class="icx-flex icx-flex-direction-row kentofu">
+            <div><input id="address_1[]" name="address_1[]" type="checkbox" value="49"><label for="name1">福岡県</label></div>
+            <div><input id="address_1[]" name="address_1[]" type="checkbox" value="50"><label for="name1">佐賀県</label></div>
+            <div><input id="address_1[]" name="address_1[]" type="checkbox" value="51"><label for="name1">長崎県</label></div>
+            <div><input id="address_1[]" name="address_1[]" type="checkbox" value="52"><label for="name1">熊本県</label></div>
+            <div><input id="address_1[]" name="address_1[]" type="checkbox" value="53"><label for="name1">大分県</label></div>
+            <div><input id="address_1[]" name="address_1[]" type="checkbox" value="54"><label for="name1">宮崎県</label></div>
+            <div><input id="address_1[]" name="address_1[]" type="checkbox" value="55"><label for="name1">鹿児島県</label></div>
+            <div><input id="address_1[]" name="address_1[]" type="checkbox" value="56"><label for="name1">沖縄県</label></div>
+          </div>
+          </div>
+          
+          <div class="icx-flex icx-flex-direction-column"> 
+          <div class="ja_localarea"><input id="ch1_111" name="ch1_111" onclick="setAll(this.id,57,58)" type="checkbox" value="1100"><label for="name1">海外</label></div>
+          <div class="icx-flex icx-flex-direction-row kentofu">
+          <div><input id="address_1[]" name="address_1[]" type="checkbox" value="57"><label for="name1">海外</label></div>
+          </div>
+          </div>
+          </div><!--//ja_all-->
+          </section><!--//v-form-ja-->
+          <!--<table width="100%" class=" table icx-fullwidth icx-hoverable">
+            <tbody>
+              <tr>
+                <td>
+                    <div class="icx-fullwidth icx-flex-direction-row icx-flex-wrap-wrap icx-justify-content-space-between">
+                    <div class="control bd-notification v-box">
+                        保存名称　<input class="input icx-hovered" type="text" id="kensaku_name[A]" name="kensaku_name[A]" placeholder="Hovered input">
+                        <label class="checkbox"><input type="checkbox"　id="kensaku_save" name="kensaku_save" value="1" >保存</label>
+                        <button class="button icx-submit" name="commit">この条件で検索する</button>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>-->
+          <div class="icx-fullwidth icx-flex-direction-row icx-flex-wrap-wrap icx-justify-content-space-between" style="margin-bottom:10px;">
+            <div class="box-noshadow">
+              <i class="fas fa-pen-alt"></i> <strong>就業状況</strong>
+　　　　　　</div>                    
+　　　　　　</div>
+          <table class="ta table icx-fullwidth icx-hoverable" width="100%">
+            <tbody>
+              <tr>
+                <th width="10%">
+                  在職離職区分
+                </th>
+                <td>
+                  <div class="select">
+                    <select name="syugyo">
+                      <option value="">---</option>
+                      <option value="1">在職中</option>
+                      <option value="2">離職中</option>
+                    </select>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  現在の年収
+                </th>
+                <td>
+                  <div class="select">
+                    <select id="nensyu" name="nensyu">
+                      <option value="">---</option>
+                      <option value="1">0〜99万</option>
+                      <option value="2">100万〜199万</option>
+                      <option value="3">200万〜299万</option>
+                      <option value="4">300万〜399万</option>
+                      <option value="5">400万〜499万</option>
+                      <option value="6">500万〜599万</option>
+                      <option value="7">600万〜699万</option>
+                      <option value="8">700万〜799万</option>
+                      <option value="9">800万〜899万</option>
+                      <option value="10">900万〜999万</option>
+                      <option value="11">1000万〜1199万</option>
+                      <option value="12">1,200万〜1,499万</option>
+                      <option value="13">1,500万〜1,999万</option>
+                      <option value="14">2,000万以上</option>
+                    </select>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  転職回数
+                </th>
+                <td>
+                    <div class="control">
+                        <input class="input icx-hovered" id="tensyoku_num_down" name="tensyoku_num_down" type="text" placeholder="Hovered input"><span class="vAl-middle">　回まで</span>
+                    </div>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  就業経験
+                </th>
+                <td>
+                  <table class="ta_none table icx-hoverable">
+                    <tbody>
+                      <tr>
+                        <td class="vAl-top">
+                          雇用形態：
+                        </td>
+                        <td class="vAl-top">
+                            <label class="checkbox"><input id="keiken_koyo[]" name="keiken_koyo[]" type="checkbox" value="1">正社員</label><br>
+                            <label class="checkbox"><input id="keiken_koyo[]" name="keiken_koyo[]" type="checkbox" value="2">契約社員</label><br>
+                            <label class="checkbox"><input id="keiken_koyo[]" name="keiken_koyo[]" type="checkbox" value="3">パート・アルバイト</label><br>
+                            <label class="checkbox"><input id="keiken_koyo[]" name="keiken_koyo[]" type="checkbox" value="4">紹介予定派遣</label><br>
+                            <label class="checkbox"><input id="keiken_koyo[]" name="keiken_koyo[]" type="checkbox" value="5">派遣社員</label><br>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          就業職種1:
+                        </td>
+                        <td>
+                          <div class="select">
+                            <select id="keiken_syokusyu_dai_select_01" name="keiken_syokusyu_dai_select_01" onchange="dai_select_syo('keiken_syokusyu_dai_select_01','keiken_syokusyu01')">
+                              <option value="">---</option>
+                              <option value="1">ソフトウェア関連</option>
+                              <option value="2">電気・電子・半導体関連</option>
+                              <option value="3">機械・自動車・メカトロ関連</option>
+                              <option value="4">化学・バイオ・食品・医療関連</option>
+                              <option value="5">建築・土木・設計・不動産関連</option>
+                              <option value="6">金融関連</option>
+                              <option value="7">流通・外食・サービス関連</option>
+                              <option value="8">クリエイティブ関連</option>
+                              <option value="9">営業・海外営業関連</option>
+                              <option value="10">経営幹部・コンサルタント関連</option>
+                              <option value="11">企画・管理関連</option>
+                              <option value="12">業務関連</option>
+                              <option value="13">その他専門職</option>
+                              <option value="14">テスト</option>
+                            </select>
+                          </div>
+                         
+                          <br>
+                          <div class="select">
+                            <select id="keiken_syokusyu01" name="keiken_syokusyu01">
+                              <option value="">
+                                ---
+                              </option>
+                              <option value="1">アプリケーション開発（オープン系）</option>
+                              <option value="2">アプリケーション開発（ＷＥＢ系）</option>
+                              <option value="3">アプリケーション開発（汎用系）</option>
+                              <option value="4">アプリケーション開発（制御・組込み系）</option>
+                              <option value="5">パッケージソフト・OS開発</option>
+                              <option value="6">プロジェクトリーダー・マネジャー</option>
+                              <option value="7">ネットワーク・サーバー設計・構築</option>
+                              <option value="8">ネットワーク・サーバー運用・保守</option>
+                              <option value="9">社内情報システム・EDP・MIS</option>
+                              <option value="10">テクニカル・カスタマーサポート</option>
+                              <option value="11">システムサポート・運用・保守</option>
+                              <option value="12">ＩＴ系コンサルタント</option>
+                              <option value="13">CAD・CAM・CAE・CIM他</option>
+                              <option value="14">品質管理、テスト、評価</option>
+                              <option value="15">製品開発・研究</option>
+                              <option value="16">その他ソフトウェア関連職</option>
+                              <option value="17">設計・開発（アナログ回路）</option>
+                              <option value="18">設計・開発（デジタル回路）</option>
+                              <option value="19">設計・開発（電気・電子制御）</option>
+                              <option value="20">設計・開発（半導体）</option>
+                              <option value="21">設計・開発（光学系）</option>
+                              <option value="22">設計・開発（機器･デバイス）</option>
+                              <option value="23">設計・開発（その他）</option>
+                              <option value="24">機械・機構設計（家電・コンピュータ関連）</option>
+                              <option value="25">機械・機構設計（精密機器・医療用機器関連）</option>
+                              <option value="26">金型設計</option>
+                              <option value="27">生産・製造技術、プロセス開発（家電・コンピュータ関連）</option>
+                              <option value="28">生産・製造技術、プロセス開発（精密・医療用機器関連）</option>
+                              <option value="29">生産管理・製造管理</option>
+                              <option value="30">品質管理・保証</option>
+                              <option value="31">セールスエンジニア</option>
+                              <option value="32">サポート・フィールドエンジニア</option>
+                              <option value="33">その他</option>
+                              <option value="34">設計・開発（機械）</option>
+                              <option value="35">設計・開発（自動車）</option>
+                              <option value="36">設計・開発（メカトロ制御）</option>
+                              <option value="37">設計・開発（その他）</option>
+                              <option value="38">機械・機構設計（自動車関連）</option>
+                              <option value="39">機械・機構設計（各種機械関連）</option>
+                              <option value="40">金型設計</option>
+                              <option value="41">生産・製造技術、プロセス開発（家電・コンピュータ関連）</option>
+                              <option value="42">生産管理・製造管理</option>
+                              <option value="43">品質管理・保証</option>
+                              <option value="44">セールスエンジニア</option>
+                              <option value="45">サポート・フィールドエンジニア</option>
+                              <option value="46">その他</option>
+                              <option value="47">研究・開発（化学）</option>
+                              <option value="48">研究・開発（食品・医薬品）</option>
+                              <option value="49">研究・開発（医療用具・医療機器）</option>
+                              <option value="50">研究・開発（その他）</option>
+                              <option value="51">臨床開発</option>
+                              <option value="52">薬事申請</option>
+                              <option value="53">生産・製造技術</option>
+                              <option value="54">生産管理・製造管理</option>
+                              <option value="55">品質管理・保証</option>
+                              <option value="56">セールスエンジニア</option>
+                              <option value="57">サポートエンジニア</option>
+                              <option value="58">その他</option>
+                              <option value="59">設計（建築・土木）</option>
+                              <option value="60">設計（設備）</option>
+                              <option value="61">設計（その他）</option>
+                              <option value="62">施工管理・設備工事</option>
+                              <option value="63">その他技術者（建築・土木・設備）</option>
+                              <option value="64">不動産（開発・企画・仕入）</option>
+                              <option value="65">不動産（仲介・法人個人）</option>
+                              <option value="66">不動産（プロパティー・アセットマネジメント）</option>
+                              <option value="67">不動産（不動産管理）</option>
+                              <option value="68">不動産（デューデリジェンス）</option>
+                              <option value="69">その他</option>
+                              <option value="70">運用・資金管理</option>
+                              <option value="71">投資研究</option>
+                              <option value="72">アナリスト</option>
+                              <option value="73">金融商品企画・開発</option>
+                              <option value="74">バック・ミドルオフィス</option>
+                              <option value="75">投資銀行業務</option>
+                              <option value="76">ストラクチャードファイナンス</option>
+                              <option value="77">アクチュアリー</option>
+                              <option value="78">デューディリジェンス</option>
+                              <option value="79">金融システム</option>
+                              <option value="80">その他</option>
+                              <option value="81">店長・店長候補（流通・アパレル）</option>
+                              <option value="82">店長・店長候補（外食）</option>
+                              <option value="83">店長・店長候補（サービス）</option>
+                              <option value="84">店舗スタッフ（流通・アパレル）</option>
+                              <option value="85">店舗スタッフ（外食）</option>
+                              <option value="86">店舗スタッフ（サービス）</option>
+                              <option value="87">マーチャンダイザー、バイヤー</option>
+                              <option value="88">スーパーバイザー</option>
+                              <option value="89">商品・メニュー開発(外食）</option>
+                              <option value="90">店舗開発・ＦＣ開発</option>
+                              <option value="91">その他</option>
+                              <option value="92">プロデューサー・ディレクター（ＷＥＢ関連）</option>
+                              <option value="93">プロデューサー・ディレクター（広告・出版関連）</option>
+                              <option value="94">プロデューサー・ディレクター（ゲーム・映像・イベント関連）</option>
+                              <option value="95">デザイナー（ＷＥＢ関連）</option>
+                              <option value="96">デザイナー（広告・出版関連）</option>
+                              <option value="97">デザイナー（ゲーム・映像・イベント関連）</option>
+                              <option value="98">編集・製作</option>
+                              <option value="99">その他クリエイティブ関連</option>
+                              <option value="100">営業・セールス（法人向営業）</option>
+                              <option value="101">営業・セールス（個人向営業）</option>
+                              <option value="102">ＭＲ</option>
+                              <option value="103">企画・コンサルティング営業</option>
+                              <option value="104">営業支援・テレマーケティング</option>
+                              <option value="105">海外営業</option>
+                              <option value="106">その他営業関連</option>
+                              <option value="107">CEO、COO、CFO、CIO、CTO、経営幹部</option>
+                              <option value="108">経営企画</option>
+                              <option value="109">経営コンサルタント</option>
+                              <option value="110">財務・会計コンサルタント</option>
+                              <option value="111">組織・人事コンサルタント</option>
+                              <option value="112">生産・物流コンサルタント</option>
+                              <option value="113">営業・マーケティングコンサルタント</option>
+                              <option value="114">その他経営・コンサル系職種</option>
+                              <option value="115">総務</option>
+                              <option value="116">人事・労務</option>
+                              <option value="117">採用・教育</option>
+                              <option value="118">法務・コンプライアンス</option>
+                              <option value="119">特許・知的財産</option>
+                              <option value="120">経理</option>
+                              <option value="121">財務</option>
+                              <option value="122">会計・税務</option>
+                              <option value="123">広報・IR</option>
+                              <option value="124">物流企画・物流管理</option>
+                              <option value="125">購買</option>
+                              <option value="126">経営企画・事業企画</option>
+                              <option value="127">商品企画・マーケティング・商品開発</option>
+                              <option value="128">営業企画・販促促進・宣伝</option>
+                              <option value="129">貿易事務・国際業務</option>
+                              <option value="130">その他企画・管理系職種</option>
+                              <option value="131">一般事務</option>
+                              <option value="132">営業事務・管理業務</option>
+                              <option value="133">秘書・受付・アシスタント</option>
+                              <option value="134">その他事務系職種</option>
+                              <option value="135">医師</option>
+                              <option value="136">医療系専門技師（士）・看護師</option>
+                              <option value="137">医療事務</option>
+                              <option value="138">その他専門職</option>
+                              <option value="139">会計士・税理士</option>
+                              <option value="140">弁護士・弁理士</option>
+                              <option value="141">薬剤師</option>
+                            </select>
+                          </div><br>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                          就業職種2:
+                        </td>
+                        <td>
+                          <div class="select">
+                            <select id="keiken_syokusyu_dai_select_02" name="keiken_syokusyu_dai_select_02" onchange="dai_select_syo('keiken_syokusyu_dai_select_02','keiken_syokusyu02')">
+                              <option value="">
+                                ---
+                              </option>
+                            <option value="1">
+                              ソフトウェア関連
+                            </option>
+                            <option value="2">
+                              電気・電子・半導体関連
+                            </option>
+                            <option value="3">
+                              機械・自動車・メカトロ関連
+                            </option>
+                            <option value="4">
+                              化学・バイオ・食品・医療関連
+                            </option>
+                            <option value="5">
+                              建築・土木・設計・不動産関連
+                            </option>
+                            <option value="6">
+                              金融関連
+                            </option>
+                            <option value="7">
+                              流通・外食・サービス関連
+                            </option>
+                            <option value="8">
+                              クリエイティブ関連
+                            </option>
+                            <option value="9">
+                              営業・海外営業関連
+                            </option>
+                            <option value="10">
+                              経営幹部・コンサルタント関連
+                            </option>
+                            <option value="11">
+                              企画・管理関連
+                            </option>
+                            <option value="12">
+                              業務関連
+                            </option>
+                            <option value="13">
+                              その他専門職
+                            </option>
+                            <option value="15">
+                              テスト
+                            </option>
+                          </select></div><br>
+                          <div class="select">
+                            <select id="keiken_syokusyu02" name="keiken_syokusyu02">
+                            <option value="">
+                              ---
+                            </option>
+                            <option value="1">
+                              アプリケーション開発（オープン系）
+                            </option>
+                            <option value="2">
+                              アプリケーション開発（ＷＥＢ系）
+                            </option>
+                            <option value="3">
+                              アプリケーション開発（汎用系）
+                            </option>
+                            <option value="4">
+                              アプリケーション開発（制御・組込み系）
+                            </option>
+                            <option value="5">
+                              パッケージソフト・OS開発
+                            </option>
+                            <option value="6">
+                              プロジェクトリーダー・マネジャー
+                            </option>
+                            <option value="7">
+                              ネットワーク・サーバー設計・構築
+                            </option>
+                            <option value="8">
+                              ネットワーク・サーバー運用・保守
+                            </option>
+                            <option value="9">
+                              社内情報システム・EDP・MIS
+                            </option>
+                            <option value="10">
+                              テクニカル・カスタマーサポート
+                            </option>
+                            <option value="11">
+                              システムサポート・運用・保守
+                            </option>
+                            <option value="12">
+                              ＩＴ系コンサルタント
+                            </option>
+                            <option value="13">
+                              CAD・CAM・CAE・CIM他
+                            </option>
+                            <option value="14">
+                              品質管理、テスト、評価
+                            </option>
+                            <option value="15">
+                              製品開発・研究
+                            </option>
+                            <option value="16">
+                              その他ソフトウェア関連職
+                            </option>
+                            <option value="17">
+                              設計・開発（アナログ回路）
+                            </option>
+                            <option value="18">
+                              設計・開発（デジタル回路）
+                            </option>
+                            <option value="19">
+                              設計・開発（電気・電子制御）
+                            </option>
+                            <option value="20">
+                              設計・開発（半導体）
+                            </option>
+                            <option value="21">
+                              設計・開発（光学系）
+                            </option>
+                            <option value="22">
+                              設計・開発（機器･デバイス）
+                            </option>
+                            <option value="23">
+                              設計・開発（その他）
+                            </option>
+                            <option value="24">
+                              機械・機構設計（家電・コンピュータ関連）
+                            </option>
+                            <option value="25">
+                              機械・機構設計（精密機器・医療用機器関連）
+                            </option>
+                            <option value="26">
+                              金型設計
+                            </option>
+                            <option value="27">
+                              生産・製造技術、プロセス開発（家電・コンピュータ関連）
+                            </option>
+                            <option value="28">
+                              生産・製造技術、プロセス開発（精密・医療用機器関連）
+                            </option>
+                            <option value="29">
+                              生産管理・製造管理
+                            </option>
+                            <option value="30">
+                              品質管理・保証
+                            </option>
+                            <option value="31">
+                              セールスエンジニア
+                            </option>
+                            <option value="32">
+                              サポート・フィールドエンジニア
+                            </option>
+                            <option value="33">
+                              その他
+                            </option>
+                            <option value="34">
+                              設計・開発（機械）
+                            </option>
+                            <option value="35">
+                              設計・開発（自動車）
+                            </option>
+                            <option value="36">
+                              設計・開発（メカトロ制御）
+                            </option>
+                            <option value="37">
+                              設計・開発（その他）
+                            </option>
+                            <option value="38">
+                              機械・機構設計（自動車関連）
+                            </option>
+                            <option value="39">
+                              機械・機構設計（各種機械関連）
+                            </option>
+                            <option value="40">
+                              金型設計
+                            </option>
+                            <option value="41">
+                              生産・製造技術、プロセス開発（家電・コンピュータ関連）
+                            </option>
+                            <option value="42">
+                              生産管理・製造管理
+                            </option>
+                            <option value="43">
+                              品質管理・保証
+                            </option>
+                            <option value="44">
+                              セールスエンジニア
+                            </option>
+                            <option value="45">
+                              サポート・フィールドエンジニア
+                            </option>
+                            <option value="46">
+                              その他
+                            </option>
+                            <option value="47">
+                              研究・開発（化学）
+                            </option>
+                            <option value="48">
+                              研究・開発（食品・医薬品）
+                            </option>
+                            <option value="49">
+                              研究・開発（医療用具・医療機器）
+                            </option>
+                            <option value="50">
+                              研究・開発（その他）
+                            </option>
+                            <option value="51">
+                              臨床開発
+                            </option>
+                            <option value="52">
+                              薬事申請
+                            </option>
+                            <option value="53">
+                              生産・製造技術
+                            </option>
+                            <option value="54">
+                              生産管理・製造管理
+                            </option>
+                            <option value="55">
+                              品質管理・保証
+                            </option>
+                            <option value="56">
+                              セールスエンジニア
+                            </option>
+                            <option value="57">
+                              サポートエンジニア
+                            </option>
+                            <option value="58">
+                              その他
+                            </option>
+                            <option value="59">
+                              設計（建築・土木）
+                            </option>
+                            <option value="60">
+                              設計（設備）
+                            </option>
+                            <option value="61">
+                              設計（その他）
+                            </option>
+                            <option value="62">
+                              施工管理・設備工事
+                            </option>
+                            <option value="63">
+                              その他技術者（建築・土木・設備）
+                            </option>
+                            <option value="64">
+                              不動産（開発・企画・仕入）
+                            </option>
+                            <option value="65">
+                              不動産（仲介・法人個人）
+                            </option>
+                            <option value="66">
+                              不動産（プロパティー・アセットマネジメント）
+                            </option>
+                            <option value="67">
+                              不動産（不動産管理）
+                            </option>
+                            <option value="68">
+                              不動産（デューデリジェンス）
+                            </option>
+                            <option value="69">
+                              その他
+                            </option>
+                            <option value="70">
+                              運用・資金管理
+                            </option>
+                            <option value="71">
+                              投資研究
+                            </option>
+                            <option value="72">
+                              アナリスト
+                            </option>
+                            <option value="73">
+                              金融商品企画・開発
+                            </option>
+                            <option value="74">
+                              バック・ミドルオフィス
+                            </option>
+                            <option value="75">
+                              投資銀行業務
+                            </option>
+                            <option value="76">
+                              ストラクチャードファイナンス
+                            </option>
+                            <option value="77">
+                              アクチュアリー
+                            </option>
+                            <option value="78">
+                              デューディリジェンス
+                            </option>
+                            <option value="79">
+                              金融システム
+                            </option>
+                            <option value="80">
+                              その他
+                            </option>
+                            <option value="81">
+                              店長・店長候補（流通・アパレル）
+                            </option>
+                            <option value="82">
+                              店長・店長候補（外食）
+                            </option>
+                            <option value="83">
+                              店長・店長候補（サービス）
+                            </option>
+                            <option value="84">
+                              店舗スタッフ（流通・アパレル）
+                            </option>
+                            <option value="85">
+                              店舗スタッフ（外食）
+                            </option>
+                            <option value="86">
+                              店舗スタッフ（サービス）
+                            </option>
+                            <option value="87">
+                              マーチャンダイザー、バイヤー
+                            </option>
+                            <option value="88">
+                              スーパーバイザー
+                            </option>
+                            <option value="89">
+                              商品・メニュー開発(外食）
+                            </option>
+                            <option value="90">
+                              店舗開発・ＦＣ開発
+                            </option>
+                            <option value="91">
+                              その他
+                            </option>
+                            <option value="92">
+                              プロデューサー・ディレクター（ＷＥＢ関連）
+                            </option>
+                            <option value="93">
+                              プロデューサー・ディレクター（広告・出版関連）
+                            </option>
+                            <option value="94">
+                              プロデューサー・ディレクター（ゲーム・映像・イベント関連）
+                            </option>
+                            <option value="95">
+                              デザイナー（ＷＥＢ関連）
+                            </option>
+                            <option value="96">
+                              デザイナー（広告・出版関連）
+                            </option>
+                            <option value="97">
+                              デザイナー（ゲーム・映像・イベント関連）
+                            </option>
+                            <option value="98">
+                              編集・製作
+                            </option>
+                            <option value="99">
+                              その他クリエイティブ関連
+                            </option>
+                            <option value="100">
+                              営業・セールス（法人向営業）
+                            </option>
+                            <option value="101">
+                              営業・セールス（個人向営業）
+                            </option>
+                            <option value="102">
+                              ＭＲ
+                            </option>
+                            <option value="103">
+                              企画・コンサルティング営業
+                            </option>
+                            <option value="104">
+                              営業支援・テレマーケティング
+                            </option>
+                            <option value="105">
+                              海外営業
+                            </option>
+                            <option value="106">
+                              その他営業関連
+                            </option>
+                            <option value="107">
+                              CEO、COO、CFO、CIO、CTO、経営幹部
+                            </option>
+                            <option value="108">
+                              経営企画
+                            </option>
+                            <option value="109">
+                              経営コンサルタント
+                            </option>
+                            <option value="110">
+                              財務・会計コンサルタント
+                            </option>
+                            <option value="111">
+                              組織・人事コンサルタント
+                            </option>
+                            <option value="112">
+                              生産・物流コンサルタント
+                            </option>
+                            <option value="113">
+                              営業・マーケティングコンサルタント
+                            </option>
+                            <option value="114">
+                              その他経営・コンサル系職種
+                            </option>
+                            <option value="115">
+                              総務
+                            </option>
+                            <option value="116">
+                              人事・労務
+                            </option>
+                            <option value="117">
+                              採用・教育
+                            </option>
+                            <option value="118">
+                              法務・コンプライアンス
+                            </option>
+                            <option value="119">
+                              特許・知的財産
+                            </option>
+                            <option value="120">
+                              経理
+                            </option>
+                            <option value="121">
+                              財務
+                            </option>
+                            <option value="122">
+                              会計・税務
+                            </option>
+                            <option value="123">
+                              広報・IR
+                            </option>
+                            <option value="124">
+                              物流企画・物流管理
+                            </option>
+                            <option value="125">
+                              購買
+                            </option>
+                            <option value="126">
+                              経営企画・事業企画
+                            </option>
+                            <option value="127">
+                              商品企画・マーケティング・商品開発
+                            </option>
+                            <option value="128">
+                              営業企画・販促促進・宣伝
+                            </option>
+                            <option value="129">
+                              貿易事務・国際業務
+                            </option>
+                            <option value="130">
+                              その他企画・管理系職種
+                            </option>
+                            <option value="131">
+                              一般事務
+                            </option>
+                            <option value="132">
+                              営業事務・管理業務
+                            </option>
+                            <option value="133">
+                              秘書・受付・アシスタント
+                            </option>
+                            <option value="134">
+                              その他事務系職種
+                            </option>
+                            <option value="135">
+                              医師
+                            </option>
+                            <option value="136">
+                              医療系専門技師（士）・看護師
+                            </option>
+                            <option value="137">
+                              医療事務
+                            </option>
+                            <option value="138">
+                              その他専門職
+                            </option>
+                            <option value="139">
+                              会計士・税理士
+                            </option>
+                            <option value="140">
+                              弁護士・弁理士
+                            </option>
+                            <option value="141">
+                              薬剤師
+                            </option>
+                          </select></div><br>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          就業職種3:
+                        </td>
+                        <td>
+                          <div class="select">
+                            <select id="keiken_syokusyu_dai_select_03" name="keiken_syokusyu_dai_select_03" onchange="dai_select_syo('keiken_syokusyu_dai_select_03','keiken_syokusyu03')">
+                            <option value="">
+                              ---
+                            </option>
+                            <option value="1">
+                              ソフトウェア関連
+                            </option>
+                            <option value="2">
+                              電気・電子・半導体関連
+                            </option>
+                            <option value="3">
+                              機械・自動車・メカトロ関連
+                            </option>
+                            <option value="4">
+                              化学・バイオ・食品・医療関連
+                            </option>
+                            <option value="5">
+                              建築・土木・設計・不動産関連
+                            </option>
+                            <option value="6">
+                              金融関連
+                            </option>
+                            <option value="7">
+                              流通・外食・サービス関連
+                            </option>
+                            <option value="8">
+                              クリエイティブ関連
+                            </option>
+                            <option value="9">
+                              営業・海外営業関連
+                            </option>
+                            <option value="10">
+                              経営幹部・コンサルタント関連
+                            </option>
+                            <option value="11">
+                              企画・管理関連
+                            </option>
+                            <option value="12">
+                              業務関連
+                            </option>
+                            <option value="13">
+                              その他専門職
+                            </option>
+                            <option value="15">
+                              テスト
+                            </option>
+                          </select></div><br>
+                          <div class="select">
+                          <select id="keiken_syokusyu03" name="keiken_syokusyu03">
+                            <option value="">
+                              ---
+                            </option>
+                            <option value="1">
+                              アプリケーション開発（オープン系）
+                            </option>
+                            <option value="2">
+                              アプリケーション開発（ＷＥＢ系）
+                            </option>
+                            <option value="3">
+                              アプリケーション開発（汎用系）
+                            </option>
+                            <option value="4">
+                              アプリケーション開発（制御・組込み系）
+                            </option>
+                            <option value="5">
+                              パッケージソフト・OS開発
+                            </option>
+                            <option value="6">
+                              プロジェクトリーダー・マネジャー
+                            </option>
+                            <option value="7">
+                              ネットワーク・サーバー設計・構築
+                            </option>
+                            <option value="8">
+                              ネットワーク・サーバー運用・保守
+                            </option>
+                            <option value="9">
+                              社内情報システム・EDP・MIS
+                            </option>
+                            <option value="10">
+                              テクニカル・カスタマーサポート
+                            </option>
+                            <option value="11">
+                              システムサポート・運用・保守
+                            </option>
+                            <option value="12">
+                              ＩＴ系コンサルタント
+                            </option>
+                            <option value="13">
+                              CAD・CAM・CAE・CIM他
+                            </option>
+                            <option value="14">
+                              品質管理、テスト、評価
+                            </option>
+                            <option value="15">
+                              製品開発・研究
+                            </option>
+                            <option value="16">
+                              その他ソフトウェア関連職
+                            </option>
+                            <option value="17">
+                              設計・開発（アナログ回路）
+                            </option>
+                            <option value="18">
+                              設計・開発（デジタル回路）
+                            </option>
+                            <option value="19">
+                              設計・開発（電気・電子制御）
+                            </option>
+                            <option value="20">
+                              設計・開発（半導体）
+                            </option>
+                            <option value="21">
+                              設計・開発（光学系）
+                            </option>
+                            <option value="22">
+                              設計・開発（機器･デバイス）
+                            </option>
+                            <option value="23">
+                              設計・開発（その他）
+                            </option>
+                            <option value="24">
+                              機械・機構設計（家電・コンピュータ関連）
+                            </option>
+                            <option value="25">
+                              機械・機構設計（精密機器・医療用機器関連）
+                            </option>
+                            <option value="26">
+                              金型設計
+                            </option>
+                            <option value="27">
+                              生産・製造技術、プロセス開発（家電・コンピュータ関連）
+                            </option>
+                            <option value="28">
+                              生産・製造技術、プロセス開発（精密・医療用機器関連）
+                            </option>
+                            <option value="29">
+                              生産管理・製造管理
+                            </option>
+                            <option value="30">
+                              品質管理・保証
+                            </option>
+                            <option value="31">
+                              セールスエンジニア
+                            </option>
+                            <option value="32">
+                              サポート・フィールドエンジニア
+                            </option>
+                            <option value="33">
+                              その他
+                            </option>
+                            <option value="34">
+                              設計・開発（機械）
+                            </option>
+                            <option value="35">
+                              設計・開発（自動車）
+                            </option>
+                            <option value="36">
+                              設計・開発（メカトロ制御）
+                            </option>
+                            <option value="37">
+                              設計・開発（その他）
+                            </option>
+                            <option value="38">
+                              機械・機構設計（自動車関連）
+                            </option>
+                            <option value="39">
+                              機械・機構設計（各種機械関連）
+                            </option>
+                            <option value="40">
+                              金型設計
+                            </option>
+                            <option value="41">
+                              生産・製造技術、プロセス開発（家電・コンピュータ関連）
+                            </option>
+                            <option value="42">
+                              生産管理・製造管理
+                            </option>
+                            <option value="43">
+                              品質管理・保証
+                            </option>
+                            <option value="44">
+                              セールスエンジニア
+                            </option>
+                            <option value="45">
+                              サポート・フィールドエンジニア
+                            </option>
+                            <option value="46">
+                              その他
+                            </option>
+                            <option value="47">
+                              研究・開発（化学）
+                            </option>
+                            <option value="48">
+                              研究・開発（食品・医薬品）
+                            </option>
+                            <option value="49">
+                              研究・開発（医療用具・医療機器）
+                            </option>
+                            <option value="50">
+                              研究・開発（その他）
+                            </option>
+                            <option value="51">
+                              臨床開発
+                            </option>
+                            <option value="52">
+                              薬事申請
+                            </option>
+                            <option value="53">
+                              生産・製造技術
+                            </option>
+                            <option value="54">
+                              生産管理・製造管理
+                            </option>
+                            <option value="55">
+                              品質管理・保証
+                            </option>
+                            <option value="56">
+                              セールスエンジニア
+                            </option>
+                            <option value="57">
+                              サポートエンジニア
+                            </option>
+                            <option value="58">
+                              その他
+                            </option>
+                            <option value="59">
+                              設計（建築・土木）
+                            </option>
+                            <option value="60">
+                              設計（設備）
+                            </option>
+                            <option value="61">
+                              設計（その他）
+                            </option>
+                            <option value="62">
+                              施工管理・設備工事
+                            </option>
+                            <option value="63">
+                              その他技術者（建築・土木・設備）
+                            </option>
+                            <option value="64">
+                              不動産（開発・企画・仕入）
+                            </option>
+                            <option value="65">
+                              不動産（仲介・法人個人）
+                            </option>
+                            <option value="66">
+                              不動産（プロパティー・アセットマネジメント）
+                            </option>
+                            <option value="67">
+                              不動産（不動産管理）
+                            </option>
+                            <option value="68">
+                              不動産（デューデリジェンス）
+                            </option>
+                            <option value="69">
+                              その他
+                            </option>
+                            <option value="70">
+                              運用・資金管理
+                            </option>
+                            <option value="71">
+                              投資研究
+                            </option>
+                            <option value="72">
+                              アナリスト
+                            </option>
+                            <option value="73">
+                              金融商品企画・開発
+                            </option>
+                            <option value="74">
+                              バック・ミドルオフィス
+                            </option>
+                            <option value="75">
+                              投資銀行業務
+                            </option>
+                            <option value="76">
+                              ストラクチャードファイナンス
+                            </option>
+                            <option value="77">
+                              アクチュアリー
+                            </option>
+                            <option value="78">
+                              デューディリジェンス
+                            </option>
+                            <option value="79">
+                              金融システム
+                            </option>
+                            <option value="80">
+                              その他
+                            </option>
+                            <option value="81">
+                              店長・店長候補（流通・アパレル）
+                            </option>
+                            <option value="82">
+                              店長・店長候補（外食）
+                            </option>
+                            <option value="83">
+                              店長・店長候補（サービス）
+                            </option>
+                            <option value="84">
+                              店舗スタッフ（流通・アパレル）
+                            </option>
+                            <option value="85">
+                              店舗スタッフ（外食）
+                            </option>
+                            <option value="86">
+                              店舗スタッフ（サービス）
+                            </option>
+                            <option value="87">
+                              マーチャンダイザー、バイヤー
+                            </option>
+                            <option value="88">
+                              スーパーバイザー
+                            </option>
+                            <option value="89">
+                              商品・メニュー開発(外食）
+                            </option>
+                            <option value="90">
+                              店舗開発・ＦＣ開発
+                            </option>
+                            <option value="91">
+                              その他
+                            </option>
+                            <option value="92">
+                              プロデューサー・ディレクター（ＷＥＢ関連）
+                            </option>
+                            <option value="93">
+                              プロデューサー・ディレクター（広告・出版関連）
+                            </option>
+                            <option value="94">
+                              プロデューサー・ディレクター（ゲーム・映像・イベント関連）
+                            </option>
+                            <option value="95">
+                              デザイナー（ＷＥＢ関連）
+                            </option>
+                            <option value="96">
+                              デザイナー（広告・出版関連）
+                            </option>
+                            <option value="97">
+                              デザイナー（ゲーム・映像・イベント関連）
+                            </option>
+                            <option value="98">
+                              編集・製作
+                            </option>
+                            <option value="99">
+                              その他クリエイティブ関連
+                            </option>
+                            <option value="100">
+                              営業・セールス（法人向営業）
+                            </option>
+                            <option value="101">
+                              営業・セールス（個人向営業）
+                            </option>
+                            <option value="102">
+                              ＭＲ
+                            </option>
+                            <option value="103">
+                              企画・コンサルティング営業
+                            </option>
+                            <option value="104">
+                              営業支援・テレマーケティング
+                            </option>
+                            <option value="105">
+                              海外営業
+                            </option>
+                            <option value="106">
+                              その他営業関連
+                            </option>
+                            <option value="107">
+                              CEO、COO、CFO、CIO、CTO、経営幹部
+                            </option>
+                            <option value="108">
+                              経営企画
+                            </option>
+                            <option value="109">
+                              経営コンサルタント
+                            </option>
+                            <option value="110">
+                              財務・会計コンサルタント
+                            </option>
+                            <option value="111">
+                              組織・人事コンサルタント
+                            </option>
+                            <option value="112">
+                              生産・物流コンサルタント
+                            </option>
+                            <option value="113">
+                              営業・マーケティングコンサルタント
+                            </option>
+                            <option value="114">
+                              その他経営・コンサル系職種
+                            </option>
+                            <option value="115">
+                              総務
+                            </option>
+                            <option value="116">
+                              人事・労務
+                            </option>
+                            <option value="117">
+                              採用・教育
+                            </option>
+                            <option value="118">
+                              法務・コンプライアンス
+                            </option>
+                            <option value="119">
+                              特許・知的財産
+                            </option>
+                            <option value="120">
+                              経理
+                            </option>
+                            <option value="121">
+                              財務
+                            </option>
+                            <option value="122">
+                              会計・税務
+                            </option>
+                            <option value="123">
+                              広報・IR
+                            </option>
+                            <option value="124">
+                              物流企画・物流管理
+                            </option>
+                            <option value="125">
+                              購買
+                            </option>
+                            <option value="126">
+                              経営企画・事業企画
+                            </option>
+                            <option value="127">
+                              商品企画・マーケティング・商品開発
+                            </option>
+                            <option value="128">
+                              営業企画・販促促進・宣伝
+                            </option>
+                            <option value="129">
+                              貿易事務・国際業務
+                            </option>
+                            <option value="130">
+                              その他企画・管理系職種
+                            </option>
+                            <option value="131">
+                              一般事務
+                            </option>
+                            <option value="132">
+                              営業事務・管理業務
+                            </option>
+                            <option value="133">
+                              秘書・受付・アシスタント
+                            </option>
+                            <option value="134">
+                              その他事務系職種
+                            </option>
+                            <option value="135">
+                              医師
+                            </option>
+                            <option value="136">
+                              医療系専門技師（士）・看護師
+                            </option>
+                            <option value="137">
+                              医療事務
+                            </option>
+                            <option value="138">
+                              その他専門職
+                            </option>
+                            <option value="139">
+                              会計士・税理士
+                            </option>
+                            <option value="140">
+                              弁護士・弁理士
+                            </option>
+                            <option value="141">
+                              薬剤師
+                            </option>
+                          </select></div><br>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          業種:
+                        </td>
+                        <td>
+                          <div class="select">
+                          <select id="keiken_gyosyu" name="keiken_gyosyu">
+                            <option value="">
+                              ---
+                            </option>
+                            <option value="1">
+                              IT・通信・インターネット
+                            </option>
+                            <option value="2">
+                              電子・電気機器・半導体
+                            </option>
+                            <option value="3">
+                              機器・機械・メカトロ
+                            </option>
+                            <option value="4">
+                              化学・素材
+                            </option>
+                            <option value="5">
+                              出版・広告・マスコミ
+                            </option>
+                            <option value="6">
+                              消費財
+                            </option>
+                            <option value="7">
+                              ゲーム
+                            </option>
+                            <option value="8">
+                              ホテル・レジャー・アミューズメント
+                            </option>
+                            <option value="9">
+                              飲食
+                            </option>
+                            <option value="10">
+                              建設・土木・プラント・設備・不動産
+                            </option>
+                            <option value="11">
+                              食品・バイオ・化粧品
+                            </option>
+                            <option value="12">
+                              金融
+                            </option>
+                            <option value="13">
+                              商社
+                            </option>
+                            <option value="14">
+                              流通・小売
+                            </option>
+                            <option value="15">
+                              物流・運輸・倉庫
+                            </option>
+                            <option value="16">
+                              電気・ガス・水道・エネルギー
+                            </option>
+                            <option value="17">
+                              コンサルタント・シンクタンク
+                            </option>
+                            <option value="18">
+                              アパレル
+                            </option>
+                            <option value="19">
+                              サービス
+                            </option>
+                            <option value="20">
+                              農林水産
+                            </option>
+                            <option value="21">
+                              人材ビジネス
+                            </option>
+                            <option value="22">
+                              医療・教育
+                            </option>
+                            <option value="23">
+                              団体・公益法人・官公庁
+                            </option>
+                            <option value="24">
+                              その他
+                            </option>
+                          </select><div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          上場区分:
+                        </td>
+                        <td>
+                          <div class="select">
+                          <select id="keiken_jojo_kubun" name="keiken_jojo_kubun">
+                            <option value="">
+                              ---
+                            </option>
+                            <option value="1">
+                              上場
+                            </option>
+                            <option value="0">
+                              非上場
+                            </option>
+                          </select></div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          資本系列:
+                        </td>
+                        <td>
+                          <div class="select">
+                          <select id="keiken_shihon_keiretsu" name="keiken_shihon_keiretsu">
+                            <option value="">
+                              ---
+                            </option>
+                            <option value="1">
+                              国内資本
+                            </option>
+                            <option value="2">
+                              外資
+                            </option>
+                          </select></div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <!--<table width="100%" class=" table icx-fullwidth icx-hoverable">
+            <tbody>
+              <tr>
+                <td>
+                    <div class="icx-fullwidth icx-flex-direction-row icx-flex-wrap-wrap icx-justify-content-space-between">
+                    <div class="control bd-notification v-box">
+                        保存名称　<input class="input icx-hovered" type="text" id="kensaku_name[A]" name="kensaku_name[A]" placeholder="Hovered input">
+                        <label class="checkbox"><input type="checkbox"　id="kensaku_save" name="kensaku_save" value="1" >保存</label>
+                        <button class="button icx-submit" name="commit">この条件で検索する</button>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>-->
+          <div class="icx-fullwidth icx-flex-direction-row icx-flex-wrap-wrap icx-justify-content-space-between" style="margin-bottom:10px;">
+            <div class="box-noshadow">
+              <i class="fas fa-pen-alt"></i> <strong>経験・スキル・資格</strong>
+            </div>                    
+          </div>
+          <table width="100%" class="ta">
+            <tbody>
+            <tr>
+              <th width="10%">マネジメント経験</th>
+              <td><input id="management[]" name="management[]" type="radio" value="1">あり
+           <input id="management[]" name="management[]" type="radio" value="0">なし</td>
+            </tr>
+            <tr>
+              <th>語学</th>
+              <td>
+                <table class="ta_none">
+                  <tbody>
+                    <tr>
+                      <td>英会話</td>
+                      <td>
+                        <div class="select"><select name="english_kaiwa"><option value="">---</option> <option value="1">初級（日常会話）</option> <option value="2">中級（ビジネス会話）</option> <option value="3">上級（交渉、通訳）</option></select></div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>英文</td>
+                      <td>
+                        <div class="select"><select name="english_bun"><option value="">---</option> <option value="1">初級（メール交換）</option> <option value="2">中級（長文読解）</option> <option value="3">上級（公的文書作成）</option></select></div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>TOEIC</td>
+                      <td><input id="english_toeic" name="english_toeic" type="text" placeholder="Hovered input" class="input icx-hovered"><span class="vAl-middle">　以上</span></td>
+                    </tr>
+                    <tr>
+                      <td>TOEFL</td>
+                      <td><input id="english_toefl" name="english_toefl" type="text" placeholder="Hovered input" class="input icx-hovered"><span class="vAl-middle">　以上</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <th>パソコンスキル</th>
+              <td>
+          <div class="select">
+          <select name="software">         
+          <option value="">---</option>
+          <option value="1">初級（マニュアルを見ながら操作）</option>
+          <option value="2">中級（2つ以上のソフトに精通）</option>
+          <option value="3">上級（トラブルを自分で解決できる）</option>
+          </select></div>
+          </td>
+            </tr>
+            <tr>
+              <th>スキル・資格</th>
+              <td>
+          <table class="ta_none">
+            <tbody><tr>
+              <td>使用可能ソフト</td>
+              <td>
+                <div id="imputted">
+                  <button class="button icx-submit icx-small" @click="linkWindow()">入力</button>
+               </div>
+          <div id="pc_skill_level_selected"></td>
+            </tr>
+            <script>
+             new Vue({
+               el: '#imputted',
+               data: {
+               myModel:false
+              },  
+                  methods:{
+                  linkWindow: function () {   
+                  window.open("pc_skill_level_select.html", "_blank");    
+                }
+              }
+             });
+            
+            </script>
+            <tr>
+              <td>スキル</td>
+              <td><div><button href="#" class="button icx-submit icx-small" onclick="open_skill_level_select(); return false;">入力</button>
+          </div>
+          <div id="skill_level_selected"></div></td>
+            </tr>
+            <tr>
+              <td>保有資格</td>
+              <td><div><button href="#" class="button icx-submit icx-small" onclick="open_shikaku_select(); return false;">入力</button>
+          </div>
+          <div id="shikaku_selected"></div></td>
+            </tr>
+          </tbody></table></td>
+            </tr>
+          </tbody>
+        </table>
+        <!--<table width="100%" class=" table icx-fullwidth icx-hoverable">
+          <tbody>
+            <tr>
+              <td>
+                  <div class="icx-fullwidth icx-flex-direction-row icx-flex-wrap-wrap icx-justify-content-space-between">
+                  <div class="control bd-notification v-box">
+                      保存名称　<input class="input icx-hovered" type="text" id="kensaku_name[A]" name="kensaku_name[A]" placeholder="Hovered input">
+                      <label class="checkbox"><input type="checkbox"　id="kensaku_save" name="kensaku_save" value="1" >保存</label>
+                      <button class="button icx-submit" name="commit">この条件で検索する</button>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>-->
+        <div class="icx-fullwidth icx-flex-direction-row icx-flex-wrap-wrap icx-justify-content-space-between" style="margin-bottom:10px;">
+          <div class="box-noshadow">
+            <i class="fas fa-pen-alt"></i> <strong>転職希望条件</strong>
+          </div>                    
+        </div>
+        <table width="100%" class="ta">
+          <tbody>
+          <tr>
+            <th width="10%">希望職種</th>
+            <td>
+              <div class="select">
+        <select id="syokusyu_dai_select_01" name="syokusyu_dai_select_01" onchange="dai_select_syo('syokusyu_dai_select_01','kibo_syokusyu01')"><option value="">---</option>
+        <option value="1">ソフトウェア関連</option>
+        <option value="2">電気・電子・半導体関連</option>
+        <option value="3">機械・自動車・メカトロ関連</option>
+        <option value="4">化学・バイオ・食品・医療関連</option>
+        <option value="5">建築・土木・設計・不動産関連</option>
+        <option value="6">金融関連</option>
+        <option value="7">流通・外食・サービス関連</option>
+        <option value="8">クリエイティブ関連</option>
+        <option value="9">営業・海外営業関連</option>
+        <option value="10">経営幹部・コンサルタント関連</option>
+        <option value="11">企画・管理関連</option>
+        <option value="12">業務関連</option>
+        <option value="13">その他専門職</option>
+        <option value="15">テスト</option></select></div><br>
+
+        <div class="select">
+        <select id="kibo_syokusyu01" name="kibo_syokusyu01"><option value="">---</option>
+        <option value="1">アプリケーション開発（オープン系）</option>
+        <option value="2">アプリケーション開発（ＷＥＢ系）</option>
+        <option value="3">アプリケーション開発（汎用系）</option>
+        <option value="4">アプリケーション開発（制御・組込み系）</option>
+        <option value="5">パッケージソフト・OS開発</option>
+        <option value="6">プロジェクトリーダー・マネジャー</option>
+        <option value="7">ネットワーク・サーバー設計・構築</option>
+        <option value="8">ネットワーク・サーバー運用・保守</option>
+        <option value="9">社内情報システム・EDP・MIS</option>
+        <option value="10">テクニカル・カスタマーサポート</option>
+        <option value="11">システムサポート・運用・保守</option>
+        <option value="12">ＩＴ系コンサルタント</option>
+        <option value="13">CAD・CAM・CAE・CIM他</option>
+        <option value="14">品質管理、テスト、評価</option>
+        <option value="15">製品開発・研究</option>
+        <option value="16">その他ソフトウェア関連職</option>
+        <option value="17">設計・開発（アナログ回路）</option>
+        <option value="18">設計・開発（デジタル回路）</option>
+        <option value="19">設計・開発（電気・電子制御）</option>
+        <option value="20">設計・開発（半導体）</option>
+        <option value="21">設計・開発（光学系）</option>
+        <option value="22">設計・開発（機器･デバイス）</option>
+        <option value="23">設計・開発（その他）</option>
+        <option value="24">機械・機構設計（家電・コンピュータ関連）</option>
+        <option value="25">機械・機構設計（精密機器・医療用機器関連）</option>
+        <option value="26">金型設計</option>
+        <option value="27">生産・製造技術、プロセス開発（家電・コンピュータ関連）</option>
+        <option value="28">生産・製造技術、プロセス開発（精密・医療用機器関連）</option>
+        <option value="29">生産管理・製造管理</option>
+        <option value="30">品質管理・保証</option>
+        <option value="31">セールスエンジニア</option>
+        <option value="32">サポート・フィールドエンジニア</option>
+        <option value="33">その他</option>
+        <option value="34">設計・開発（機械）</option>
+        <option value="35">設計・開発（自動車）</option>
+        <option value="36">設計・開発（メカトロ制御）</option>
+        <option value="37">設計・開発（その他）</option>
+        <option value="38">機械・機構設計（自動車関連）</option>
+        <option value="39">機械・機構設計（各種機械関連）</option>
+        <option value="40">金型設計</option>
+        <option value="41">生産・製造技術、プロセス開発（家電・コンピュータ関連）</option>
+        <option value="42">生産管理・製造管理</option>
+        <option value="43">品質管理・保証</option>
+        <option value="44">セールスエンジニア</option>
+        <option value="45">サポート・フィールドエンジニア</option>
+        <option value="46">その他</option>
+        <option value="47">研究・開発（化学）</option>
+        <option value="48">研究・開発（食品・医薬品）</option>
+        <option value="49">研究・開発（医療用具・医療機器）</option>
+        <option value="50">研究・開発（その他）</option>
+        <option value="51">臨床開発</option>
+        <option value="52">薬事申請</option>
+        <option value="53">生産・製造技術</option>
+        <option value="54">生産管理・製造管理</option>
+        <option value="55">品質管理・保証</option>
+        <option value="56">セールスエンジニア</option>
+        <option value="57">サポートエンジニア</option>
+        <option value="58">その他</option>
+        <option value="59">設計（建築・土木）</option>
+        <option value="60">設計（設備）</option>
+        <option value="61">設計（その他）</option>
+        <option value="62">施工管理・設備工事</option>
+        <option value="63">その他技術者（建築・土木・設備）</option>
+        <option value="64">不動産（開発・企画・仕入）</option>
+        <option value="65">不動産（仲介・法人個人）</option>
+        <option value="66">不動産（プロパティー・アセットマネジメント）</option>
+        <option value="67">不動産（不動産管理）</option>
+        <option value="68">不動産（デューデリジェンス）</option>
+        <option value="69">その他</option>
+        <option value="70">運用・資金管理</option>
+        <option value="71">投資研究</option>
+        <option value="72">アナリスト</option>
+        <option value="73">金融商品企画・開発</option>
+        <option value="74">バック・ミドルオフィス</option>
+        <option value="75">投資銀行業務</option>
+        <option value="76">ストラクチャードファイナンス</option>
+        <option value="77">アクチュアリー</option>
+        <option value="78">デューディリジェンス</option>
+        <option value="79">金融システム</option>
+        <option value="80">その他</option>
+        <option value="81">店長・店長候補（流通・アパレル）</option>
+        <option value="82">店長・店長候補（外食）</option>
+        <option value="83">店長・店長候補（サービス）</option>
+        <option value="84">店舗スタッフ（流通・アパレル）</option>
+        <option value="85">店舗スタッフ（外食）</option>
+        <option value="86">店舗スタッフ（サービス）</option>
+        <option value="87">マーチャンダイザー、バイヤー</option>
+        <option value="88">スーパーバイザー</option>
+        <option value="89">商品・メニュー開発(外食）</option>
+        <option value="90">店舗開発・ＦＣ開発</option>
+        <option value="91">その他</option>
+        <option value="92">プロデューサー・ディレクター（ＷＥＢ関連）</option>
+        <option value="93">プロデューサー・ディレクター（広告・出版関連）</option>
+        <option value="94">プロデューサー・ディレクター（ゲーム・映像・イベント関連）</option>
+        <option value="95">デザイナー（ＷＥＢ関連）</option>
+        <option value="96">デザイナー（広告・出版関連）</option>
+        <option value="97">デザイナー（ゲーム・映像・イベント関連）</option>
+        <option value="98">編集・製作</option>
+        <option value="99">その他クリエイティブ関連</option>
+        <option value="100">営業・セールス（法人向営業）</option>
+        <option value="101">営業・セールス（個人向営業）</option>
+        <option value="102">ＭＲ</option>
+        <option value="103">企画・コンサルティング営業</option>
+        <option value="104">営業支援・テレマーケティング</option>
+        <option value="105">海外営業</option>
+        <option value="106">その他営業関連</option>
+        <option value="107">CEO、COO、CFO、CIO、CTO、経営幹部</option>
+        <option value="108">経営企画</option>
+        <option value="109">経営コンサルタント</option>
+        <option value="110">財務・会計コンサルタント</option>
+        <option value="111">組織・人事コンサルタント</option>
+        <option value="112">生産・物流コンサルタント</option>
+        <option value="113">営業・マーケティングコンサルタント</option>
+        <option value="114">その他経営・コンサル系職種</option>
+        <option value="115">総務</option>
+        <option value="116">人事・労務</option>
+        <option value="117">採用・教育</option>
+        <option value="118">法務・コンプライアンス</option>
+        <option value="119">特許・知的財産</option>
+        <option value="120">経理</option>
+        <option value="121">財務</option>
+        <option value="122">会計・税務</option>
+        <option value="123">広報・IR</option>
+        <option value="124">物流企画・物流管理</option>
+        <option value="125">購買</option>
+        <option value="126">経営企画・事業企画</option>
+        <option value="127">商品企画・マーケティング・商品開発</option>
+        <option value="128">営業企画・販促促進・宣伝</option>
+        <option value="129">貿易事務・国際業務</option>
+        <option value="130">その他企画・管理系職種</option>
+        <option value="131">一般事務</option>
+        <option value="132">営業事務・管理業務</option>
+        <option value="133">秘書・受付・アシスタント</option>
+        <option value="134">その他事務系職種</option>
+        <option value="135">医師</option>
+        <option value="136">医療系専門技師（士）・看護師</option>
+        <option value="137">医療事務</option>
+        <option value="138">その他専門職</option>
+        <option value="139">会計士・税理士</option>
+        <option value="140">弁護士・弁理士</option>
+        <option value="141">薬剤師</option></select></div><br>
+        
+        または<br>
+        
+        <div class="select">
+        <select id="syokusyu_dai_select_02" name="syokusyu_dai_select_02" onchange="dai_select_syo('syokusyu_dai_select_02','kibo_syokusyu02')"><option value="">---</option>
+        <option value="1">ソフトウェア関連</option>
+        <option value="2">電気・電子・半導体関連</option>
+        <option value="3">機械・自動車・メカトロ関連</option>
+        <option value="4">化学・バイオ・食品・医療関連</option>
+        <option value="5">建築・土木・設計・不動産関連</option>
+        <option value="6">金融関連</option>
+        <option value="7">流通・外食・サービス関連</option>
+        <option value="8">クリエイティブ関連</option>
+        <option value="9">営業・海外営業関連</option>
+        <option value="10">経営幹部・コンサルタント関連</option>
+        <option value="11">企画・管理関連</option>
+        <option value="12">業務関連</option>
+        <option value="13">その他専門職</option>
+        <option value="15">テスト</option></select></div><br>
+        
+        <div class="select">
+        <select id="kibo_syokusyu02" name="kibo_syokusyu02"><option value="">---</option>
+        <option value="1">アプリケーション開発（オープン系）</option>
+        <option value="2">アプリケーション開発（ＷＥＢ系）</option>
+        <option value="3">アプリケーション開発（汎用系）</option>
+        <option value="4">アプリケーション開発（制御・組込み系）</option>
+        <option value="5">パッケージソフト・OS開発</option>
+        <option value="6">プロジェクトリーダー・マネジャー</option>
+        <option value="7">ネットワーク・サーバー設計・構築</option>
+        <option value="8">ネットワーク・サーバー運用・保守</option>
+        <option value="9">社内情報システム・EDP・MIS</option>
+        <option value="10">テクニカル・カスタマーサポート</option>
+        <option value="11">システムサポート・運用・保守</option>
+        <option value="12">ＩＴ系コンサルタント</option>
+        <option value="13">CAD・CAM・CAE・CIM他</option>
+        <option value="14">品質管理、テスト、評価</option>
+        <option value="15">製品開発・研究</option>
+        <option value="16">その他ソフトウェア関連職</option>
+        <option value="17">設計・開発（アナログ回路）</option>
+        <option value="18">設計・開発（デジタル回路）</option>
+        <option value="19">設計・開発（電気・電子制御）</option>
+        <option value="20">設計・開発（半導体）</option>
+        <option value="21">設計・開発（光学系）</option>
+        <option value="22">設計・開発（機器･デバイス）</option>
+        <option value="23">設計・開発（その他）</option>
+        <option value="24">機械・機構設計（家電・コンピュータ関連）</option>
+        <option value="25">機械・機構設計（精密機器・医療用機器関連）</option>
+        <option value="26">金型設計</option>
+        <option value="27">生産・製造技術、プロセス開発（家電・コンピュータ関連）</option>
+        <option value="28">生産・製造技術、プロセス開発（精密・医療用機器関連）</option>
+        <option value="29">生産管理・製造管理</option>
+        <option value="30">品質管理・保証</option>
+        <option value="31">セールスエンジニア</option>
+        <option value="32">サポート・フィールドエンジニア</option>
+        <option value="33">その他</option>
+        <option value="34">設計・開発（機械）</option>
+        <option value="35">設計・開発（自動車）</option>
+        <option value="36">設計・開発（メカトロ制御）</option>
+        <option value="37">設計・開発（その他）</option>
+        <option value="38">機械・機構設計（自動車関連）</option>
+        <option value="39">機械・機構設計（各種機械関連）</option>
+        <option value="40">金型設計</option>
+        <option value="41">生産・製造技術、プロセス開発（家電・コンピュータ関連）</option>
+        <option value="42">生産管理・製造管理</option>
+        <option value="43">品質管理・保証</option>
+        <option value="44">セールスエンジニア</option>
+        <option value="45">サポート・フィールドエンジニア</option>
+        <option value="46">その他</option>
+        <option value="47">研究・開発（化学）</option>
+        <option value="48">研究・開発（食品・医薬品）</option>
+        <option value="49">研究・開発（医療用具・医療機器）</option>
+        <option value="50">研究・開発（その他）</option>
+        <option value="51">臨床開発</option>
+        <option value="52">薬事申請</option>
+        <option value="53">生産・製造技術</option>
+        <option value="54">生産管理・製造管理</option>
+        <option value="55">品質管理・保証</option>
+        <option value="56">セールスエンジニア</option>
+        <option value="57">サポートエンジニア</option>
+        <option value="58">その他</option>
+        <option value="59">設計（建築・土木）</option>
+        <option value="60">設計（設備）</option>
+        <option value="61">設計（その他）</option>
+        <option value="62">施工管理・設備工事</option>
+        <option value="63">その他技術者（建築・土木・設備）</option>
+        <option value="64">不動産（開発・企画・仕入）</option>
+        <option value="65">不動産（仲介・法人個人）</option>
+        <option value="66">不動産（プロパティー・アセットマネジメント）</option>
+        <option value="67">不動産（不動産管理）</option>
+        <option value="68">不動産（デューデリジェンス）</option>
+        <option value="69">その他</option>
+        <option value="70">運用・資金管理</option>
+        <option value="71">投資研究</option>
+        <option value="72">アナリスト</option>
+        <option value="73">金融商品企画・開発</option>
+        <option value="74">バック・ミドルオフィス</option>
+        <option value="75">投資銀行業務</option>
+        <option value="76">ストラクチャードファイナンス</option>
+        <option value="77">アクチュアリー</option>
+        <option value="78">デューディリジェンス</option>
+        <option value="79">金融システム</option>
+        <option value="80">その他</option>
+        <option value="81">店長・店長候補（流通・アパレル）</option>
+        <option value="82">店長・店長候補（外食）</option>
+        <option value="83">店長・店長候補（サービス）</option>
+        <option value="84">店舗スタッフ（流通・アパレル）</option>
+        <option value="85">店舗スタッフ（外食）</option>
+        <option value="86">店舗スタッフ（サービス）</option>
+        <option value="87">マーチャンダイザー、バイヤー</option>
+        <option value="88">スーパーバイザー</option>
+        <option value="89">商品・メニュー開発(外食）</option>
+        <option value="90">店舗開発・ＦＣ開発</option>
+        <option value="91">その他</option>
+        <option value="92">プロデューサー・ディレクター（ＷＥＢ関連）</option>
+        <option value="93">プロデューサー・ディレクター（広告・出版関連）</option>
+        <option value="94">プロデューサー・ディレクター（ゲーム・映像・イベント関連）</option>
+        <option value="95">デザイナー（ＷＥＢ関連）</option>
+        <option value="96">デザイナー（広告・出版関連）</option>
+        <option value="97">デザイナー（ゲーム・映像・イベント関連）</option>
+        <option value="98">編集・製作</option>
+        <option value="99">その他クリエイティブ関連</option>
+        <option value="100">営業・セールス（法人向営業）</option>
+        <option value="101">営業・セールス（個人向営業）</option>
+        <option value="102">ＭＲ</option>
+        <option value="103">企画・コンサルティング営業</option>
+        <option value="104">営業支援・テレマーケティング</option>
+        <option value="105">海外営業</option>
+        <option value="106">その他営業関連</option>
+        <option value="107">CEO、COO、CFO、CIO、CTO、経営幹部</option>
+        <option value="108">経営企画</option>
+        <option value="109">経営コンサルタント</option>
+        <option value="110">財務・会計コンサルタント</option>
+        <option value="111">組織・人事コンサルタント</option>
+        <option value="112">生産・物流コンサルタント</option>
+        <option value="113">営業・マーケティングコンサルタント</option>
+        <option value="114">その他経営・コンサル系職種</option>
+        <option value="115">総務</option>
+        <option value="116">人事・労務</option>
+        <option value="117">採用・教育</option>
+        <option value="118">法務・コンプライアンス</option>
+        <option value="119">特許・知的財産</option>
+        <option value="120">経理</option>
+        <option value="121">財務</option>
+        <option value="122">会計・税務</option>
+        <option value="123">広報・IR</option>
+        <option value="124">物流企画・物流管理</option>
+        <option value="125">購買</option>
+        <option value="126">経営企画・事業企画</option>
+        <option value="127">商品企画・マーケティング・商品開発</option>
+        <option value="128">営業企画・販促促進・宣伝</option>
+        <option value="129">貿易事務・国際業務</option>
+        <option value="130">その他企画・管理系職種</option>
+        <option value="131">一般事務</option>
+        <option value="132">営業事務・管理業務</option>
+        <option value="133">秘書・受付・アシスタント</option>
+        <option value="134">その他事務系職種</option>
+        <option value="135">医師</option>
+        <option value="136">医療系専門技師（士）・看護師</option>
+        <option value="137">医療事務</option>
+        <option value="138">その他専門職</option>
+        <option value="139">会計士・税理士</option>
+        <option value="140">弁護士・弁理士</option>
+        <option value="141">薬剤師</option></select></div><br>
+        
+        または<br>
+        
+        <div class="select">
+        <select id="syokusyu_dai_select_03" name="syokusyu_dai_select_03" onchange="dai_select_syo('syokusyu_dai_select_03','kibo_syokusyu03')"><option value="">---</option>
+        <option value="1">ソフトウェア関連</option>
+        <option value="2">電気・電子・半導体関連</option>
+        <option value="3">機械・自動車・メカトロ関連</option>
+        <option value="4">化学・バイオ・食品・医療関連</option>
+        <option value="5">建築・土木・設計・不動産関連</option>
+        <option value="6">金融関連</option>
+        <option value="7">流通・外食・サービス関連</option>
+        <option value="8">クリエイティブ関連</option>
+        <option value="9">営業・海外営業関連</option>
+        <option value="10">経営幹部・コンサルタント関連</option>
+        <option value="11">企画・管理関連</option>
+        <option value="12">業務関連</option>
+        <option value="13">その他専門職</option>
+        <option value="15">テスト</option></select></div><br>
+        
+        <div class="select">
+        <select id="kibo_syokusyu03" name="kibo_syokusyu03"><option value="">---</option>
+        <option value="1">アプリケーション開発（オープン系）</option>
+        <option value="2">アプリケーション開発（ＷＥＢ系）</option>
+        <option value="3">アプリケーション開発（汎用系）</option>
+        <option value="4">アプリケーション開発（制御・組込み系）</option>
+        <option value="5">パッケージソフト・OS開発</option>
+        <option value="6">プロジェクトリーダー・マネジャー</option>
+        <option value="7">ネットワーク・サーバー設計・構築</option>
+        <option value="8">ネットワーク・サーバー運用・保守</option>
+        <option value="9">社内情報システム・EDP・MIS</option>
+        <option value="10">テクニカル・カスタマーサポート</option>
+        <option value="11">システムサポート・運用・保守</option>
+        <option value="12">ＩＴ系コンサルタント</option>
+        <option value="13">CAD・CAM・CAE・CIM他</option>
+        <option value="14">品質管理、テスト、評価</option>
+        <option value="15">製品開発・研究</option>
+        <option value="16">その他ソフトウェア関連職</option>
+        <option value="17">設計・開発（アナログ回路）</option>
+        <option value="18">設計・開発（デジタル回路）</option>
+        <option value="19">設計・開発（電気・電子制御）</option>
+        <option value="20">設計・開発（半導体）</option>
+        <option value="21">設計・開発（光学系）</option>
+        <option value="22">設計・開発（機器･デバイス）</option>
+        <option value="23">設計・開発（その他）</option>
+        <option value="24">機械・機構設計（家電・コンピュータ関連）</option>
+        <option value="25">機械・機構設計（精密機器・医療用機器関連）</option>
+        <option value="26">金型設計</option>
+        <option value="27">生産・製造技術、プロセス開発（家電・コンピュータ関連）</option>
+        <option value="28">生産・製造技術、プロセス開発（精密・医療用機器関連）</option>
+        <option value="29">生産管理・製造管理</option>
+        <option value="30">品質管理・保証</option>
+        <option value="31">セールスエンジニア</option>
+        <option value="32">サポート・フィールドエンジニア</option>
+        <option value="33">その他</option>
+        <option value="34">設計・開発（機械）</option>
+        <option value="35">設計・開発（自動車）</option>
+        <option value="36">設計・開発（メカトロ制御）</option>
+        <option value="37">設計・開発（その他）</option>
+        <option value="38">機械・機構設計（自動車関連）</option>
+        <option value="39">機械・機構設計（各種機械関連）</option>
+        <option value="40">金型設計</option>
+        <option value="41">生産・製造技術、プロセス開発（家電・コンピュータ関連）</option>
+        <option value="42">生産管理・製造管理</option>
+        <option value="43">品質管理・保証</option>
+        <option value="44">セールスエンジニア</option>
+        <option value="45">サポート・フィールドエンジニア</option>
+        <option value="46">その他</option>
+        <option value="47">研究・開発（化学）</option>
+        <option value="48">研究・開発（食品・医薬品）</option>
+        <option value="49">研究・開発（医療用具・医療機器）</option>
+        <option value="50">研究・開発（その他）</option>
+        <option value="51">臨床開発</option>
+        <option value="52">薬事申請</option>
+        <option value="53">生産・製造技術</option>
+        <option value="54">生産管理・製造管理</option>
+        <option value="55">品質管理・保証</option>
+        <option value="56">セールスエンジニア</option>
+        <option value="57">サポートエンジニア</option>
+        <option value="58">その他</option>
+        <option value="59">設計（建築・土木）</option>
+        <option value="60">設計（設備）</option>
+        <option value="61">設計（その他）</option>
+        <option value="62">施工管理・設備工事</option>
+        <option value="63">その他技術者（建築・土木・設備）</option>
+        <option value="64">不動産（開発・企画・仕入）</option>
+        <option value="65">不動産（仲介・法人個人）</option>
+        <option value="66">不動産（プロパティー・アセットマネジメント）</option>
+        <option value="67">不動産（不動産管理）</option>
+        <option value="68">不動産（デューデリジェンス）</option>
+        <option value="69">その他</option>
+        <option value="70">運用・資金管理</option>
+        <option value="71">投資研究</option>
+        <option value="72">アナリスト</option>
+        <option value="73">金融商品企画・開発</option>
+        <option value="74">バック・ミドルオフィス</option>
+        <option value="75">投資銀行業務</option>
+        <option value="76">ストラクチャードファイナンス</option>
+        <option value="77">アクチュアリー</option>
+        <option value="78">デューディリジェンス</option>
+        <option value="79">金融システム</option>
+        <option value="80">その他</option>
+        <option value="81">店長・店長候補（流通・アパレル）</option>
+        <option value="82">店長・店長候補（外食）</option>
+        <option value="83">店長・店長候補（サービス）</option>
+        <option value="84">店舗スタッフ（流通・アパレル）</option>
+        <option value="85">店舗スタッフ（外食）</option>
+        <option value="86">店舗スタッフ（サービス）</option>
+        <option value="87">マーチャンダイザー、バイヤー</option>
+        <option value="88">スーパーバイザー</option>
+        <option value="89">商品・メニュー開発(外食）</option>
+        <option value="90">店舗開発・ＦＣ開発</option>
+        <option value="91">その他</option>
+        <option value="92">プロデューサー・ディレクター（ＷＥＢ関連）</option>
+        <option value="93">プロデューサー・ディレクター（広告・出版関連）</option>
+        <option value="94">プロデューサー・ディレクター（ゲーム・映像・イベント関連）</option>
+        <option value="95">デザイナー（ＷＥＢ関連）</option>
+        <option value="96">デザイナー（広告・出版関連）</option>
+        <option value="97">デザイナー（ゲーム・映像・イベント関連）</option>
+        <option value="98">編集・製作</option>
+        <option value="99">その他クリエイティブ関連</option>
+        <option value="100">営業・セールス（法人向営業）</option>
+        <option value="101">営業・セールス（個人向営業）</option>
+        <option value="102">ＭＲ</option>
+        <option value="103">企画・コンサルティング営業</option>
+        <option value="104">営業支援・テレマーケティング</option>
+        <option value="105">海外営業</option>
+        <option value="106">その他営業関連</option>
+        <option value="107">CEO、COO、CFO、CIO、CTO、経営幹部</option>
+        <option value="108">経営企画</option>
+        <option value="109">経営コンサルタント</option>
+        <option value="110">財務・会計コンサルタント</option>
+        <option value="111">組織・人事コンサルタント</option>
+        <option value="112">生産・物流コンサルタント</option>
+        <option value="113">営業・マーケティングコンサルタント</option>
+        <option value="114">その他経営・コンサル系職種</option>
+        <option value="115">総務</option>
+        <option value="116">人事・労務</option>
+        <option value="117">採用・教育</option>
+        <option value="118">法務・コンプライアンス</option>
+        <option value="119">特許・知的財産</option>
+        <option value="120">経理</option>
+        <option value="121">財務</option>
+        <option value="122">会計・税務</option>
+        <option value="123">広報・IR</option>
+        <option value="124">物流企画・物流管理</option>
+        <option value="125">購買</option>
+        <option value="126">経営企画・事業企画</option>
+        <option value="127">商品企画・マーケティング・商品開発</option>
+        <option value="128">営業企画・販促促進・宣伝</option>
+        <option value="129">貿易事務・国際業務</option>
+        <option value="130">その他企画・管理系職種</option>
+        <option value="131">一般事務</option>
+        <option value="132">営業事務・管理業務</option>
+        <option value="133">秘書・受付・アシスタント</option>
+        <option value="134">その他事務系職種</option>
+        <option value="135">医師</option>
+        <option value="136">医療系専門技師（士）・看護師</option>
+        <option value="137">医療事務</option>
+        <option value="138">その他専門職</option>
+        <option value="139">会計士・税理士</option>
+        <option value="140">弁護士・弁理士</option>
+        <option value="141">薬剤師</option></select></div><br>
+        
+            </td>
+          </tr>
+        </tbody>
+    </table>
+  
+    <section class="icx-fullwidth v-form-ja icx-flex icx-flex-direction-row">
+      <div class="icx-flex icx-flex-direction-row" style="width:10%;">
+            <div style="font-weight:700;margin-left:11px;">勤務地</div>
+      </div>
+    
+      <div class="ja_all" style="width:90%;">
+        <div class="icx-flex icx-flex-direction-column"> 
+        <div class="ja_localarea"><input id="ch1_1" name="ch1_1" onclick="setAll(this.id,0,1)" type="checkbox" value="100"><label for="name1">北海道</label></div>
+        <div class="icx-flex icx-flex-direction-row kentofu">
+        <div><input id="address_1[]" name="address_1[]" type="checkbox" value="1"><label for="name1">北海道</label></div>
+        </div>
+        </div>
+        
+        <div class="icx-flex icx-flex-direction-column"> 
+        <div class="ja_localarea"><input id="ch1_12" name="ch1_12" onclick="setAll(this.id,2,8)" type="checkbox" value="200"><label for="name1">東北全域</label></div>
+        <div class="icx-flex icx-flex-direction-row kentofu">
+          <div><input id="address_1[]" name="address_1[]" type="checkbox" value="3"><label for="name1">青森県</label></div>
+          <div><input id="address_1[]" name="address_1[]" type="checkbox" value="4"><label for="name1">岩手県</label></div>
+          <div><input id="address_1[]" name="address_1[]" type="checkbox" value="5"><label for="name1">宮城県</label></div>
+          <div><input id="address_1[]" name="address_1[]" type="checkbox" value="6"><label for="name1">秋田県</label></div>
+          <div><input id="address_1[]" name="address_1[]" type="checkbox" value="7"><label for="name1">山形県</label></div>
+          <div><input id="address_1[]" name="address_1[]" type="checkbox" value="8"><label for="name1">福島県</label></div>
+        </div>
+        </div>
+        
+        <div class="icx-flex icx-flex-direction-column"> 
+        <div class="ja_localarea"><input id="ch1_13" name="ch1_13" onclick="setAll(this.id,9,12)" type="checkbox" value="300"> <label for="name1">北関東全域</label></div>
+        <div class="icx-flex icx-flex-direction-row kentofu">
+          <div><input id="address_1[]" name="address_1[]" type="checkbox" value="10"><label for="name1">茨城県</label></div>
+          <div><input id="address_1[]" name="address_1[]" type="checkbox" value="11"><label for="name1">栃木県</label></div>
+          <div><input id="address_1[]" name="address_1[]" type="checkbox" value="12"><label for="name1">群馬県</label></div>
+        </div>
+        </div>
+        
+        <div class="icx-flex icx-flex-direction-column"> 
+        <div class="ja_localarea"><input id="ch1_14" name="ch1_14" onclick="setAll(this.id,13,17)" type="checkbox" value="400"><label for="name1">首都圏全域</label></div>
+        <div class="icx-flex icx-flex-direction-row kentofu">
+          <div><input id="address_1[]" name="address_1[]" type="checkbox" value="14"><label for="name1">東京都</label></div>
+          <div><input id="address_1[]" name="address_1[]" type="checkbox" value="15"><label for="name1">神奈川県</label></div>
+          <div><input id="address_1[]" name="address_1[]" type="checkbox" value="16"><label for="name1">千葉県</label></div>
+          <div><input id="address_1[]" name="address_1[]" type="checkbox" value="17"><label for="name1">埼玉県</label></div>
+        </div>
+        </div>
+        
+        <div class="icx-flex icx-flex-direction-column"> 
+        <div class="ja_localarea"><input id="ch1_15" name="ch1_15" onclick="setAll(this.id,18,24)" type="checkbox" value="500"><label for="name1">甲信越全域</label></div>
+        <div class="icx-flex icx-flex-direction-row kentofu">
+          <div><input id="address_1[]" name="address_1[]" type="checkbox" value="19"><label for="name1">新潟県</label></div>
+          <div><input id="address_1[]" name="address_1[]" type="checkbox" value="20"><label for="name1">富山県</label></div>
+          <div><input id="address_1[]" name="address_1[]" type="checkbox" value="21"><label for="name1">石川県</label></div>
+          <div><input id="address_1[]" name="address_1[]" type="checkbox" value="22"><label for="name1">福井県</label></div>
+          <div><input id="address_1[]" name="address_1[]" type="checkbox" value="23"><label for="name1">山梨県</label></div>
+          <div><input id="address_1[]" name="address_1[]" type="checkbox" value="24"><label for="name1">長野県</label></div>
+        </div>
+        </div>
+        
+        <div class="icx-flex icx-flex-direction-column"> 
+        <div class="ja_localarea"><input id="ch1_16" name="ch1_16" onclick="setAll(this.id,25,29)" type="checkbox" value="600"><label for="name1">東海全域</label></div>
+        <div class="icx-flex icx-flex-direction-row kentofu">
+          <div><input id="address_1[]" name="address_1[]" type="checkbox" value="26"><label for="name1">岐阜県</label></div>
+          <div><input id="address_1[]" name="address_1[]" type="checkbox" value="27"><label for="name1">静岡県</label></div>
+          <div><input id="address_1[]" name="address_1[]" type="checkbox" value="28"><label for="name1">愛知県</label></div>
+          <div><input id="address_1[]" name="address_1[]" type="checkbox" value="29"><label for="name1">三重県</label></div>
+        </div>
+        </div>
+        
+        <div class="icx-flex icx-flex-direction-column"> 
+        <div class="ja_localarea"><input id="ch1_17" name="ch1_17" onclick="setAll(this.id,30,36)" type="checkbox" value="700"><label for="name1">関西全域</label></div>
+        <div class="icx-flex icx-flex-direction-row kentofu">
+          <div><input id="address_1[]" name="address_1[]" type="checkbox" value="31"><label for="name1">滋賀県</label></div>
+          <div><input id="address_1[]" name="address_1[]" type="checkbox" value="32"><label for="name1">京都府</label></div>
+          <div><input id="address_1[]" name="address_1[]" type="checkbox" value="33"><label for="name1">大阪府</label></div>
+          <div><input id="address_1[]" name="address_1[]" type="checkbox" value="34"><label for="name1">兵庫県</label></div>
+          <div><input id="address_1[]" name="address_1[]" type="checkbox" value="35"><label for="name1">奈良県</label></div>
+          <div><input id="address_1[]" name="address_1[]" type="checkbox" value="36"><label for="name1">和歌山県</label></div>
+        </div>
+        </div>
+        
+        <div class="icx-flex icx-flex-direction-column"> 
+        <div class="ja_localarea"><input id="ch1_18" name="ch1_18" onclick="setAll(this.id,37,42)" type="checkbox" value="800"><label for="name1">中国全域</label></div>
+        <div class="icx-flex icx-flex-direction-row kentofu">
+          <div><input id="address_1[]" name="address_1[]" type="checkbox" value="38"><label for="name1">鳥取県</label></div>
+          <div><input id="address_1[]" name="address_1[]" type="checkbox" value="39"><label for="name1">島根県</label></div>
+          <div><input id="address_1[]" name="address_1[]" type="checkbox" value="40"><label for="name1">岡山県</label></div>
+          <div><input id="address_1[]" name="address_1[]" type="checkbox" value="41"><label for="name1">広島県</label></div>
+          <div><input id="address_1[]" name="address_1[]" type="checkbox" value="42"><label for="name1">山口県</label></div>
+        </div>
+        </div>
+        
+        <div class="icx-flex icx-flex-direction-column"> 
+        <div class="ja_localarea"><input id="ch1_19" name="ch1_19" onclick="setAll(this.id,43,47)" type="checkbox" value="900"><label for="name1">四国全域</label></div>
+        <div class="icx-flex icx-flex-direction-row kentofu">
+          <div><input id="address_1[]" name="address_1[]" type="checkbox" value="44"><label for="name1">徳島県</label></div>
+          <div><input id="address_1[]" name="address_1[]" type="checkbox" value="45"><label for="name1">香川県</label></div>
+          <div><input id="address_1[]" name="address_1[]" type="checkbox" value="46"><label for="name1">愛媛県</label></div>
+          <div><input id="address_1[]" name="address_1[]" type="checkbox" value="47"><label for="name1">高知県</label></div>
+        </div>
+        </div>
+        
+        <div class="icx-flex icx-flex-direction-column"> 
+        <div class="ja_localarea"><input id="ch1_110" name="ch1_110" onclick="setAll(this.id,48,56)" type="checkbox" value="1000"><label for="name1">九州全域</label></div>
+        <div class="icx-flex icx-flex-direction-row kentofu">
+          <div><input id="address_1[]" name="address_1[]" type="checkbox" value="49"><label for="name1">福岡県</label></div>
+          <div><input id="address_1[]" name="address_1[]" type="checkbox" value="50"><label for="name1">佐賀県</label></div>
+          <div><input id="address_1[]" name="address_1[]" type="checkbox" value="51"><label for="name1">長崎県</label></div>
+          <div><input id="address_1[]" name="address_1[]" type="checkbox" value="52"><label for="name1">熊本県</label></div>
+          <div><input id="address_1[]" name="address_1[]" type="checkbox" value="53"><label for="name1">大分県</label></div>
+          <div><input id="address_1[]" name="address_1[]" type="checkbox" value="54"><label for="name1">宮崎県</label></div>
+          <div><input id="address_1[]" name="address_1[]" type="checkbox" value="55"><label for="name1">鹿児島県</label></div>
+          <div><input id="address_1[]" name="address_1[]" type="checkbox" value="56"><label for="name1">沖縄県</label></div>
+        </div>
+        </div>
+        
+        <div class="icx-flex icx-flex-direction-column"> 
+        <div class="ja_localarea"><input id="ch1_111" name="ch1_111" onclick="setAll(this.id,57,58)" type="checkbox" value="1100"><label for="name1">海外</label></div>
+        <div class="icx-flex icx-flex-direction-row kentofu">
+        <div><input id="address_1[]" name="address_1[]" type="checkbox" value="57"><label for="name1">海外</label></div>
+        </div>
+        </div>
+        </div><!--//ja_all-->
+        </section><!--//v-form-ja-->
+
+
+    <table class="ta table icx-fullwidth icx-hoverable" width="100%">
+      <tbody>
+          <tr>
+            <th>希望雇用形態</th>
+            <td>
+        
+        
+            <input id="kibo_koyo[]" name="kibo_koyo[]" type="checkbox" value="1">
+            正社員<br>
+            <input id="kibo_koyo[]" name="kibo_koyo[]" type="checkbox" value="2">
+            契約社員<br>
+            <input id="kibo_koyo[]" name="kibo_koyo[]" type="checkbox" value="3">
+            パート・アルバイト<br>
+            <input id="kibo_koyo[]" name="kibo_koyo[]" type="checkbox" value="4">
+            紹介予定派遣<br>
+            <input id="kibo_koyo[]" name="kibo_koyo[]" type="checkbox" value="5">
+            派遣社員<br>
+         </td>
+          </tr>
+          <tr>
+            <th>希望年収</th>
+            <td>
+        <div class="select">      
+        <select id="kibo_nensyu" name="kibo_nensyu"><option value="">---</option>
+        <option value="1">0〜99万</option>
+        <option value="2">100万〜199万</option>
+        <option value="3">200万〜299万</option>
+        <option value="4">300万〜399万</option>
+        <option value="5">400万〜499万</option>
+        <option value="6">500万〜599万</option>
+        <option value="7">600万〜699万</option>
+        <option value="8">700万〜799万</option>
+        <option value="9">800万〜899万</option>
+        <option value="10">900万〜999万</option>
+        <option value="11">1,000万〜1,199万</option>
+        <option value="12">1,200万〜1,499万</option>
+        <option value="13">1,500万〜1,999万</option>
+        <option value="14">2,000万以上</option></select>
+      </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!--<table width="100%" class=" table icx-fullwidth icx-hoverable">
+        <tbody>
+          <tr>
+            <td>
+                <div class="icx-fullwidth icx-flex-direction-row icx-flex-wrap-wrap icx-justify-content-space-between">
+                <div class="control bd-notification v-box">
+                    保存名称　<input class="input icx-hovered" type="text" id="kensaku_name[A]" name="kensaku_name[A]" placeholder="Hovered input">
+                    <label class="checkbox"><input type="checkbox"　id="kensaku_save" name="kensaku_save" value="1" >保存</label>
+                    <button class="button icx-submit" name="commit">この条件で検索する</button>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+       </table>-->
+       <div class="icx-fullwidth icx-flex-direction-row icx-flex-wrap-wrap icx-justify-content-space-between" style="margin-bottom:10px;">
+        <div class="box-noshadow">
+          <i class="fas fa-pen-alt"></i> <strong>フリー検索キーワード</strong>
+        </div>                    
+      </div>
+      <table width="100%" class="ta">
+        <tbody>
+        <tr>
+          <th width="10%">キーワード</th>
+          <td>
+            <input class="input icx-hovered" type="text" id="keyword" name="keyword" placeholder="Hovered input"><br>
+      
+      ※フリーテキスト検索をします。キーワードは一つだけ入力してください</td>
+        </tr>
+      </tbody>
+    </table>
+    <table width="100%" class="table cm_searchBtngroup icx-fullwidth icx-hoverable">
+        <tr>
+          <td>
+              <div class="icx-fullwidth icx-flex-direction-row icx-flex-wrap-wrap icx-justify-content-space-between">
+              <div class="control bd-notification">
+                  <label><span class="vAl-middle"><i class="far fa-save"></i>　保存名称　</span><label><input class="input icx-hovered" type="text" id="kensaku_name[A]" name="kensaku_name[A]" placeholder="Hovered input">
+                  <label class="checkbox vAl-middle"><input type="checkbox"　id="kensaku_save" name="kensaku_save" value="1" >保存</label><span class="vAl-middle">※チェックして検索すると検索条件が保存されます。</span>
+                  <button class="button icx-submit" name="commit" style="border:1px solid #fff;"><i class="fas fa-search-plus"></i>　この条件で検索する　</button>
+              </div>
+            </div>
+          </td>
+        </tr>
+    </table>       
+  </div>
+
+        <div class="content" v-bind:class="{ 'icx-active': icxActive == 'tab3c' }" style="border:none!important;background:none !important;">
+          <!--tab3c-->
+          <div class="box-noshadow"><i class="fas fa-share-alt"></i> <strong>マッチング条件</strong></div>
+          <table class="table icx-fullwidth icx-hoverable" width="100%">
+            <tbody><tr>
+              <th class="alignLeft">3件中　1～3件を表示</th>
+              <td class="alignRight">     
+          </td>
+            </tr>
+          </tbody></table>
+            <table class="ta_NoBotan table icx-fullwidth icx-hoverable v-box2" style="width:100%;">
+                <tbody>
+                  <tr>                 
+                    <th colspan="4" class="alignRight"><button onClick="location.href='/freecandidate/search_kibo_jyouken/2'" class="button icx-submit icx-small" name="commit" style="margin-right:10px;"><i class="fas fa-search-plus"></i>この条件で検索</button><a class="btn button icx-defoult_mint icx-small" href="/freecandidate/matching_setting/2"><span>編集</span></a>&nbsp;&nbsp; <a class="btn button icx-artred icx-small" href="/freecandidate/kibo_jyouken_kensaku_one_del/2" onclick="if( confirm( '削除してもいいですか？' ) ) { var f=document.createElement('form'); this.parentNode.appendChild(f); f.method='POST'; f.action=this.href; f.submit() }; return false;"><span>削除</span></a>
+                    </th>
+                    <td> </td>
+                  </tr>
+                  <tr>
+                    <th scope="col">
+                      登録日
+                      <th>
+                      <td>
+                        2021/06/25
+                      </td>
+                  </tr>
+                  <tr>
+                    <th scope="col">
+                      保存名称
+                    </th>
+                    <td>
+                      <a href="/freecandidate/kibo_jyouken_kensaku/2">Christ Vector</a>
+                    </td>                    
+                  </tr>
+                  </tbody>
+                </table>
+
+                <table class="ta_NoBotan table icx-fullwidth icx-hoverable v-box2" width="100%" style="margin-top:50px;">
+                  <tbody>
+                    <tr>                 
+                      <th colspan="4" class="alignRight"><button onClick="location.href='/freecandidate/search_kibo_jyouken/2'" class="button icx-submit icx-small" name="commit" style="margin-right:10px;"><i class="fas fa-search-plus"></i>この条件で検索</button><a class="btn button icx-defoult_mint icx-small" href="/freecandidate/matching_setting/2"><span>編集</span></a>&nbsp;&nbsp; <a class="btn button icx-artred icx-small" href="/freecandidate/kibo_jyouken_kensaku_one_del/2" onclick="if( confirm( '削除してもいいですか？' ) ) { var f=document.createElement('form'); this.parentNode.appendChild(f); f.method='POST'; f.action=this.href; f.submit() }; return false;"><span>削除</span></a>
+                      </th>
+                      <td> </td>
+                    </tr>
+                    <tr>
+                      <th scope="col">
+                        登録日
+                        <th>
+                        <td>
+                          2021/06/024
+                        </td>
+                    </tr>
+                    <tr>
+                      <th scope="col">
+                        保存名称
+                      </th>
+                      <td>
+                        <a href="/freecandidate/kibo_jyouken_kensaku/2">fujisawa</a>
+                      </td>                    
+                    </tr>
+                    </tbody>
+                  </table>
+                  
+                  <table class="ta_NoBotan table icx-fullwidth icx-hoverable v-box2" width="100%" style="margin-top:50px;">
+                    <tbody>
+                      <tr>                 
+                        <th colspan="4" class="alignRight"><button onClick="location.href='/freecandidate/search_kibo_jyouken/2'" class="button icx-submit icx-small" name="commit" style="margin-right:10px;"><i class="fas fa-search-plus"></i>この条件で検索</button><a class="btn button icx-defoult_mint icx-small" href="/freecandidate/matching_setting/2"><span>編集</span></a>&nbsp;&nbsp; <a class="btn button icx-artred icx-small" href="/freecandidate/kibo_jyouken_kensaku_one_del/2" onclick="if( confirm( '削除してもいいですか？' ) ) { var f=document.createElement('form'); this.parentNode.appendChild(f); f.method='POST'; f.action=this.href; f.submit() }; return false;"><span>削除</span></a>
+                        </th>
+                        <td> </td>
+                      </tr>
+                      <tr>
+                        <th scope="col">
+                          登録日
+                          <th>
+                          <td>
+                            2021/05/011
+                          </td>
+                      </tr>
+                      <tr>
+                        <th scope="col">
+                          保存名称
+                        </th>
+                        <td>
+                          <a href="/freecandidate/kibo_jyouken_kensaku/2">Technicaltekuts</a>
+                        </td>                    
+                      </tr>
+                      </tbody>
+                    </table>
+
+
+              <table class="table icx-fullwidth icx-hoverable" width="100%">
+                <tbody><tr>
+                  <th class="alignLeft">3件中　1～3件を表示</th>
+                  <td class="alignRight">     
+              </td>
+                </tr>
+              </tbody></table>
+              <!--<div class="ta">
+                <a href="/freecandidate" class="btn button icx-submit" onclick="var f=document.createElement('form'); this.parentNode.appendChild(f); var p0=document.createElement('input'); p0.type='hidden'; p0.name='is_back'; p0.value='true'; f.appendChild(p0); f.method='POST'; f.action=this.href; f.submit(); return false;"><i class="fas fa-chevron-left"></i><span>　もどる</span></a>
+              </div>-->
+        </div>
+        <div class="content" v-bind:class="{ 'icx-active': icxActive == 'tab4c' }" style="border:none!important;background:none !important;">
+          <!--tab4c-->
+          <!--<div class="v-box"><i aria-hidden="true" class="fas fa-star"></i> <strong>　お気に入り</strong></div>-->
+
+              <table class="table icx-fullwidth icx-hoverable" width="100%">
+                <tbody><tr>
+                  <th class="alignLeft">2件中　1～2件を表示</th>
+                  <td class="alignRight">     
+              </td>
+                </tr>
+              </tbody></table>
+
+              <table class="ta_none table icx-fullwidth icx-hoverable" width="100%">
+                <tbody>
+                  <tr>
+                    <td class="alignRight" class="ta">
+                      <div id="right_Btngroup" class="icx-fullwidth icx-hoverable ls-flex icx-justify-content-flex-end">
+                      <div><a class="btn button icx-submit icx-small" href="/freecandidate/scout_input_message" onclick="var f=document.createElement('form'); this.parentNode.appendChild(f); var p0=document.createElement('input'); p0.type='hidden'; p0.name='kyusyokusya_id'; p0.value='461'; f.appendChild(p0); f.method='POST'; f.action=this.href; f.submit(); return false;"><i class="far fa-bell" aria-hidden="true"></i><span>スカウト</span></a><a class="btn button icx-defoult_mint icx-small" href="/freecandidate/kyusyokusya_show/461"><i class="fas fa-comment-dots"></i><span>詳細</span></a><a class="btn button icx-artred icx-small" href="/freecandidate/kyusyokusya_kento_del/461"><i class="fas fa-window-close"></i><span>お気に入り解除</span></a></div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <table class="ta_o table icx-fullwidth icx-hoverable v-box2" width="100%">
+                <tbody>
+                  <tr>
+                    <th colspan="7" scope="col">
+                      <table border="0" cellpadding="0" cellspacing="0" class="ta_none table icx-fullwidth icx-hoverable" width="100%">
+                        <tbody>
+                          <tr>
+                            <td scope="col">
+                              <!--%= check_box_tag "kyusyokusya_ids[]" , kyusyokusya.id %-->461
+                            </td>
+                            <td scope="col">
+                              &nbsp;
+                            </td>
+                            <td class="alignRight" scope="col">
+                              登録日2021/04/28
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </th>
+                  </tr>
+                  <tr>
+                    <th scope="row" width="15%">
+                      氏名
+                    </th>
+                    <td colspan="6">
+                      31歳/男性
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" width="15%">
+                      最終学歴
+                    </th>
+                    <td colspan="3" width="35%">
+                      大学院／国立／文系
+                    </td>
+                    <th width="15%">
+                      婚姻
+                    </th>
+                    <td colspan="2" width="35%">
+                      未婚
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" width="15%">
+                      住所
+                    </th>
+                    <td colspan="3">
+                      神奈川県 テスト
+                    </td>
+                    <th width="15%">
+                      希望勤務地
+                    </th>
+                    <td colspan="2">
+                      北海道
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" width="15%">
+                      就業経験1
+                    </th>
+                    <td colspan="6"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" width="15%">
+                      語学
+                    </th>
+                    <td colspan="6"> 
+                      <table class="ta_none Language table icx-fullwidth icx-hoverable">
+                        <tbody>
+                          <tr>
+                            <td class="vAl=middle">
+                              英会話:---
+                            </td>
+                            <td class="vAl=middle">
+                              英文:---
+                            </td>
+                            <td>
+                              その他資格:
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              TOEIC :
+                            </td>
+                            <td>
+                              TOEFL :
+                            </td>
+                            <td>
+                              その他語学:
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" width="15%">
+                      希望職種
+                    </th>
+                    <td colspan="6">
+                      [ソフトウェア関連] アプリケーション開発（オープン系）／希望なし／希望なし
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <table class="ta_none table icx-fullwidth icx-hoverable" width="100%">
+                <tbody>
+                  <tr>
+                    <td class="alignRight" class="ta">
+                      <div id="right_Btngroup" class="icx-fullwidth icx-hoverable ls-flex icx-justify-content-flex-end">
+                      <div><a class="btn button icx-submit icx-small" href="/freecandidate/scout_input_message" onclick="var f=document.createElement('form'); this.parentNode.appendChild(f); var p0=document.createElement('input'); p0.type='hidden'; p0.name='kyusyokusya_id'; p0.value='461'; f.appendChild(p0); f.method='POST'; f.action=this.href; f.submit(); return false;"><i class="far fa-bell" aria-hidden="true"></i><span>スカウト</span></a><a class="btn button icx-defoult_mint icx-small" href="/freecandidate/kyusyokusya_show/461"><i class="fas fa-comment-dots"></i><span>詳細</span></a><a class="btn button icx-artred icx-small" href="/freecandidate/kyusyokusya_kento_del/461"><i class="fas fa-window-close"></i><span>お気に入り解除</span></a></div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              <table width="100%" class="ta_o table icx-fullwidth icx-hoverable v-box2">
+                <tbody><tr>
+                  <th colspan="7" scope="col"><table width="100%" border="0" cellpadding="0" cellspacing="0" class="ta_none">
+                    <tbody><tr>
+                      <td scope="col"><!--%= check_box_tag "kyusyokusya_ids[]" , kyusyokusya.id %-->468</td>
+                      <td scope="col">&nbsp;</td>
+                      <td scope="col" class="alignRight">登録日2021/05/10</td>
+                    </tr>
+                  </tbody></table></th>
+                </tr>
+                <tr>
+                  <th width="15%" scope="row">氏名</th>
+                  <td colspan="6">
+                  
+                    31歳/男性
+                  
+                </td>
+                </tr>
+                <tr>
+                  <th width="15%" scope="row">最終学歴</th>
+                  <td colspan="3" width="35%">中学／国立／理系</td>
+                  <th width="15%">婚姻</th>
+                  <td colspan="2" width="35%">未婚</td>
+                </tr>
+                <tr>
+                  <th width="15%" scope="row">住所</th>
+                  <td colspan="3">山梨県 北海道</td>
+                  <th width="15%">希望勤務地</th>
+                  <td colspan="2">
+                    
+                    北海道
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <th width="15%" scope="row">就業経験1</th>
+                  <td colspan="6"></td>
+                </tr>
+                <tr>
+                  <th width="15%" scope="row">語学</th>
+                  <td colspan="6"><table class="ta_none">
+                    <tbody><tr>
+                      <td>英会話:---</td>
+                      <td>英文:---</td>
+                      <td>その他資格:</td>
+                    </tr>
+                    <tr>
+                      <td>TOEIC :</td>
+                      <td>TOEFL :</td>
+                      <td>その他語学:</td>
+                    </tr>
+                  </tbody></table></td>
+                </tr>
+                <tr>
+                  <th width="15%" scope="row">希望職種</th>
+                  <td colspan="6">[ソフトウェア関連] アプリケーション開発（ＷＥＢ系）／希望なし／希望なし</td>
+                </tr>
+              </tbody></table>
+              <!--<div class="ta">
+                <a class="btn button icx-submit" href="/freecandidate/matching" onclick="var f=document.createElement('form'); this.parentNode.appendChild(f); var p0=document.createElement('input'); p0.type='hidden'; p0.name='is_back'; p0.value='true'; f.appendChild(p0); f.method='POST'; f.action=this.href; f.submit(); return false;"><i class="fas fa-chevron-left"></i><span>　もどる</span></a>
+              </div>-->
+
+        </div>
+    </div>
+
+<script>
+    window.onload = function () {var searchApp = new Vue({
+      el: '#searchApp',
+      data: {
+        icxActive: 'tab1c'
+      }
+    })
+}
+</script>
+
+  <button class="button icx-defoult_mint icx-outlined v-box pageTop">
+    <a href="#"><i class="fas fa-arrow-up"></i></a>
+  </button>
+<script>
+  $(window).scroll(function () {
+  var now = $(window).scrollTop();
+  if (now > 200) {
+    $('.pageTop').fadeIn("slow");
+  } else {
+    $('.pageTop').fadeOut('slow');
+  }
+});
+</script>
+</main>
+<script>
+  for (const element of document.querySelectorAll('.modal .delete, .show-modal')) {
+    element.addEventListener('click', e => {
+        const modalId = element.dataset.target;
+        const modal = document.getElementById(modalId);
+        modal.classList.toggle('icx-active');
+    });
+}
+</script>
+
+<footer class="footer">
+  <div class="content cont-text-centered">
+    <p>
+      <strong>VCareer </strong><span> © Copyright Reserved. 2021 Vector,co.ltd</span>
+    </p>
+  </div>
+</footer>
+</body>
+</html>

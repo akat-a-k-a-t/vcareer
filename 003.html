@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>VCAREER</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="dist/vcareer-style.css">
+    <script src="https://kit.fontawesome.com/58d8b0aee0.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2" defer></script>
+</head>
+<body>
+<!-- heroコンポーネント -->
+<section class="topsBar">
+  <div class="herrty-body">
+    <div class="container displayFlex icx-justify-content-space-between icx-align-content-center" style="max-width:100%;">
+      <!--<a href="index.html"><img src="dist/img/vector_logo_sample.jpg"></a>-->
+      <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a href="index.html"><img src="dist/img/vector_logo_sample.png"></a>
+          <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          
+          <!--<a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" aria-expanded="false">-->
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+          <!--<div class="navbar-menu" id="navMenu">-->
+            <!-- navbar-start, navbar-end... -->
+          <!--</div>-->
+        </div>
+        <script>
+              document.addEventListener('DOMContentLoaded', () => {
+    
+              // Get all "navbar-burger" elements
+              const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+    
+              // Check if there are any navbar burgers
+              if ($navbarBurgers.length > 0) {
+    
+              // Add a click event on each of them
+              $navbarBurgers.forEach( el => {
+              el.addEventListener('click', () => {
+    
+              // Get the target from the "data-target" attribute
+              const target = el.dataset.target;
+              const $target = document.getElementById(target);
+    
+              // Toggle the "icx-active" class on both the "navbar-burger" and the "navbar-menu"
+              el.classList.toggle('icx-active');
+              $target.classList.toggle('icx-active');
+    
+              });
+             });
+            }
+    
+            });
+        (function() {
+           var burger = document.querySelector('.burger');
+           var nav = document.querySelector('#'+burger.dataset.target); 
+           burger.addEventListener('click', function(){
+           burger.classList.toggle('icx-active');
+           nav.classList.toggle('icx-active');
+         });
+        })();
+        </script>
+      
+        <div id="navbarBasicExample" class="navbar-menu" style="margin:0 2% 0 0;">
+          <div class="navbar-start">
+            <!--<a href="index.html" class="navbar-item">
+                <i class="fab fa-font-awesome-flag"></i>HOME
+            </a>-->
+              <div class="navbar-item cont-dropdown icx-hoverable">
+                <a href="002.html" class="navbar-link">
+                    <i class="fas fa-mail-bulk"></i>メッセージ管理＜求人企業・紹介会社＞
+                </a>   
+                <div class="navbar-dropdown">
+                  <a class="navbar-item">
+                    <i class="fab fa-twitch"></i>メッセージ管理＜求職者＞
+                  </a>
+                </div>
+              </div>
+                <a href="004.html" class="navbar-item">
+                    <i class="fas fa-user-tie"></i><i class="fab fa-sistrix"></i>求職者検索
+                </a>
+                <a class="navbar-item">
+                    <i class="far fa-id-card"></i>登録者管理
+                </a> 
+            <div class="navbar-item cont-dropdown icx-hoverable">
+              <a class="navbar-link">
+                <i class="fas fa-sliders-h"></i>基本設定
+              </a>
+      
+              <div class="navbar-dropdown">
+                <a class="navbar-item">
+                    <i class="fas fa-user-cog"></i>アカウント管理
+                </a>
+                <a class="navbar-item">
+                    <i class="fas fa-laptop-code"></i>サイト管理
+                </a>
+                <!--<a class="navbar-item">
+                  Contact
+                </a>
+                <hr class="navbar-divider">
+                <a class="navbar-item">
+                  Report an issue
+                </a>-->
+              </div>
+            </div>
+          </div>
+      
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="buttons">
+                <a class="button icx-defoult_mint">
+                    <i class="fas fa-pen-nib"></i><strong>　Signup</strong>
+                  </a>
+                  <a class="button icx-pails_sub">
+                    <i class="fas fa-fingerprint"></i>　Login
+                  </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+</section>
+
+<main>
+  <!--main-functioncontents-->
+  <article>
+    <div class="displayFlex icx-justify-content-space-between">
+      <div class="tags cont-activity">
+        <span class="tag icx-darkbl">2021年06月17日</span>
+        <span class="tag icx-bright">掲載中の求人情報 3件</span>
+      </div>
+      <div class="title icx-6" style="font-size:0.8em;text-align:right;padding:1% 0;">
+        <h1 class="pagetitle title icx-5 nowrap">受信メールボックス</h1>
+      </div>
+    </div>   
+</article>
+<!--<article>
+    <div class="field cont-activity activity_menu" style="max-width:100%;">
+        <p class="control">
+            <button class="button icx-artred icx-outlined">
+            <span class="icon icx-small">
+              <i class="fas fa-align-left"></i>
+            </span>
+            <p> 受信メールボックス</p>
+          </button>
+        </p>
+        <p class="control">
+            <button class="button icx-artred icx-outlined">
+            <span class="icon icx-small">
+              <i class="fas fa-align-center"></i>
+            </span>
+            <span> 送信メールボックス</span>
+          </button>
+        </p>
+        <p class="control">
+            <button class="button icx-artred icx-outlined">
+            <span class="icon icx-small">
+              <i class="fas fa-align-center"></i>
+            </span>
+            <span>スカウトメール　</span>
+          </button>
+        </p>
+        <p class="control">
+            <button class="button icx-artred icx-outlined">
+            <span class="icon icx-small">
+              <i class="fas fa-align-center"></i>
+            </span>
+            <span>ゴミ箱　　</span>
+          </button>
+        </p>
+        <p class="control">
+            <button class="button icx-artred icx-outlined">
+            <span class="icon icx-small">
+              <i class="fas fa-align-center"></i>
+            </span>
+            <span> フォルダ管理　　　</span>
+          </button>
+        </p>
+        <p class="control">
+            <button class="button icx-artred icx-outlined">
+            <span class="icon icx-small">
+              <i class="fas fa-align-right"></i>
+            </span>
+            <span>定型メッセージ　　</span>
+          </button>
+        </p>
+    </div>
+</article>-->
+<style>
+    .column.vmenu >div {
+    height: 100px;
+    border-radius: 5px;
+}
+</style>
+
+
+<article style="margin-top:1%;">
+    <div class="v-columns icx-flex-direction-row icx-flex-wrap-wrap icx-justify-content-space-between">
+      <div class="column vmenu" onClick="location.href='003.html'">
+          <div class="bd-notification v-box">
+            <div class="cont-text-centered">
+              <h3 class="title icx-4"><i class="far fa-envelope"></i>受信メールボックス</h3>
+              <hr>
+                <p>求人案件への応募やスカウトに関するメールなど、求人企業や他の紹介会社からのメールを確認できます。</p>
+            </p></div>
+          </div>
+        </div>
+        <div class="column vmenu">
+          <div class="bd-notification v-box">
+            <div class="cont-text-centered">
+              <h3 class="title icx-4"><i class="far fa-envelope"></i><i class="fas fa-reply"></i> 送信メールボックス</h3>
+              <hr>
+              <p>相手先に向けて送信したメールを見ることが出来ます。</p>
+            </div>
+          </div>
+        </div>
+        <div class="column vmenu">
+          <div class="bd-notification v-box">
+            <div class="cont-text-centered">
+              <h3 class="title icx-4"><i class="far fa-bell"></i>スカウトメール</h3>
+              <hr>
+                <p>求人企業や人材紹介会社から来たスカウトメールを確認できます。</p>
+            </div>   
+          </div>
+        </div>
+        <div class="column vmenu">
+          <div class="bd-notification v-box">
+          <div class="cont-text-centered">
+            <h3 class="title icx-4"><i class="far fa-trash-alt"></i>ゴミ箱</h3>
+            <hr>
+            <p>不要になったメッセージを捨てるためのゴミ箱です。</s>
+          </div>
+          </div>
+        </div>
+        <div class="column vmenu">
+          <div class="bd-notification v-box">
+          <div class="cont-text-centered">
+            <h3 class="title icx-4"><i class="far fa-address-book"></i>フォルダ管理</h3>
+            <hr>
+              <p>メッセージ管理／整理のために、自由にフォルダを作成する事が可能です。</p>
+          </div>
+          </div>
+        </div>
+        <div class="column vmenu">
+          <div class="bd-notification v-box">
+          <div class="cont-text-centered">
+            <h3 class="title icx-4"><i class="fas fa-edit"></i>定型メッセージ</h3>
+            <hr>
+              <p>定型メッセージを作成・登録し、メール作成時に適時読み出す事が可能です。</p>
+          </div>
+          </div>
+        </div>
+      </div>
+</article>
+<article style="margin-top:3%;">
+  <div class="icx-fullwidth icx-flex-direction-row icx-flex-wrap-wrap icx-justify-content-space-between" style="margin-bottom: 10px;">
+    <div class="box-noshadow"><i class="far fa-envelope" aria-hidden="true"></i> <strong>受信メールボックス</strong>
+    </div>
+  </div>
+    <form action="/messages/receive_mail_list" method="post" post="true">
+        <input id="session_id_validation" name="session_id_validation" type="hidden" value="e2bae7fb0cac83fdb219331b0501849c">
+        
+        <table class="ta_o table icx-fullwidth icx-hoverable v-table-filtering-controller-nogrid v-box2">
+          <tbody>
+            <tr>
+              <!--<th>並べ替え</th>-->
+              <td>
+                <div class="select">
+                <select id="search_sort1" name="search_sort1"><option value="8" selected="selected">日時</option>
+                        <option value="1">メール状況</option>
+                        <option value="2">種類</option>
+                        <option value="3">送信者</option>
+                        <option value="5">求職者名</option>
+                        <option value="6">受信者</option>
+                        <option value="7">件名</option></select></div><div class="select"><select id="search_order1" name="search_order1">
+                          <option value="1">昇順</option>
+                          <option value="2" selected="selected">降順</option></select></div> ＋<div class="select"><select id="search_sort2" name="search_sort2">
+                            <option value="">---</option>
+                            <option value="8">日時</option>
+                            <option value="1">メール状況</option>
+                            <option value="2">種類</option>
+                            <option value="3">送信者</option>
+                            <option value="5">求職者名</option>
+                            <option value="6">受信者</option>
+                            <option value="7">件名</option></select></div>
+                        <div class="select"><select id="search_order2" name="search_order2">
+                            <option value="">---</option>
+                            <option value="1">昇順</option>
+                            <option value="2">降順</option></select></div>
+                </td>
+            </tr>
+            <tr>
+              <!--<th class="alignCenter">絞込み</th>-->
+              <td>
+                <table class="table icx-hoverable icx-fullwidth ta_none">
+                  <tbody>
+                    <tr>
+                      <td class="nowrap">メール状況</td>
+                      <td>
+                        <div class="select">
+                          <select id="search_mail_status" name="search_mail_status"><option value="">---</option>
+                            <option value="1">未読</option>
+                            <option value="2">開封済</option>
+                            <option value="3">返信済</option></select></div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="nowrap">送信者</td>
+                      <td><span class="control"><input id="search_sender" class="input icx-hovered" name="search_sender" type="text"></span></td>
+                    </tr>
+                    <tr>
+                      <td class="nowrap">種類</td>
+                      <td>
+                        <div class="select">
+                          <select id="search_type" name="search_type">
+                            <option value="">---</option>
+                            <option value="2">スカウト</option>
+                            <option value="1">応募</option>
+                            <option value="3">スカウト了承応募</option>
+                            <option value="4">スカウト了辞退</option>
+                            <option value="5">オファーレター</option>
+                            <option value="6">入社承諾</option>
+                            <option value="7">入社辞退</option>
+                            <option value="8">入社確定</option>
+                            <option value="9">案件紹介</option>
+                            <option value="0">その他メッセージ</option></select></div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="nowrap">求職者</td>
+                      <td> <input id="search_kyusyokusya" class="input icx-hovered" name="search_kyusyokusya" type="text"> </td>
+                    </tr>
+                    <tr>
+                      <td class="nowrap">受信者</td>
+                      <td> <input id="search_receive_admin" class="input icx-hovered" name="search_receive_admin" type="text"> </td>
+                     
+                    </tr>
+                    <tr>
+                      <td class="nowrap">日時</td>
+                      <td>　西暦&nbsp;<input id="search_regist_date_min_yy" class="input icx-hovered" maxlength="4" name="search_regist_date_min_yy" size="5" type="text" value="">年&nbsp;
+                        <div class="select">
+                          <select id="search_regist_date_min_MM" name="search_regist_date_min_MM">
+                            <option value="" selected="selected">---</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option></select></div>月&nbsp;<div class="select"><select id="search_regist_date_min_dd" name="search_regist_date_min_dd">
+                            <option value="" selected="selected">---</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30">30</option>
+                            <option value="31">31</option></select></div>日&nbsp; ～ 西暦&nbsp;<input id="search_regist_date_max_yy" class="input icx-hovered" maxlength="4" name="search_regist_date_max_yy" size="5" type="text" value="">年&nbsp;<div class="select"><select id="search_regist_date_max_MM" name="search_regist_date_max_MM">
+                            <option value="" selected="selected">---</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option></select></div>月&nbsp;<div class="select"><select id="search_regist_date_max_dd" name="search_regist_date_max_dd">
+                            <option value="" selected="selected">---</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30">30</option>
+                            <option value="31">31</option></select></div>日&nbsp; </td>
+                    </tr>
+                  </tbody>
+                </td> 
+                </table>
+            </tr>        
+            <tr>
+            <!--<th class="alignCenter">操作</th>-->
+            <td>
+                選択したメールを
+              <div class="select"><select id="folder_list_id" name="folder_list_id"><option value="11">0002</option>
+                  <option value="64">test</option>
+                  <option value="78">test</option>
+                  <option value="-1">受信メールボックス</option>
+                  <option value="-2">送信メールボックス</option>
+                  <option value="-3">ゴミ箱</option></select></div> へ <span class="sbtn"><input name="batch_move" class="input icx-hovered" type="submit" value="移動"></span>        &nbsp;&nbsp;｜&nbsp;&nbsp;
+                選択したメールを <span class="sbtn control"><input class="input icx-hovered" icx-hovered" name="batch_delete" type="submit" value="削除"></span>            </td>
+        </tr>
+      </tbody>
+      </table>
+        <section class="icx-fullwidth v-form-ja icx-flex icx-justify-content-center" style="border-bottom: unset;"><button class="btn button icx-submit" name="commit" type="submit">絞込み</button></section>
+        
+        <br>
+        
+        <table class="table icx-narrow" width="100%">
+          <input id="per_page_count[old]" name="per_page_count[old]" type="hidden" value="10">
+          <tbody><tr>
+            <th class="alignLeft">
+            8件中　1～8件を表示
+            <select id="per_page_count[A]" name="per_page_count[A]"><option value="10" selected="selected">10 件</option>
+              <option value="20">20 件</option>
+              <option value="30">30 件</option>
+              <option value="50">50 件</option></select>
+            <span class="sbtn"><input name="per_page_button[A]" type="submit" value="表示"></span>
+          </th>
+            <td class="alignRight">     
+          </td>
+          </tr>
+        </tbody></table>
+        
+        <!--
+        
+          受信
+        
+        -->
+        <table cellpading="5" cellspacing="0" class="table icx-fullwidth icx-hoverable ta_NoBotan messageTable_def v-box2">
+        <colgroup><col width="5%">
+        <col width="8%">
+        <col width="16%">
+        <col width="14%">
+        <col width="9%">
+        <col width="9%">
+        <col width="22%">
+        <col width="4%">
+        <col width="7%">
+        <col width="4%">
+        
+        <col width="2%">
+        
+        
+        </colgroup><tbody><tr>
+        <th>メール状況</th>
+        <th>種類</th>
+        <th>送信者</th>
+        <th>求人案件名</th>
+        <th>求職者名</th>
+        <th>受信者</th>
+        <th>件名</th>
+        <th>メール履歴</th>
+        <th>日時</th>
+        <th>返信</th>       
+        <th>一括</th>
+        
+        </tr>
+
+          <tr style="font-weight:bold;color:#CC0000">
+            <td><span class="tag icx-danger">未読</span></td>
+            <td>その他メッセージ</td>
+            <td>紹介会社テスト 非ベクトル紹介会社ユーザー テスト ([S25]C451)</td>
+            <td><a href="/kyujin_ankens/show_from_message/80?is_popup=true" onclick="window.open(this.href);return false;">【ＷＥＢサイト（インターネット広告）編集・コンテンツ企画】　 ([S1]38)</a></td>
+            <td><a href="/freecandidate/kyusyokusya_show/468?is_popup=true" onclick="window.open(this.href);return false;">登録No.468</a></td>
+            <td>紹介会社 1 ([S1]C433)</td>
+            <td>
+            
+            <a href="/messages/show/80" onclick="var f=document.createElement('form'); this.parentNode.appendChild(f); var p0=document.createElement('input'); p0.type='hidden'; p0.name='inbox'; p0.value='true'; f.appendChild(p0); f.method='POST'; f.action=this.href; f.submit(); return false;">Re: test  (80)</a>
+            
+            </td>
+            <td>
+            <table class="ta_none tatd_none">
+          <tbody><tr>
+            <td nowrap="" class="ta"><a href="/messages/message_history/80" class="btn button icx-submit icx-small"><span>メール履歴</span></a></td>
+          </tr>
+        </tbody></table>
+        </td>
+            <td>2021/05/21 17:03:40</td>
+            <td>
+        <table class="ta_none tatd_none">
+          <tbody><tr>
+            <td nowrap="" class="ta">
+            
+              <a href="/messages/reply/80" class="btn button icx-defoult_mint icx-small" onclick="var f=document.createElement('form'); this.parentNode.appendChild(f); f.method='POST'; f.action=this.href; f.submit(); return false;"><span>返信</span></a>
+            
+            </td>
+          </tr>
+        </tbody></table>
+            </td>
+        
+        
+            
+            <td>
+              <input id="message_id[]" name="message_id[]" type="checkbox" value="80">
+            </td>
+            
+          </tr>
+        
+          
+          <tr>
+            <td><span class="tag icx-success icx-light">開封済み</span></td>
+            <td>その他メッセージ</td>
+            <td>紹介会社テスト 非ベクトル紹介会社ユーザー テスト ([S25]C451)</td>
+            <td><a href="/kyujin_ankens/show_from_message/70?is_popup=true" onclick="window.open(this.href);return false;">【ＷＥＢサイト（インターネット広告）編集・コンテンツ企画】　 ([S1]38)</a></td>
+            <td><a href="/freecandidate/kyusyokusya_show/461?is_popup=true" onclick="window.open(this.href);return false;">登録No.461</a></td>
+            <td>紹介会社 1 ([S1]C433)</td>
+        
+        
+            <td>
+            
+            <a href="/messages/show/70" onclick="var f=document.createElement('form'); this.parentNode.appendChild(f); var p0=document.createElement('input'); p0.type='hidden'; p0.name='inbox'; p0.value='true'; f.appendChild(p0); f.method='POST'; f.action=this.href; f.submit(); return false;">Re: Re: Re: フロー確認    (70)</a>
+            
+            </td>
+            <td>
+            <table class="ta_none tatd_none">
+          <tbody><tr>
+            <td nowrap="" class="ta"><a href="/messages/message_history/70" class="btn button icx-submit icx-small"><span>メール履歴</span></a></td>
+          </tr>
+        </tbody></table>
+        </td>
+            <td>2021/05/10 17:27:07</td>
+            <td>
+        <table class="ta_none tatd_none">
+          <tbody><tr>
+            <td nowrap="" class="ta">
+            
+              <a href="/messages/reply/70" class="btn button icx-defoult_mint icx-small" onclick="var f=document.createElement('form'); this.parentNode.appendChild(f); f.method='POST'; f.action=this.href; f.submit(); return false;"><span>返信</span></a>
+            
+            </td>
+          </tr>
+        </tbody></table>
+            </td>
+        
+        
+            
+            <td>
+              <input id="message_id[]" name="message_id[]" type="checkbox" value="70">
+            </td>
+            
+          </tr>
+        
+          
+          <tr style="font-style:italic">
+            <td>返信済み</td>
+            <td>その他メッセージ</td>
+            <td>紹介会社テスト 非ベクトル紹介会社ユーザー テスト ([S25]C451)</td>
+            <td><a href="/kyujin_ankens/show_from_message/68?is_popup=true" onclick="window.open(this.href);return false;">【ＷＥＢサイト（インターネット広告）編集・コンテンツ企画】　 ([S1]38)</a></td>
+            <td><a href="/freecandidate/kyusyokusya_show/461?is_popup=true" onclick="window.open(this.href);return false;">登録No.461</a></td>
+            <td>紹介会社 1 ([S1]C433)</td>
+        
+        
+            <td>
+            
+            <a href="/messages/show/68" onclick="var f=document.createElement('form'); this.parentNode.appendChild(f); var p0=document.createElement('input'); p0.type='hidden'; p0.name='inbox'; p0.value='true'; f.appendChild(p0); f.method='POST'; f.action=this.href; f.submit(); return false;">Re: フロー確認  (68)</a>
+            
+            </td>
+            <td>
+            <table class="ta_none tatd_none">
+          <tbody><tr>
+            <td nowrap="" class="ta"><a href="/messages/message_history/68" class="btn button icx-submit icx-small"><span>メール履歴</span></a></td>
+          </tr>
+        </tbody></table>
+        </td>
+            <td>2021/05/06 14:31:11</td>
+            <td>
+        <table class="ta_none tatd_none">
+          <tbody><tr>
+            <td nowrap="" class="ta">
+            
+              <a href="/messages/reply/68" class="btn button icx-defoult_mint icx-small" onclick="var f=document.createElement('form'); this.parentNode.appendChild(f); f.method='POST'; f.action=this.href; f.submit(); return false;"><span>返信</span></a>
+            
+            </td>
+          </tr>
+        </tbody></table>
+            </td>
+        
+        
+            
+            <td>
+              <input id="message_id[]" name="message_id[]" type="checkbox" value="68">
+            </td>
+            
+          </tr>
+        
+          
+          <tr style="font-style:italic">
+            <td>返信済み</td>
+            <td>その他メッセージ</td>
+            <td>紹介会社テスト 非ベクトル紹介会社ユーザー テスト ([S25]C451)</td>
+            <td><a href="/kyujin_ankens/show_from_message/64?is_popup=true" onclick="window.open(this.href);return false;">【ＷＥＢサイト（インターネット広告）編集・コンテンツ企画】　 ([S1]38)</a></td>
+            <td><a href="/freecandidate/kyusyokusya_show/461?is_popup=true" onclick="window.open(this.href);return false;">登録No.461</a></td>
+            <td>紹介会社 1 ([S1]C433)</td>
+        
+        
+            <td>
+            
+            <a href="/messages/show/64" onclick="var f=document.createElement('form'); this.parentNode.appendChild(f); var p0=document.createElement('input'); p0.type='hidden'; p0.name='inbox'; p0.value='true'; f.appendChild(p0); f.method='POST'; f.action=this.href; f.submit(); return false;">Re: test  (64)</a>
+            
+            </td>
+            <td>
+            <table class="ta_none tatd_none">
+          <tbody><tr>
+            <td nowrap="" class="ta"><a href="/messages/message_history/64" class="btn button icx-submit icx-small"><span>メール履歴</span></a></td>
+          </tr>
+        </tbody></table>
+        </td>
+            <td>2021/05/06 14:19:02</td>
+            <td>
+        <table class="ta_none tatd_none">
+          <tbody><tr>
+            <td nowrap="" class="ta">
+            
+              <a href="/messages/reply/64" class="btn button icx-defoult_mint icx-small" onclick="var f=document.createElement('form'); this.parentNode.appendChild(f); f.method='POST'; f.action=this.href; f.submit(); return false;"><span>返信</span></a>
+            
+            </td>
+          </tr>
+        </tbody></table>
+            </td>
+        
+        
+            
+            <td>
+              <input id="message_id[]" name="message_id[]" type="checkbox" value="64">
+            </td>
+            
+          </tr>
+        
+          
+          <tr>
+            <td><span class="tag icx-success icx-light">開封済み</span></td>
+            <td>その他メッセージ</td>
+            <td>紹介会社テスト 非ベクトル紹介会社ユーザー テスト ([S25]C451)</td>
+            <td><a href="/kyujin_ankens/show_from_message/65?is_popup=true" onclick="window.open(this.href);return false;">【ＷＥＢサイト（インターネット広告）編集・コンテンツ企画】　 ([S1]38)</a></td>
+            <td><a href="/freecandidate/kyusyokusya_show/461?is_popup=true" onclick="window.open(this.href);return false;">登録No.461</a></td>
+            <td>紹介会社 1 ([S1]C433)</td>
+        
+        
+            <td>
+            
+            <a href="/messages/show/65" onclick="var f=document.createElement('form'); this.parentNode.appendChild(f); var p0=document.createElement('input'); p0.type='hidden'; p0.name='inbox'; p0.value='true'; f.appendChild(p0); f.method='POST'; f.action=this.href; f.submit(); return false;">Re: test  (65)</a>
+            
+            </td>
+            <td>
+            <table class="ta_none tatd_none">
+          <tbody><tr>
+            <td nowrap="" class="ta"><a href="/messages/message_history/65" class="btn button icx-submit icx-small"><span>メール履歴</span></a></td>
+          </tr>
+        </tbody></table>
+        </td>
+            <td>2021/05/06 14:19:02</td>
+            <td>
+        <table class="ta_none tatd_none">
+          <tbody><tr>
+            <td nowrap="" class="ta">
+            
+              <a href="/messages/reply/65" class="btn button icx-defoult_mint icx-small" onclick="var f=document.createElement('form'); this.parentNode.appendChild(f); f.method='POST'; f.action=this.href; f.submit(); return false;"><span>返信</span></a>
+            
+            </td>
+          </tr>
+        </tbody></table>
+            </td>
+        
+        
+            
+            <td>
+              <input id="message_id[]" name="message_id[]" type="checkbox" value="65">
+            </td>
+            
+          </tr>
+        
+          
+          <tr style="font-style:italic">
+            <td>返信済み</td>
+            <td>その他メッセージ</td>
+            <td>株式会社ヒューマンステージ 高橋 徹 ([S3]C23)</td>
+            <td><a href="/kyujin_ankens/show_from_message/12?is_popup=true" onclick="window.open(this.href);return false;">【業務運用ＳＥ】　一部上場のＩＴサービス企業です。 ([S1]525)</a></td>
+            <td><a href="/freecandidate/kyusyokusya_show/27?is_popup=true" onclick="window.open(this.href);return false;">登録No.27</a></td>
+            <td>秋山 加奈子 ([S1]C7)</td>
+        
+        
+            <td>
+            
+            <a href="/messages/show/12" onclick="var f=document.createElement('form'); this.parentNode.appendChild(f); var p0=document.createElement('input'); p0.type='hidden'; p0.name='inbox'; p0.value='true'; f.appendChild(p0); f.method='POST'; f.action=this.href; f.submit(); return false;">Re: 詳細を確認させてください（株式会社ベクトル）  (12)</a>
+            
+            </td>
+            <td>
+            <table class="ta_none tatd_none">
+          <tbody><tr>
+            <td nowrap="" class="ta"><a href="/messages/message_history/12" class="btn button icx-submit icx-small"><span>メール履歴</span></a></td>
+          </tr>
+        </tbody></table>
+        </td>
+            <td>2007/06/01 21:58:57</td>
+            <td>
+        <table class="ta_none tatd_none">
+          <tbody><tr>
+            <td nowrap="" class="ta">
+            
+              <a href="/messages/reply/12" class="btn button icx-defoult_mint icx-small" onclick="var f=document.createElement('form'); this.parentNode.appendChild(f); f.method='POST'; f.action=this.href; f.submit(); return false;"><span>返信</span></a>
+            
+            </td>
+          </tr>
+        </tbody></table>
+            </td>
+        
+        
+            
+            <td>
+              <input id="message_id[]" name="message_id[]" type="checkbox" value="12">
+            </td>
+            
+          </tr>
+        
+          
+          <tr>
+            <td><span class="tag icx-success icx-light">開封済み</span></td>
+            <td>その他メッセージ</td>
+            <td>ペンタックス株式会社 小林 豪 ([K1]P10)</td>
+            <td><a href="/kyujin_ankens/show_from_message/4?is_popup=true" onclick="window.open(this.href);return false;">海外営業（医療関連） ([K1]3)</a></td>
+            <td><a href="/kyusyokusyas/show/26?is_popup=true" onclick="window.open(this.href);return false;">小林 豪 ([S1]B26 コバヤシ ゴウ)</a></td>
+            <td>Ｖキャリア 事務局 ([S1]C15)</td>
+        
+        
+            <td>
+            
+            <a href="/messages/show/4" onclick="var f=document.createElement('form'); this.parentNode.appendChild(f); var p0=document.createElement('input'); p0.type='hidden'; p0.name='inbox'; p0.value='true'; f.appendChild(p0); f.method='POST'; f.action=this.href; f.submit(); return false;">Re: 了解いたしました  (4)</a>
+            
+            </td>
+            <td>
+            <table class="ta_none tatd_none">
+          <tbody><tr>
+            <td nowrap="" class="ta"><a href="/messages/message_history/4" class="btn button icx-submit icx-small"><span>メール履歴</span></a></td>
+          </tr>
+        </tbody></table>
+        </td>
+            <td>2007/02/09 13:21:44</td>
+            <td>
+        <table class="ta_none tatd_none">
+          <tbody><tr>
+            <td nowrap="" class="ta">
+            
+              <a href="/messages/reply/4" class="btn button icx-defoult_mint icx-small" onclick="var f=document.createElement('form'); this.parentNode.appendChild(f); f.method='POST'; f.action=this.href; f.submit(); return false;"><span>返信</span></a>
+            
+            </td>
+          </tr>
+        </tbody></table>
+            </td>
+        
+        
+            
+            <td>
+              <input id="message_id[]" name="message_id[]" type="checkbox" value="4">
+            </td>
+            
+          </tr>
+        
+          
+          <tr style="font-style:italic">
+            <td>返信済み</td>
+            <td>その他メッセージ</td>
+            <td>ペンタックス株式会社 小林 豪 ([K1]P10)</td>
+            <td><a href="/kyujin_ankens/show_from_message/2?is_popup=true" onclick="window.open(this.href);return false;">海外営業（医療関連） ([K1]3)</a></td>
+            <td><a href="/kyusyokusyas/show/26?is_popup=true" onclick="window.open(this.href);return false;">小林 豪 ([S1]B26 コバヤシ ゴウ)</a></td>
+            <td>Ｖキャリア 事務局 ([S1]C15)</td>
+        
+        
+            <td>
+            
+            <a href="/messages/show/2" onclick="var f=document.createElement('form'); this.parentNode.appendChild(f); var p0=document.createElement('input'); p0.type='hidden'; p0.name='inbox'; p0.value='true'; f.appendChild(p0); f.method='POST'; f.action=this.href; f.submit(); return false;">ご応募ありがとうございます (2)</a>
+            
+            </td>
+            <td>
+            <table class="ta_none tatd_none">
+          <tbody><tr>
+            <td nowrap="" class="ta"><a href="/messages/message_history/2" class="btn button icx-submit icx-small"><span>メール履歴</span></a></td>
+          </tr>
+        </tbody></table>
+        </td>
+            <td>2007/02/09 13:12:22</td>
+            <td>
+        <table class="ta_none tatd_none">
+          <tbody><tr>
+            <td nowrap="" class="ta">
+            
+              <a href="/messages/reply/2" class="btn button icx-defoult_mint icx-small" onclick="var f=document.createElement('form'); this.parentNode.appendChild(f); f.method='POST'; f.action=this.href; f.submit(); return false;"><span>返信</span></a>
+            
+            </td>
+          </tr>
+        </tbody></table>
+            </td>
+        
+        
+            
+            <td>
+              <input id="message_id[]" name="message_id[]" type="checkbox" value="2">
+            </td>
+            
+          </tr>
+        
+        
+        </tbody></table>
+        
+        
+        <table width="100%">
+          <tbody><tr>
+            <th align="left">
+            8件中　1～8件を表示
+            <select id="per_page_count[B]" name="per_page_count[B]"><option value="10" selected="selected">10 件</option>
+        <option value="20">20 件</option>
+        <option value="30">30 件</option>
+        <option value="50">50 件</option></select>
+            <span class="sbtn"><input name="per_page_button[B]" type="submit" value="表示"></span>
+          </th>
+            <td align="right">
+            
+            
+            
+          </td>
+          </tr>
+        </tbody></table>
+        </form>
+
+
+
+</article>
+  <button class="button icx-defoult_mint icx-outlined v-box pageTop">
+    <a href="#"><i class="fas fa-arrow-up"></i></a>
+  </button>
+<script>
+  $(window).scroll(function () {
+  var now = $(window).scrollTop();
+  if (now > 200) {
+    $('.pageTop').fadeIn("slow");
+  } else {
+    $('.pageTop').fadeOut('slow');
+  }
+});
+</script>
+</main>
+<script>
+  for (const element of document.querySelectorAll('.modal .delete, .show-modal')) {
+    element.addEventListener('click', e => {
+        const modalId = element.dataset.target;
+        const modal = document.getElementById(modalId);
+        modal.classList.toggle('icx-active');
+    });
+}
+</script>
+
+<footer class="footer">
+  <div class="content cont-text-centered">
+    <p>
+      <strong>VCareer </strong><span> © Copyright Reserved. 2021 Vector,co.ltd</span>
+    </p>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>VCAREER</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="dist/vcareer-style.css">
+    <script src="https://kit.fontawesome.com/58d8b0aee0.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2" defer></script>
+</head>
+<body>
+<!-- herrtyコンポーネント -->
+<section class="topsBar">
+  <div class="herrty-body">
+    <div class="container displayFlex icx-justify-content-space-between icx-align-content-center" style="max-width:100%;">
+      <!--<a href="index.html"><img src="dist/img/vector_logo_sample.jpg"></a>-->
+      <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a href="index.html"><img src="dist/img/vector_logo_sample.png"></a>
+          <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          
+          <!--<a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" aria-expanded="false">-->
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+          <!--<div class="navbar-menu" id="navMenu">-->
+            <!-- navbar-start, navbar-end... -->
+          <!--</div>-->
+        </div>
+        <script>
+              document.addEventListener('DOMContentLoaded', () => {
+    
+              // Get all "navbar-burger" elements
+              const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+    
+              // Check if there are any navbar burgers
+              if ($navbarBurgers.length > 0) {
+    
+              // Add a click event on each of them
+              $navbarBurgers.forEach( el => {
+              el.addEventListener('click', () => {
+    
+              // Get the target from the "data-target" attribute
+              const target = el.dataset.target;
+              const $target = document.getElementById(target);
+    
+              // Toggle the "icx-active" class on both the "navbar-burger" and the "navbar-menu"
+              el.classList.toggle('icx-active');
+              $target.classList.toggle('icx-active');
+    
+              });
+             });
+            }
+    
+            });
+        (function() {
+           var burger = document.querySelector('.burger');
+           var nav = document.querySelector('#'+burger.dataset.target); 
+           burger.addEventListener('click', function(){
+           burger.classList.toggle('icx-active');
+           nav.classList.toggle('icx-active');
+         });
+        })();
+        </script>
+      
+        <div id="navbarBasicExample" class="navbar-menu" style="margin:0 2% 0 0;">
+          <div class="navbar-start">
+            <!--<a href="index.html" class="navbar-item">
+                <i class="fab fa-font-awesome-flag"></i>HOME
+            </a>-->
+              <div class="navbar-item cont-dropdown icx-hoverable">
+                <a href="002.html" class="navbar-link">
+                    <i class="fas fa-mail-bulk"></i>メッセージ管理＜求人企業・紹介会社＞
+                </a>   
+                <div class="navbar-dropdown">
+                  <a class="navbar-item">
+                    <i class="fab fa-twitch"></i>メッセージ管理＜求職者＞
+                  </a>
+                </div>
+              </div>
+                <a href="004.html" class="navbar-item">
+                    <i class="fas fa-user-tie"></i><i class="fab fa-sistrix"></i>求職者検索
+                </a>
+                <a class="navbar-item">
+                    <i class="far fa-id-card"></i>登録者管理
+                </a> 
+            <div class="navbar-item cont-dropdown icx-hoverable">
+              <a class="navbar-link">
+                <i class="fas fa-sliders-h"></i>基本設定
+              </a>
+      
+              <div class="navbar-dropdown">
+                <a class="navbar-item">
+                    <i class="fas fa-user-cog"></i>アカウント管理
+                </a>
+                <a class="navbar-item">
+                    <i class="fas fa-laptop-code"></i>サイト管理
+                </a>
+                <!--<a class="navbar-item">
+                  Contact
+                </a>
+                <hr class="navbar-divider">
+                <a class="navbar-item">
+                  Report an issue
+                </a>-->
+              </div>
+            </div>
+          </div>
+      
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="buttons">
+                <a class="button icx-defoult_mint">
+                    <i class="fas fa-pen-nib"></i><strong>　Signup</strong>
+                  </a>
+                  <a class="button icx-pails_sub">
+                    <i class="fas fa-fingerprint"></i>　Login
+                  </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+</section>
+
+<main>
+  <!--main-functioncontents-->
+  <article>
+    <div class="displayFlex icx-justify-content-space-between">
+      <div class="tags cont-activity">
+        <span class="tag icx-darkbl">2021年06月17日</span>
+        <span class="tag icx-bright">掲載中の求人情報 3件</span>
+      </div>
+      <div class="title icx-6" style="font-size:0.8em;text-align:right;padding:1% 0;">
+      Ｖキャリアは、求人企業と紹介会社とサイト会員が、求人求職情報を共有できる転職求人情報サイトです。
+      </div>
+    </div>
+  <div class="v-columns icx-flex-direction-row icx-flex-wrap-wrap icx-justify-content-space-between">
+    <div class="column vmenu" onClick="location.href='index.html'">
+      <div class="bd-notification v-box">
+        <div class="cont-text-centered">
+          <h3 class="title icx-4"><i class="fab fa-font-awesome-flag"></i>NEWS</h3>
+          <hr>
+        </div>
+      </div>
+    </div>
+    <div class="column vmenu" onClick="location.href='002.html'">
+      <div class="bd-notification v-box">
+        <div class="cont-text-centered">
+          <h3 class="title icx-4"><i class="fas fa-mail-bulk"></i>メッセージ管理</h3>
+          <hr>
+            <p subtitle icx-5>＜求人企業・紹介会社＞</p>
+            <p>スカウトメール/
+            受信メールボックス/
+            送信メールボックス/
+            ゴミ箱/
+            フォルダ管理/
+            定型メッセージ</p>
+        </div>
+    </div>
+    </div>
+    <div class="column vmenu">
+      <div class="bd-notification v-box">
+        <div class="cont-text-centered">
+          <h3 class="title icx-4"><i class="fab fa-twitch"></i>メッセージ管理</h3>
+          <hr>
+            <p subtitle icx-5>＜求職者＞</p>
+              <p>スカウトメール/受信メールボックス/送信メールボックス/フォルダー管理/新規メッセージ/ゴミ箱<p>
+        </div>
+      </div>
+    </div>
+    <div class="column vmenu" onClick="location.href='004.html'">
+      <div class="bd-notification v-box">
+        <div class="cont-text-centered">
+          <h3 class="title icx-4"><i class="fas fa-user-tie"></i><i class="fab fa-sistrix"></i>求職者検索</h3>
+          <hr>
+            <p>「Ｖキャリア」に公開されている求職者を検索。求職者（求職者が登録している人材紹介会社）に対してスカウトメールを出すことができます。</p>
+        </div>
+      </div>
+    </div>
+    <div class="column vmenu">
+      <div class="bd-notification v-box">
+      <div class="cont-text-centered">
+        <h3 class="title icx-4"><i class="far fa-id-card"></i>登録者管理</h3>
+        <hr>
+            <p>自社の登録者を管理する画面です。求人案件に応募する場合など、応募する方の情報の入力や登録者の選考状況など確認できます。</p>
+        </div>   
+      </div>
+    </div>
+    <div class="column vmenu">
+      <div class="bd-notification v-box">
+      <div class="cont-text-centered">
+        <h3 class="title icx-4"><i class="fas fa-sliders-h"></i>基本設定</h3>
+        <hr>
+        <p>基本情報の登録、ログイン設定、メール設定を行います。</p>
+      </div>
+      </div>
+    </div>
+    <div class="column vmenu">
+      <div class="bd-notification v-box">
+      <div class="cont-text-centered">
+        <h3 class="title icx-4"><i class="fas fa-user-cog"></i>アカウント管理</h3>
+        <hr>
+          <P>自社ユーザーの新規登録、及び登録内容の変更等を行います。（権限があるユーザーのみ操作可能です。</p>
+      </div>
+      </div>
+    </div>
+    <div class="column vmenu">
+      <div class="bd-notification v-box">
+      <div class="cont-text-centered">
+        <h3 class="title icx-4"><i class="fas fa-laptop-code"></i>サイト管理</h3>
+        <hr>
+          <p>システム管理画面</p>
+      </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+<article>
+<!-- Modal -->
+  <div class="modal" id="my-modal">
+      <div class="modal-background"></div>
+      <div class="v-modal-window">
+          <header class="v-modal-window-head">
+              <p class="v-modal-window-title alignCenter" style="font-size:1.3em;">事務局からの【重要なお知らせ】</p>
+              <button class="delete" aria-label="close" data-target="my-modal"></button>
+          </header>
+          <section class="v-modal-window-body">
+              
+            <table width="100%" border="0" cellpadding="10" cellspacing="0">
+              <tbody><tr>
+                <td></td>
+              </tr>
+              <tr>
+                <td background="images/aka_line.gif">&nbsp;</td>
+              </tr>
+              <tr>
+                <td>
+      
+            <a href="/admin_syokai/show_newsarticle/23">2008/08/08&nbsp;【重要なお知らせ】Ⅴ―キャリア(Ⅴ-Career)サービスの終了に関するお知らせ</a><br>
+            <br>
+            <table class="table icx-striped" border="0" cellpadding="5" cellspacing="1">
+                    <tbody><tr>
+                      <td><a href="/messages">メッセージ管理</a></td>
+                      <td>
+                        求人企業とのメールの送受信やメールの管理を行います。<br>
+                        ・新着メッセージ&nbsp;3&nbsp;件<br>
+                        ・新着スカウトメール&nbsp;1&nbsp;件
+                      </td>
+                    </tr>
+              
+              <tr>
+                <td><a href="/obos">応募者管理</a></td>
+                <td>「Ｖキャリア」上に公開した求人案件への応募者の個人情報の確認や進捗の管理を行ないます。また、採用通知（オファーレター）<br>
+                などの送付も応募者管理から行います。<span class="red">※「Ｖキャリア」上で内定が確定した場合は、必ず応募者管理から採用通知を送付ください。</span></td>
+              </tr>
+              <tr>
+                <td><a href="/kyujin_ankens">自社求人案件管理</a></td>
+                <td>自社で管理する求人案件の登録・照会や、「Ｖキャリア」への公開設定など行います。</td>
+              </tr>
+              <tr>
+                <td><a href="004.html">求職者検索＜スカウト＞</a></td>
+                <td>「Ｖキャリア」に公開されている求職者を検索することができます。また、求職者（求職者が登録している人材紹介会社）に対して<br>
+                スカウトメールを出すことができます。</td>
+              </tr>
+            
+                    <tr>
+                      <td><a href="/freecandidate/list_kyujin_ankens">求人案件検索</a></td>
+                      <td>「Ｖキャリア」に登録されている全ての求人案件の検索、および案件に対するエントリー（応募）が可能です。</td>
+                    </tr>
+                    <tr>
+                      <td><a href="/torokusyas">登録者管理</a></td>
+                      <td>自社の登録者を管理する画面です。求人案件に応募する場合など、応募する方の情報の入力や登録者の選考状況など確認できます。</td>
+                    </tr>
+                    <tr>
+                      <td><a href="/basic_info">基本設定</a></td>
+                      <td>基本情報の登録、ログイン設定、メール設定を行います。</td>
+                    </tr>
+                    
+                    <tr>
+                      <td><a href="/consultants">アカウント管理</a></td>
+                      <td>自社ユーザーの新規登録、及び登録内容の変更等を行います。</td>
+                    </tr>
+                    
+                  </tbody></table></td>
+              </tr>
+            </tbody></table>
+
+          </section>
+  
+          <footer class="v-modal-window-foot">
+              <button type="button" class="button icx-artred" aria-label="close" data-target="my-modal">Close</button>
+              <button type="button" class="button icx-artred delete" style="position:absolute;top:30px;left:60px;background-color:rgba(255,255,255,0);border-color:rgba(255,255,255,0);color:rgba(255,255,255,0);" aria-label="close" data-target="my-modal"></button>
+          </footer>
+      </div>
+  </div>
+</article>
+
+
+<!--modal//END-->
+<article style="margin-top:1%;">
+  <!---->
+  <div class="message message-v v-box">
+    <div class="message-header message-v-header">
+      <p><strong>お問合せ/重要事項</strong></p>
+    </div>
+    <div class="message-body">
+      <div class="content">
+        <div>ご不明な点がございましたら、下記窓口までご連絡下さい。（受付時間9：00～18：00）<br><br>
+          <address><strong><i class="fas fa-phone-square-alt"></i>【お問合せ窓口】<a href="tel:0364035781">03-6403-5781</a></strong></address><br>
+           迅速にご対応させて頂くために、企業様IＤをお知らせ下さい。<br>
+     
+         【操作マニュアルについて】	<br>
+          管理画面の使用方法のマニュアルがダウンロードできます。<br>
+          下記のリンクを右クリックし、「対象をファイルに保存」を選択すると指定場所に保存できます。<br>
+     
+          <button class="button icx-outlined" onclick="#"><i class="fas fa-file-download"></i>マニュアルをダウンロード</button><br>
+     
+     
+          <button class="button icx-outlined" onclick="#"><i class="fas fa-copy"></i>【利用規約】	こちらをご覧ください</button><br>
+         <button class="button icx-outlined" onclick="#"><i class="far fa-copy"></i>【個人情報保護方針】	こちらをご覧ください。</button><br>
+
+         <button type="button" class="button icx-outlined v-box show-modal" data-target="my-modal" style=""><span style="font-size:1em;"><i class="fas fa-info-circle"></i>事務局からの【重要なお知らせ】</span>
+         </button>
+         </div>
+      </div>
+    </div>
+  </div>
+
+</article>
+  <button class="button icx-defoult_mint icx-outlined v-box pageTop">
+    <a href="#"><i class="fas fa-arrow-up"></i></a>
+  </button>
+<script>
+  $(window).scroll(function () {
+  var now = $(window).scrollTop();
+  if (now > 200) {
+    $('.pageTop').fadeIn("slow");
+  } else {
+    $('.pageTop').fadeOut('slow');
+  }
+});
+</script>
+</main>
+<script>
+  for (const element of document.querySelectorAll('.modal .delete, .show-modal')) {
+    element.addEventListener('click', e => {
+        const modalId = element.dataset.target;
+        const modal = document.getElementById(modalId);
+        modal.classList.toggle('icx-active');
+    });
+}
+</script>
+
+<footer class="footer">
+  <div class="content cont-text-centered">
+    <p>
+      <strong>VCareer </strong><span> © Copyright Reserved. 2021 Vector,co.ltd</span>
+    </p>
+  </div><!--https://github.com/akat-a-k-a-t/akat-a-k-a-t-.github.io/blob/main/index.html-->
+</footer>
+</body>
+</html>
