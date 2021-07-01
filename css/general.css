@@ -8754,10 +8754,6 @@ a.cont-text-white:hover, a.cont-text-white:focus {
   align-content: flex-end !important;
 }
 
-.icx-align-content-center {
-  align-content: center !important;
-}
-
 .icx-align-content-space-between {
   align-content: space-between !important;
 }
@@ -10886,3 +10882,5 @@ a.cont-text-white:hover, a.cont-text-white:focus {
   background-color: #fafafa;
   padding: 3rem 1.5rem 6rem;
 }
+
+
