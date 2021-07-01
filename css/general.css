@@ -292,9 +292,9 @@ html {
   overflow-y: scroll;
   text-rendering: optimizeLegibility;
   -webkit-text-size-adjust: 100%;
-     -moz-text-size-adjust: 100%;
-      -ms-text-size-adjust: 100%;
-          text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 article,
@@ -463,8 +463,6 @@ a.v-box:active {
   cursor: pointer;
   justify-content: center;
   padding-bottom: calc(0.5em - 1px);
-  padding-left: 1em;
-  padding-right: 1em;
   padding-top: calc(0.5em - 1px);
   text-align: center;
   white-space: nowrap;
@@ -10949,5 +10947,3 @@ a.cont-text-white:hover, a.cont-text-white:focus {
   background-color: #fafafa;
   padding: 3rem 1.5rem 6rem;
 }
-
-
