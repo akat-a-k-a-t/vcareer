@@ -236,13 +236,13 @@
   <tr>
     <!--<th style="width:10%;" align="center">並べ替え</th>-->
     <td colspan="2">
-      <div class="select is-normal">
+      <div class="select">
       <select id="search_sort1" name="search_sort1"><option value="1" selected="selected">登録日</option>
 <option value="2">登録No</option>
 <option value="3">年齢</option>
 <option value="5">担当者</option>
 <option value="6">希望職種 1</option>
-<option value="7">人材紹介会社</option></select></div>      <div class="select is-normal"><select id="search_order1" name="search_order1"><option value="1">昇順</option>
+<option value="7">人材紹介会社</option></select></div>      <div class="select"><select id="search_order1" name="search_order1"><option value="1">昇順</option>
 <option value="2" selected="selected">降順</option></select></div>
     </td>
   </tr>
@@ -268,7 +268,7 @@
           <td align="left" valign="top" nowrap="nowrap">希望年収</td>
           <td align="left" valign="top">&nbsp;</td>
           <td align="left" valign="top">
-            <div class="select is-normal">
+            <div class="select">
             <select id="filter_nensyu" name="filter_nensyu"><option value="">---</option>
 <option value="1">0〜99万</option>
 <option value="2">100万〜199万</option>
@@ -304,7 +304,7 @@
             （複数選択可）</td>
           <td align="left" valign="top">&nbsp;</td>
           <td align="left" valign="top">
-            <div class="select is-normal selectoptionmul_Multiple">
+            <div class="select selectoptionmul_Multiple">
             <select id="filter_kibo_kinmuchis[]" multiple="multiple" name="filter_kibo_kinmuchis[]" size="5" value="希望勤務地">
 <option value="1">北海道</option>
 <option value="3">青森県</option>
@@ -359,7 +359,7 @@
   </td>
   </tr>
 </table>
-<section class="icx-fullwidth v-form-ja icx-flex is-justify-content-center" style="border-bottom: unset;"><button class="btn button icx-submit" name="commit" type="submit">絞込み</button></section>
+<section class="icx-fullwidth v-form-ja icx-flex icx-justify-content-center" style="border-bottom: unset;"><button class="btn button icx-submit icx-small" name="commit" type="submit">絞込み</button></section>
 <br>
 
 <!--table width="100%" border="0" cellpadding="10" cellspacing="0">
@@ -880,7 +880,7 @@
     </tr>
   </table>
   </form>
-  <div class="ta"> <a href="004.html" class="btn button icx-submit" onclick="var f=document.createElement('form'); this.parentNode.appendChild(f); var p0=document.createElement('input'); p0.type='hidden'; p0.name='is_back'; p0.value='true'; f.appendChild(p0); f.method='POST'; f.action=this.href; f.submit(); return false;"><i class="fas fa-chevron-left"></i><span>　もどる</span></a> </div>&nbsp;&nbsp; <br>
+  <div class="ta"> <a href="004.html" class="btn button icx-submit icx-small" onclick="var f=document.createElement('form'); this.parentNode.appendChild(f); var p0=document.createElement('input'); p0.type='hidden'; p0.name='is_back'; p0.value='true'; f.appendChild(p0); f.method='POST'; f.action=this.href; f.submit(); return false;"><i class="fas fa-chevron-left"></i><span>　もどる</span></a> </div>&nbsp;&nbsp; <br>
 
 <script>
     window.onload = function () {var searchApp = new Vue({
@@ -892,7 +892,7 @@
 }
 </script>
 
-  <button class="button icx-defoult_mint icx-outlined is-nomal v-box pageTop">
+  <button class="button icx-defoult_mint icx-outlined pageTop">
     <a href="#"><i class="fas fa-arrow-up"></i></a>
   </button>
 <script>
