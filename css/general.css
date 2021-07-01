@@ -3085,7 +3085,7 @@ div.icon-text {
   color: rgba(0,0,0,.7);
 }
 
-.tag:not(body).is-success.is-light {
+.tag:not(body).icx-success.icx-light {
   background-color: #effaf5;
   color: #257953;
 }
@@ -9528,67 +9528,6 @@ a.cont-text-white:hover, a.cont-text-white:focus {
     font-size: 0.75rem !important;
   }
 }
-
-.cont-text-centered {
-  text-align: center !important;
-}
-
-
-@media screen and (max-width: 768px) {
-  .cont-text-centered-mobile {
-    text-align: center !important;
-  }
-}
-
-@media screen and (min-width: 769px), print {
-  .cont-text-centered-tablet {
-    text-align: center !important;
-  }
-}
-
-@media screen and (min-width: 769px) and (max-width: 1023px) {
-  .cont-text-centered-tablet-only {
-    text-align: center !important;
-  }
-}
-
-@media screen and (max-width: 1023px) {
-  .cont-text-centered-touch {
-    text-align: center !important;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .cont-text-centered-desktop {
-    text-align: center !important;
-  }
-}
-
-@media screen and (min-width: 1024px) and (max-width: 1215px) {
-  .cont-text-centered-desktop-only {
-    text-align: center !important;
-  }
-}
-
-@media screen and (min-width: 1216px) {
-  .cont-text-centered-widescreen {
-    text-align: center !important;
-  }
-}
-
-@media screen and (min-width: 1216px) and (max-width: 1407px) {
-  .cont-text-centered-widescreen-only {
-    text-align: center !important;
-  }
-}
-
-@media screen and (min-width: 1408px) {
-  .cont-text-centered-fullhd {
-    text-align: center !important;
-  }
-}
-
-
 
 .icx-capitalized {
   text-transform: capitalize !important;
