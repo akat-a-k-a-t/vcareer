@@ -44,9 +44,12 @@ address {
 .button.icx-rounded:hover{
     background-color:rgba(241,235,231,1);
 }
-#right_Btngroup div .button{
+#right_Btngroup div .button,
+#right_Btngroup tr th .button,
+#right_Btngroup tr th a{
     margin-right:2px;
 }
+
 .bd-notification.icx-defoult_mint {
     background-color: #00d1b2;
     color: #fff;
