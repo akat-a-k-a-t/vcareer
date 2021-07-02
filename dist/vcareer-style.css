@@ -276,9 +276,6 @@ table.preferred_workplace tr td:nth-child(1){
 table.Language th td{
     vertical-align:middle !important;
 }
-#right_Btngroup{
-    text-align:right !important;
-}
 
 .selectoptionmul_Multiple.select select[multiple] {
     height: 100px;
